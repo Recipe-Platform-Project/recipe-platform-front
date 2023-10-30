@@ -1,0 +1,121 @@
+#main-page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#chef-list-wrapper {
+  margin: 40px 200px 40px;
+  padding: 20px 0;
+  width: 1520px;
+
+  display: flex;
+
+  border: 1px solid rgba(53, 139, 67, 1);
+  border-left: none;
+  border-right: none;
+}
+
+.chef-list-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list-left {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+  padding-left: 26px;
+}
+.list-left:hover {
+  cursor: pointer;
+}
+
+.list-bottom-left-icon {
+  width: 50px;
+  height: 70px;
+
+  background-image: url(assets/왼쪽\ 버튼\ 아이콘.png);
+}
+
+.list-right {
+  width: 100%;
+
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: row-reverse;
+
+  padding-right: 26px;
+}
+.list-right:hover {
+  cursor: pointer;
+}
+.list-bottom-right-icon {
+  width: 50px;
+  height: 70px;
+
+  background-image: url(assets/오른쪽\ 버튼\ 아이콘.png);
+}
+.chef-list-center {
+  width: 1270px;
+
+  display: flex;
+  flex-direction: column;
+}
+.chef-list-center-top {
+  /* margin: 0 64px; */
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.chef-list-center-top-title {
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "SUIT";
+}
+
+.chef-list-center-top-more-button {
+  width: 109px;
+  height: 26px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: rgba(53, 139, 67, 1);
+  font-family: "SUIT";
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+
+  border: 1px solid rgba(53, 139, 67, 1);
+  border-radius: 10px;
+}
+
+.chef-list-center-top-more-button:hover {
+  cursor: pointer;
+  background-color: rgba(53, 139, 67, 0.1);
+}
+
+.chef-list-center-bottom {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.chef-list-center-bottom-info-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

@@ -1,11 +1,15 @@
 import React from 'react'
 import "./style.css"
+<<<<<<< HEAD
 import { useLocation } from 'react-router-dom';
+=======
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
 
 
 //          component: 푸터 컴포넌트         //
 export default function Footer() {
 
+<<<<<<< HEAD
     //          function: useLocation 함수        //         
     const locationNow = useLocation();
 
@@ -19,6 +23,8 @@ export default function Footer() {
     if(locationNow.pathname ==="/membership") return null;
 
 
+=======
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
     //          event handler: 유튜브 아이콘 버튼 클릭 이벤트 처리         //
     const onYoutubeIconClickHandler = () => {
     window.open('https://www.youtube.com');

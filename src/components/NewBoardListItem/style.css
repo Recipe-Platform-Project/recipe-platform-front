@@ -1,0 +1,118 @@
+
+
+#new-recipe-list-wrapper {
+  width: 1520px;
+  margin: 40px 200px 40px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border: 1px solid rgba(53, 139, 67, 1);
+  border-left: none;
+  border-right: none;
+}
+
+.new-recipe-list-center{
+  width: 1270px;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-recipe-list-center-top {
+
+  /* margin: 0 64px; */
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-recipe-list-center-top-title {
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'SUIT';
+}
+
+.new-recipe-list-center-top-more-button {
+  width: 109px;
+  height: 26px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: rgba(53, 139, 67, 1);
+  font-family: 'SUIT';
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+
+  border: 1px solid rgba(53, 139, 67, 1);
+  border-radius: 10px;
+}
+
+.new-recipe-list-center-top-more-button:hover {
+  cursor: pointer;
+  background-color: rgba(53, 139, 67, 0.1);
+}
+
+.new-recipe-list-center-bottom{
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: row;
+  gap: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.new-recipe-list-container{
+  width: 1270px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 22px;
+  
+  transition: 0.5s;
+
+  
+}
+
+.recipe-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 300px;
+  height: 291px;
+}
+
+.recipe-box:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+.recipe-image {
+  width: 300px;
+  height: 220px;
+  border-radius: 10px;
+  border: none;
+
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+.recipe-title {
+  color: rgba(0, 0, 0, 1);
+  
+  font-family: 'SUIT';
+  font-size: 15px;
+  font-weight: 400;
+
+  display: flex;
+  width: 300px;
+  height: 51px;
+  flex-direction: column;
+  justify-content: center;
+}

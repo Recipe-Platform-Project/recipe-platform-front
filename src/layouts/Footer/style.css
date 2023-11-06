@@ -1,4 +1,8 @@
 #footer{
+<<<<<<< HEAD
+=======
+    width: 1920px;
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
     padding: 50px 0;
     
     display: flex;
@@ -12,6 +16,11 @@
     width: 1620px;
     height: 200px;
 
+<<<<<<< HEAD
+=======
+    /* margin: 50px 0; */
+
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
     display: flex;
     justify-content: space-between;
     gap: 100px;
@@ -39,7 +48,11 @@
 
 .footer-copyright{
     color: rgba(255, 255, 255, 0.70);
+<<<<<<< HEAD
     font-family: Inter;
+=======
+    font-family: 'SUIT';
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -59,7 +72,11 @@
 
 .campus-name{
     color: rgba(255, 255, 255, 0.50);
+<<<<<<< HEAD
     font-family: Inter;
+=======
+    font-family: 'SUIT';
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -73,7 +90,11 @@
 
 .campus-tel-number{
     color: rgba(255, 255, 255, 0.50);
+<<<<<<< HEAD
     font-family: Inter;
+=======
+    font-family: 'SUIT';
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
     font-size: 15px;
     font-style: normal;
     font-weight: 400;

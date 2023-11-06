@@ -1,13 +1,24 @@
 @font-face {
+<<<<<<< HEAD
   font-family: 'SUIT-Regular';
+=======
+  font-family: 'SUIT';
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
+<<<<<<< HEAD
 body {
   margin: 0;
    font-family: 'SUIT-Regular';
+=======
+
+body {
+  margin: 0;
+  font-family: 'SUIT';
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -15,4 +26,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d

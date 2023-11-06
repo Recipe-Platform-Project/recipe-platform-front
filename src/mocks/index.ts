@@ -1,8 +1,3 @@
-import userMock from "./user.mock";
-
-export{
-    userMock,
-}
 import boardListMock from "./board.mock";
 import chefInfoMock from "./chef-info.mock";
 import loginInfoMock from "./login-info.mock";

@@ -7,6 +7,9 @@ import { useUserStore } from "stores";
 
 //          component: 헤더 컴포넌트          //
 export default function Header() {
+  //          function: useLocation 함수        //
+  const locationNow = useLocation();
+
   //          function: 네비게이트 함수          //
   const navigator = useNavigate();
 
@@ -39,6 +42,13 @@ export default function Header() {
   const onMainClickHandler = () => {
     navigator(MAIN_PATH);
   };
+  //          event handler: 헤더 Hidden 처리       //
+  if(locationNow.pathname ==="/SignIn") return null;
+  if(locationNow.pathname ==="/SignUp") return null;
+  if(locationNow.pathname ==="/PasswordFound") return null;
+  if(locationNow.pathname ==="/UserUpdate") return null;
+  if(locationNow.pathname ==="/MembershipWithdrawal") return null;
+  if(locationNow.pathname ==="/UserFound") return null;
 
 
 

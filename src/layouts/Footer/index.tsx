@@ -1,9 +1,13 @@
 import React from 'react'
 import "./style.css"
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 //          component: 푸터 컴포넌트         //
 export default function Footer() {
+
+    //          function: useLocation 함수        //
+    const locationNow = useLocation();
 
     //          event handler: 유튜브 아이콘 버튼 클릭 이벤트 처리         //
     const onYoutubeIconClickHandler = () => {
@@ -22,7 +26,11 @@ export default function Footer() {
     window.open('https://blog.naver.com');
     }
 
-
+    //          event handler: 헤더 Hidden 처리       //
+    if(locationNow.pathname ==="/SignIn") return null;
+    if(locationNow.pathname ==="/SignUp") return null;
+    if(locationNow.pathname ==="/user") return null;
+    if(locationNow.pathname ==="/membership") return null;
 
 
   //          render: 푸터 컴포넌트 렌더링         //

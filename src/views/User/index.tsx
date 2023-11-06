@@ -1,19 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.css"
+import { useNavigate } from 'react-router-dom';
 
-export default function index() {
+export default function User() {
+    //                 component: 보여주는 페이지 지정                  //
+    const [view, setView] = useState<'UserInfo' | 'PasswordChangePage'>('UserInfo');
+    
+    //          function: navigate          //
+    const navigate = useNavigate();
+
+    //                      event handler: move main page                       //
+    const onLogoButtonClickHandler = () => {
+        navigate("/Main");
+    }
 
     const UserInfo = () => {
 
         //                 component: 사용자 정보수정 컴포넌트                     //
 
+        //                 event handler: move Password Chnage Page                     //
+        const onPasswordChangeButtonClickHandler = () => {
+            setView('PasswordChangePage');
+        }
+
+        //                 event handler: move Withdrawal page              //
+        const onWithdrawalButtonClickHandler = () => {
+            navigate("/withdrawal");
+        }
+        
 
         //                  render: 사용자 정보 컴포넌트 랜더링                    //
         return(
 
             <div id='user-update-wrapper'>
                 <div className='user-update-header'>
-                    <div className='user-update-logo-box'>
+                    <div className='user-update-logo-box' onClick={onLogoButtonClickHandler}>
                         <div className='user-update-logo'></div>
                     </div>
                 </div>
@@ -61,7 +82,9 @@ export default function index() {
                                 <div className='nickname-line'></div>
                                 <div className='nickname-input-box'>
                                     <div className='nickname-input-container'>
-                                        <input type="text" />
+                                        <div className='nickname-input-border'>
+                                            <input type="text" className='nickname-input'/>
+                                        </div>
                                         <div className='nickname-button-container'>
                                             <div className='nickname-button-box'>
                                                 <div className='nickname-button-update'>{"수정"}</div>
@@ -77,7 +100,7 @@ export default function index() {
                                 </div>
                                 <div className='password-line'></div>
                                 <div className='password-change-button-container'>
-                                    <div className='password-change-button-box'>
+                                    <div className='password-change-button-box'onClick={onPasswordChangeButtonClickHandler}>
                                         <div className='password-change-button'>{"수정"}</div>
                                     </div>
                                 </div>
@@ -100,7 +123,7 @@ export default function index() {
                                 </div>
                                 <div className='withdrawal-line'></div>
                                 <div className='withdrawal-button-container'>
-                                    <div className='withdrawal-button-box'>
+                                    <div className='withdrawal-button-box'onClick={onWithdrawalButtonClickHandler}>
                                         <div className='withdrawal-button'>{"수정"}</div>
                                     </div>
                                 </div>
@@ -120,7 +143,7 @@ export default function index() {
         return(
             <div id='password-change-page-wrapper'>
                 <div className='password-change-header'>
-                    <div className='password-change-logo-box'>
+                    <div className='password-change-logo-box'onClick={onLogoButtonClickHandler}>
                         <div className='password-change-logo'></div>
                     </div>
                 </div>
@@ -148,9 +171,9 @@ export default function index() {
         }
 
     return (
-        <>
-          {/* <UserInfo /> */}
-          <PasswordChangePage/>
-        </>
+        <div>
+            { view === 'UserInfo' && <UserInfo /> }
+            { view === 'PasswordChangePage' && <PasswordChangePage /> }
+        </div>
       )
 }

@@ -15,9 +15,9 @@ function App() {
     <Routes>
       <Route element={<Container />}>
         <Route path='/' element={<Main />} />
-        <Route path='/membership' element={<Membership />} />
-        <Route path='/authentication' element={<Authentication />} />
-        <Route path='/user' element={<User />} />
+        <Route path='/membership/' element={<Membership />} />
+        <Route path='/authentication/' element={<Authentication />} />
+        <Route path='/user/' element={<User />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
       </ Route>
     </Routes>

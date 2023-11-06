@@ -11,8 +11,11 @@ export default function Footer() {
 
 
     //          event handler: 푸터 Hidden 처리              //
+    if(locationNow.pathname ==="/Authentication/") return null;
     if(locationNow.pathname ==="/Authentication") return null;
+    if(locationNow.pathname ==="/user/") return null;
     if(locationNow.pathname ==="/user") return null;
+    if(locationNow.pathname ==="/membership/") return null;
     if(locationNow.pathname ==="/membership") return null;
 
 

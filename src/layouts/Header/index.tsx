@@ -13,9 +13,9 @@ export default function Header() {
 
 
   //          event handler: 헤더 Hidden 처리       //
-  if(locationNow.pathname ==="/Authentication") return null;
-  if(locationNow.pathname ==="/user") return null;
-  if(locationNow.pathname ==="/membership") return null;
+  if(locationNow.pathname ==="/Authentication/") return null;
+  if(locationNow.pathname ==="/user/") return null;
+  if(locationNow.pathname ==="/membership/") return null;
 
   //          event handler: 메인 로고 버튼 클릭 이벤트 처리         //
   const onMainLogoClickHandler = () => {

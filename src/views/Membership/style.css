@@ -239,17 +239,29 @@
     height: 60px;
     flex-direction: column;
     justify-content: center;
+    
 
-    border-bottom: #358B43;
-    border-bottom: 1px solid;
-
-    color: #358B43;
+    color: #000;
     text-align: center;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 
+}
+
+.userfound-id:hover{
+    cursor: pointer;
+    
+    color: #358B43;
+    border-bottom: #358B43;
+    border-bottom: 1px solid;
+
+}
+
+.userfound-id:visited{
+    border-bottom: #358B43;
+    border-bottom: 1px solid;
 }
 
 .userfound-line{
@@ -272,6 +284,15 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.userfound-pw:hover{
+    cursor: pointer;
+    
+    color: #358B43;
+    border-bottom: #358B43;
+    border-bottom: 1px solid;
+
 }
 
 .userfound-email-found-detail-container{
@@ -301,6 +322,7 @@
 
     margin-bottom: 14px;
 
+    border:none;
     border-bottom: 1px solid #AEAEAE;
     background: rgba(217, 217, 217, 0.00);
 }
@@ -309,6 +331,7 @@
     width: 494px;
     height: 50px;
 
+    border: none;
     border-bottom: 1px solid #AEAEAE;
     background: rgba(217, 217, 217, 0.00);
 }
@@ -423,6 +446,94 @@
     color: #FFF;
     text-align: center;
     font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.userfound-password-found-detail-container{
+    display: flex;
+    width: 750px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userfound-password-detail-box{
+    width: 690px;
+    height: 204px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 63px;
+    border: 1px solid #358B43;
+
+}
+
+.userfound-password-button-box{
+    width: 360px;
+    height: 60px;
+
+    border-radius: 10px;
+    background: #358B43;
+
+    margin-top: 33px;
+
+    display: flex;
+    align-items: center;
+}
+
+.userfound-password-button{
+    display: flex;
+    width: 360px;
+    height: 60px;
+    flex-direction: column;
+    justify-content: center;
+    
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.userfound-password-result-detail-container{
+    display: flex;
+    width: 750px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userfound-password-success-box{
+    width: 690px;
+    height: 217px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 63px;
+    border: 1px solid #358B43;
+}
+
+.green-text-name{
+    color: #358B43;
+
+}
+
+.userfound-password-success-message{
+    display: flex;
+    width: 494px;
+    height: 42px;
+    justify-content: center;
+
+    color: #000;
+    text-align: center;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

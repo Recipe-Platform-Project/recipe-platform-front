@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.css"
+import { Navigate, useNavigate } from 'react-router-dom'
 
-export default function index() {
+export default function Membership() {
+
+    //                 component: 보여주는 페이지 지정                  //
+    const [view, setView] = useState<'MembershipWithdrawal' | 'UserFound'>('UserFound');
     
+    //          function: navigate          //
+    const navigate = useNavigate();
 
-    const Membership_Withdrawal = () => {
+    const MembershipWithdrawal = () => {
 //          render: 회원탈퇴 랜더                 //
 
         return(
@@ -47,6 +53,36 @@ export default function index() {
     }
 
     const UserFound = () =>{
+
+        
+        //              component: ID Found component            //
+        const [idFoundButton, setIdFoundButton] = useState(true);
+
+        //              component: PW Found component            //
+        const [pwFoundButton, setPwFoundButton] = useState(false);
+
+
+        //              event handler: Found ID Button Click Event          //
+        const foundIdButtonClickHandler = () => {
+            setIdFoundButton(false);
+            setPwFoundButton(true);
+            
+        }
+
+        //              event handler: Found PW Button Click Event           //
+        const foundPwButtonClickHandler =() => {
+            setIdFoundButton(true);
+            setPwFoundButton(false);
+        }
+        
+
+        //              event handler: Login Button Click Event                //
+        const onSingInLinkClickHandler = () => {
+            navigate("/SignIn");
+        }
+
+
+
         
         return(
             <div id='userfound-page-wrapper'>
@@ -60,21 +96,21 @@ export default function index() {
                 </div>
                 <div className='userfound-container'>
                     <div className='userfound-title-box'>
-                        <div className='userfound-id'>{"아이디 찾기"}</div>
+                        <div className='userfound-id' onClick={foundIdButtonClickHandler}>{"아이디 찾기"}</div>
                         <div className='userfound-line'></div>
-                        <div className='userfound-pw'>{"비밀번호 찾기"}</div>
+                        <div className='userfound-pw' onClick={foundPwButtonClickHandler}>{"비밀번호 찾기"}</div>
                     </div>
-                    {/* <div className='userfound-email-found-detail-container'>
+                    <div className='userfound-email-found-detail-container'style={{display: pwFoundButton ? "flex" : "none"}}>
                         <div className='userfound-detail-box'>
-                            <input type="text" className='name-box' />
-                            <input type="text" className='email-box' />
+                            <input type="text" className='name-box' placeholder='이름'/>
+                            <input type="text" className='email-box' placeholder='이메일'/>
                             <div className='userfound-tip'>{"가입한 이메일을 정확히 입력하세요."}</div>
                         </div>
                         <div className='userfound-button-box'>
                             <div className='userfound-button'>{"아이디 찾기"}</div>
                         </div>
-                    </div> */}
-                    <div className='userfound-email-result-detail-container'>
+                    </div>
+                    {/* <div className='userfound-email-result-detail-container'>
                         <div className='userfound-email-success-box'>
                             <div className='userfound-email-success-message'><span className='green-text-name'>{"이름 "}</span>{" 회원님의 아이디 입니다."}</div>
                             <div className='userfound-email'>{"개인 계정 : "}<span className='green-text-email'>{"이메일 대입"}</span></div>
@@ -82,27 +118,35 @@ export default function index() {
                                 <div className='userfound-login-button'>{"로그인"}</div>
                             </div>
                         </div>
-                    </div>
-                    <div className='userfound-password-found-detail-container'>
+                    </div> */}
+                    <div className='userfound-password-found-detail-container' style={{display: idFoundButton ? "flex" : "none"}}>
                         <div className='userfound-password-detail-box'>
-                            <input type="text" className='name-box' />
-                            <input type="text" className='email-box' />
+                            <input type="text" className='name-box' placeholder='이름'/>
+                            <input type="text" className='email-box' placeholder='이메일' />
                             <div className='userfound-tip'>{"가입한 이메일을 정확히 입력하세요."}</div>
                         </div>
                         <div className='userfound-password-button-box'>
-                            <div className='userfound-password-button'>{"아이디 찾기"}</div>
+                            <div className='userfound-password-button'>{"비밀번호 찾기"}</div>
                         </div>
                     </div>
+                    {/* <div className='userfound-password-result-detail-container'>
+                        <div className='userfound-password-success-box'>
+                            <div className='userfound-password-success-message'><span className='green-text-name'>{"이름 "}</span>{" 회원님의 이메일로 임시 비밀번호가 발송되었습니다."}</div>
+                            <div className='userfound-login-button-box'>
+                                <div className='userfound-login-button'>{"로그인"}</div>
+                            </div>
+                        </div>
+                    </div> */}
                 </div>
             </div>
         )
     }
 
     return (
-    <>
-    {/* <Membership_Withdrawal /> */}
-    <UserFound />
-    </>
+    <div>
+    { view === 'MembershipWithdrawal' && <Membership /> }
+    { view === 'UserFound' && <UserFound /> }
+    </div>
   )
 
 }

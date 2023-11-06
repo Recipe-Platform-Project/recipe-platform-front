@@ -1,6 +1,5 @@
 .sign-in-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 1920px;
@@ -69,39 +68,63 @@
     text-align: center;
 }
 
+.inputbox{
+    width: 494px;
+    height: 50px;
+    margin-top: 20px;
+}
+
 .sign-in-place {
+    width: 494px;
+    height: 125px;    
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 50px;
 }
 
+
 .find-button-container {
+    width: 494px;
+    height: 112px;
+
     display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
+    justify-content: center;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.70);
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 6px;
+    
 }
 
-.sign-in-place InputBox {
-    margin: 20px 0; /* 위아래 여백을 조절 */
+.user-find-button{
+    width: 193px;
+    height: 47px;
+
 }
 
-.sign-in-place .input-button {
-    margin: 20px 0; /* 위아래 여백을 조절 */
+.user-find-button:hover{
+    cursor: pointer;
 }
 
-.find-button-container {
-    display: flex; 
-    justify-content: space-between; 
-    margin: 10px 0; 
+.user-sign-up-button{
+    width: 102px;
+    height: 47px;
 }
 
-.find-button {
-    margin: 0 5px; 
+.user-sign-up-button:hover{
+    cursor: pointer;
 }
 
-.input-button {
 
+
+.input-button-box{
     border-radius: 30px;
     background: #358B43;
 
@@ -111,7 +134,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.input-button {
     color: #FFF;
 
     font-size: 20px;
@@ -121,13 +146,8 @@
     letter-spacing: 10px;
   }
   
-  .input-button:hover {
+  .input-button-box:hover {
     cursor: pointer;
-  }
-  
-  .input-box {
-    width: 24px;
-    height: 24px;
   }
 
   #sign-up-wrapper{
@@ -243,7 +263,7 @@
 .detail-check{
     display: flex;
 }
-.sign-up-button-box{
+.user-generate-box{
     display: flex;
     width: 750px;
     height: 144px;
@@ -252,7 +272,7 @@
     flex-shrink: 0;
 }
 
-.sign-up-button {
+.user-generate-button {
 
     background: #358B43;
 
@@ -270,4 +290,7 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: 10px;
+  }
+  .user-generate-button:hover{
+    cursor: pointer;
   }

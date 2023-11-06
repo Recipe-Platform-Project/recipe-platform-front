@@ -1,85 +1,3 @@
-<<<<<<< HEAD
-import { ChangeEvent, KeyboardEvent, useState, useEffect } from 'react';
-import "./style.css"
-import { useNavigate, useLocation } from 'react-router-dom';
-
-//          component: 헤더 컴포넌트          //
-export default function Header() {
-  
-  //          function: useLocation 함수        //
-  const locationNow = useLocation();
-
-  //          function: 네비게이트 함수          //
-  const navigator = useNavigate();
-
-
-  //          event handler: 헤더 Hidden 처리       //
-  if(locationNow.pathname ==="/Authentication/") return null;
-  if(locationNow.pathname ==="/user/") return null;
-  if(locationNow.pathname ==="/membership/") return null;
-
-  //          event handler: 메인 로고 버튼 클릭 이벤트 처리         //
-  const onMainLogoClickHandler = () => {
-    navigator("/")
-    }
-
-  //          event handler: 검색 버튼 클릭 이벤트 처리         //
-  const onSearchButtonClickHandler = () => {
-    navigator("/search")
-    }
-
-  //          event handler: 검색 인풋 Enter key down 이벤트 처리          //
-  const onSearchEnterKeyDownHandler = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key !== 'Enter') return;
-    // if (!searchValue) return;
-    navigator("/search");
-  }
-  
-  //          component: 로그인 상태에 따라 로그인 혹은 마이페이지 버튼 컴포넌트          //
-  const LoginMyPageButton = () => {
-
-
-    //          event handler: 로그인 버튼 클릭 이벤트 처리         //
-    const onSignInButtonClickHandler = () => {
-      navigator("/sign-in");
-    }
-    //          event handler: 회원가입 버튼 클릭 이벤트 처리         //
-    const onSignUpButtonClickHandler = () => {
-      navigator("/sign-up");
-    }
-
-    //          event handler: 마이페이지 버튼 클릭 이벤트 처리         //
-    const onMyPageButtonClickHandler = () => {
-      navigator("/user");
-    }
-    //          event handler: 로그아웃 버튼 클릭 이벤트 처리         //
-    const onLogoutButtonClickHandler = () => {
-      navigator("/");
-    }
-
-    return(
-      <>
-        <div className="header-top-right-sign-in">{'로그인'}</div>
-        <div className="header-top-right-divider">{'|'}</div>
-        <div className="header-top-right-sign-up">{'회원가입'}</div>
-      </>
-    )
-  }
-
-  //          event handler: 레시피 등록 버튼 클릭 이벤트 처리         //
-  const onUploadButtonClickHandler = () => {
-    navigator("/board/write")
-    }
-
-
-
-  return (
-    <div id='header'>
-      <div className="header-top">
-        <div className="header-top-box">
-          <div className="header-top-left-box">
-            <div className="header-logo-box" onClick={onMainLogoClickHandler}>
-=======
 import { ChangeEvent, KeyboardEvent, useState, useEffect } from "react";
 import "./style.css";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -231,15 +149,11 @@ export default function Header() {
         <div className="header-top-box">
           <div className="header-top-left-box">
             <div className="header-logo-box" onClick={onMainClickHandler}>
->>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
               <div className="header-logo"></div>
             </div>
           </div>
           <div className="header-top-center-box">
             <div className="header-top-center-search">
-<<<<<<< HEAD
-              <input className="header-top-center-search-bar" type='text' spellCheck="false" onKeyDown={onSearchEnterKeyDownHandler}/>
-=======
               <input
                 className="header-top-center-search-bar"
                 type="text"
@@ -248,18 +162,12 @@ export default function Header() {
                 onKeyDown={onSearchEnterKeyDownHandler}
                 onChange={onSearchValueChangeHandler}
               />
->>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
               <div className="icon-button" onClick={onSearchButtonClickHandler}>
                 <div className="search-icon"></div>
               </div>
             </div>
           </div>
           <div className="header-top-right-box">
-<<<<<<< HEAD
-            <LoginMyPageButton />
-            <div className="header-top-right-upload-button-box">
-              <div className="header-top-right-upload-button" onClick={onUploadButtonClickHandler}>{'레시피 등록'}</div>
-=======
             <LoginMyPage />
             <div className="header-top-right-upload-button-box">
               <div
@@ -268,7 +176,6 @@ export default function Header() {
               >
                 {"레시피 등록"}
               </div>
->>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
             </div>
           </div>
         </div>
@@ -276,15 +183,6 @@ export default function Header() {
       <div className="divider"></div>
       <div className="header-bottom">
         <div className="header-navi-bar">
-<<<<<<< HEAD
-          <div className="navi-menu">{'메인'}
-          </div>
-          <div className="navi-menu">{'분류'}
-          </div>
-          <div className="navi-menu">{'랭킹'}
-          </div>
-          <div className="navi-menu">{'쉐프'}
-=======
           <div className={isMainPage ? "navi-menu-box-click" : "navi-menu-box"}>
             <div className="navi-menu" onClick={onMainClickHandler}>
               {"메인"}
@@ -298,15 +196,10 @@ export default function Header() {
           </div>
           <div className={isChefPage ? "navi-menu-box-click" : "navi-menu-box"}>
             <div className="navi-menu" onClick={onChefClickHandler}>{"쉐프"}</div>
->>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
           </div>
         </div>
       </div>
       <div className="divider"></div>
     </div>
-<<<<<<< HEAD
-  )
-=======
   );
->>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
 }

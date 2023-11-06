@@ -8,19 +8,6 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.54",
-<<<<<<< HEAD
-    "@types/react": "^18.2.33",
-    "@types/react-dom": "^18.2.8",
-    "react": "^18.2.0",
-    "react-cookie": "^6.1.1",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.16.0",
-    "react-scripts": "5.0.1",
-    "types": "^0.1.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
-    "zustand": "^4.4.4"
-=======
     "@types/react": "^18.2.23",
     "@types/react-dom": "^18.2.8",
     "react": "^18.2.0",
@@ -36,7 +23,6 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
     "zustand": "^4.4.3"
->>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
   },
   "scripts": {
     "start": "react-scripts start",
@@ -61,8 +47,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
-=======
   },
   "devDependencies": {
     "@jridgewell/sourcemap-codec": "^1.4.15",
@@ -73,6 +57,5 @@
     "react-refresh-typescript": "^2.0.9",
     "type-fest": "^4.4.0",
     "webpack-dev-server": "^4.15.1"
->>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
   }
 }

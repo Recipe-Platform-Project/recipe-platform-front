@@ -2,15 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "target": "es5",
-<<<<<<< HEAD
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-=======
     "lib": ["dom", "dom.iterable", "esnext"],
->>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -25,11 +17,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-<<<<<<< HEAD
-  "include": [
-    "src"
-  ]
-=======
   "include": ["src"]
->>>>>>> 74f0e88ecc6abd13ac555197e69d895ddcfecc9d
 }

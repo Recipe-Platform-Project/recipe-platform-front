@@ -62,7 +62,7 @@
   outline: none;
 
   color: rgba(0, 0, 0, 1);
-  font-family: 'SUIT';
+  font-family: "SUIT";
   font-size: 18px;
   font-weight: 400;
   line-height: 140%;
@@ -98,7 +98,7 @@
 
 .header-top-right-sign-in {
   color: rgba(0, 0, 0, 0.7);
-  font-family: 'SUIT';
+  font-family: "SUIT";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -113,7 +113,7 @@
 
 .header-top-right-divider {
   color: rgba(0, 0, 0, 0.3);
-  font-family: 'SUIT';
+  font-family: "SUIT";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -121,7 +121,7 @@
 
 .header-top-right-sign-up {
   color: rgba(0, 0, 0, 0.7);
-  font-family: 'SUIT';
+  font-family: "SUIT";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -140,7 +140,7 @@
   border-radius: 5px;
 
   color: rgba(255, 255, 255, 1);
-  font-family: 'SUIT';
+  font-family: "SUIT";
   font-size: 17px;
   font-weight: 400;
 
@@ -173,7 +173,7 @@
 .header-navi-bar:hover {
   cursor: pointer;
 }
-.navi-menu-box-click{
+.navi-menu-box-click {
   border-bottom: 1px solid rgba(53, 139, 67, 1);
   color: rgba(53, 139, 67, 1);
 }
@@ -184,7 +184,7 @@
 
   width: 365px;
   height: 48px;
-  font-family: 'SUIT';
+  font-family: "SUIT";
   font-size: 20px;
   font-style: normal;
   font-weight: 600;

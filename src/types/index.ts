@@ -4,4 +4,4 @@ import LoginUser from "./login-user.interface";
 import BestBoardItem from "./best-board-item.interface";
 import User from "./user.interface";
 
-export type {ChefInfoItem, BoardItem, LoginUser, BestBoardItem, User};
+export type { ChefInfoItem, BoardItem, LoginUser, BestBoardItem, User };

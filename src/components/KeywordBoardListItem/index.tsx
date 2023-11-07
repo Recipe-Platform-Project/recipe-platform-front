@@ -82,7 +82,8 @@ export default function KeywordBoardList() {
       <div className="new-recipe-list-center">
         <div className="new-recipe-list-center-top">
           <div className="new-recipe-list-center-top-title">
-            {"키워드 레시피"}
+            <span className="new-recipe-list-center-top-title-keyword">{'#비빔밥 '}</span>
+            {"레시피"}
           </div>
           <div
             className="new-recipe-list-center-top-more-button"

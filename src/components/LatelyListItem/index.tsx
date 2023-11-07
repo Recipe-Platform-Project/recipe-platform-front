@@ -1,13 +1,13 @@
 import React, { forwardRef, useRef, useState,useEffect } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-import { BoardItem } from "types";
+import { BoardListItem } from "types";
 import { boardListMock, latelyBoardListMock } from "mocks";
 
 //          component: 최근 본 레시피 컴포넌트          //
 export default function LatelyRecipe() {
   //					state: 보드 리스트 상태					//
-  const [latelyBoardList, setLatelyBoardList] = useState<BoardItem[]>([]);
+  const [latelyBoardList, setLatelyBoardList] = useState<BoardListItem[]>([]);
   const slideRef = useRef<HTMLDivElement | null>(null);
   const itemRef = useRef<HTMLDivElement | null>(null);
   const [current, setCurrent] = useState<number>(0);
@@ -17,7 +17,7 @@ export default function LatelyRecipe() {
 
   //          interface: board 리스트 아이템 컴포넌트 Props         //
   interface Props {
-    boardItem: BoardItem;
+    boardItem: BoardListItem;
   }
 
   const LatelyRecipeListItem = forwardRef<HTMLDivElement, Props>(

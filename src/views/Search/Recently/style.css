@@ -1,0 +1,57 @@
+.recently-board-item-list-main-box{
+    width: 365px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recently-board-item-list-box-title{
+    width: 100%;
+    color: rgba(0, 0, 0, 1);
+
+    padding-left: 129px;
+
+    font-size: 20px;
+    font-weight: 700;
+}   
+.up-button{
+    margin-bottom: -25px;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    background-image: url(assets/윗쪽버튼\ \(1\).png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+.recently-board-item-list-sub-box{
+    width: 236px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.user-recently-board{
+    width: 236px;
+    height: 236px;
+
+    background: #D9D9D9;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+.user-recently-board-title{
+    color: rgba(0, 0, 0, 1);
+    font-size: 12px;
+    font-weight: 700;
+
+}
+
+.down-button{
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+    background-image: url(assets/아래쪽\ 버튼.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}

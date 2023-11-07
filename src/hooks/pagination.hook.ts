@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
   
-const useChefPagination = <T>(countPerPage: number) => {
+const usePagination = <T>(countPerPage: number) => {
     //					state: 현재 페이지 번호 상태					//
     const [currentPageNumber, setCurrentPageNumber] = useState<number>(1);
   
@@ -9,7 +9,8 @@ const useChefPagination = <T>(countPerPage: number) => {
   
     //					state: 보여줄 게시물 리스트 상태					//
     const [viewBoardList, setViewBoardList] = useState<T[]>([]);
-  
+    //          state: 보여줄 페이지 번호 리스트 상태          //
+    const [viewPageNumberList, setViewPageNumberList] = useState<number[]>([]);
     //					state: 전체 페이지 번호 상태					//
     const [totalPage, setTotalPage] = useState<number>(0);
   
@@ -23,13 +24,27 @@ const useChefPagination = <T>(countPerPage: number) => {
   
   //                    function: 보여줄 게시물 리스트 불러오기 함수                    //
   const setViewBoard = () => {
-    const FIRST_INDEX = countPerPage * (currentPageNumber - 1);
-    const LAST_INDEX = 30;
-    const tmpList = boardList.filter(
-      (item, index) => (index >= FIRST_INDEX && index < LAST_INDEX)
-    );
+    const FIRST_INDEX = countPerPage * (currentPageNumber -1);
+    const LAST_INDEX = countPerPage * currentPageNumber;
+    const tmpList = boardList.filter((item, index) => (index >= FIRST_INDEX && index < LAST_INDEX));
+
     setViewBoardList(tmpList);
-  };
+  }
+  //          function: 보여줄 페이지 리스트 불러오기 함수          //
+  const setViewPage = (totalPage: number) => {
+
+    const FIRST_PAGE_INDEX = 5 * (currentSectionNumber - 1) + 1;
+    const LAST_PAGE_INDEX = 5 * currentSectionNumber;
+
+    const tmpPageNumberList = [];
+
+    for (let pageNumber = FIRST_PAGE_INDEX; pageNumber <= LAST_PAGE_INDEX; pageNumber++) {
+        if (pageNumber > totalPage) break;
+        tmpPageNumberList.push(pageNumber);
+    }
+
+    setViewPageNumberList(tmpPageNumberList);
+  }
   //					effect: 전체 게시물 리스트가 변경될 시 작업					//
   useEffect(() => {
     const totalPage = Math.floor((boardList.length - 1) / countPerPage) + 1;
@@ -45,6 +60,21 @@ const useChefPagination = <T>(countPerPage: number) => {
   useEffect(() => {
     setViewBoard();
   }, [currentPageNumber]);
+
+  useEffect(() => {
+    setViewPage(totalPage);
+  }, [currentSectionNumber, totalPage]);
+  
+  return {
+    currentPageNumber,
+    setCurrentPageNumber,
+    currentSectionNumber,
+    setCurrentSectionNumber,
+    viewBoardList,
+    viewPageNumberList,
+    totalSection,
+    setBoardList
+};
 }
 
-export default useChefPagination;
+export default usePagination;

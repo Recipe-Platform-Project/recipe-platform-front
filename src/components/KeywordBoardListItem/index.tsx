@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./style.css";
-import { BoardItem } from "types";
+import { BoardListItem } from "types";
 import { useNavigate } from "react-router-dom";
 import { boardListMock } from "mocks";
 import { RECIPE_LIST_PATH } from "constant";
@@ -9,14 +9,14 @@ import { RECIPE_LIST_PATH } from "constant";
 export default function KeywordBoardList() {
 
   //					state: 보드 리스트 상태					//
-  const [keywordBoardList, setKeywordBoardList] = useState<BoardItem[]>([]);
+  const [keywordBoardList, setKeywordBoardList] = useState<BoardListItem[]>([]);
   const slideRef = useRef<HTMLDivElement | null>(null);
   const itemRef = useRef<HTMLDivElement | null>(null);
   const [current, setCurrent] = useState<number>(0);
   const [translate, setTranslate] = useState<number>(0);
   //          interface: board 리스트 아이템 컴포넌트 Props         //
   interface Props {
-    boardItem: BoardItem;
+    boardItem: BoardListItem;
   }
   //          function: 네비게이트 함수         //
   const navigator = useNavigate();

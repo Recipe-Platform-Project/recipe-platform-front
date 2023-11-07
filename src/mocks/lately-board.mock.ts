@@ -1,6 +1,6 @@
-import { BoardItem } from "types";
+import { BoardListItem } from "types";
 
-const latelyBoardListMock: BoardItem[] = [
+const latelyBoardListMock: BoardListItem[] = [
     {
         noticeNumber: 1,
         title: '1',

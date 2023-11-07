@@ -1,6 +1,6 @@
-import { BoardItem } from "types";
+import { BoardListItem } from "types";
 
-const boardListMock: BoardItem[] = [
+const boardListMock: BoardListItem[] = [
     {
         noticeNumber: 1,
         title: '1',

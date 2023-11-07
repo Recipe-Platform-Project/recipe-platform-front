@@ -1,6 +1,8 @@
 import React from 'react'
 import './style.css';
 import { SearchItem } from 'Types';
+import { useNavigate } from 'react-router-dom';
+import { RECIPE_DETAIL_PATH } from 'constant';
 
 interface Props{
   onClick: (item: SearchItem) => void;
@@ -9,17 +11,22 @@ interface Props{
 
 export default function BoardItem({item, onClick}: Props) {
 
+//              function: 네이비게이트 함수         //
+const navigator = useNavigate();
+
 const {boardNumber, title, boardTitleImage, favoriteCount, viewCount, starRating, writeNickname,  writeProfileImage} = item;
 
 const onClickHandler = () => {
   onClick(item);
 }
-
+const onSearchCardClickHandler = () => {
+  navigator(RECIPE_DETAIL_PATH(boardNumber));
+}
   //          component:  search 리스트 아이템 컴포넌트          //
     return (
         <div className='search-list-item1' onClick={onClickHandler}>
           <div className='search-list-item-image-box1'>
-            <div className='search-list-item-image1' style={{backgroundImage: `url(${boardTitleImage})`}}></div>
+            <div className='search-list-item-image1' style={{backgroundImage: `url(${boardTitleImage})`}} onClick={onSearchCardClickHandler}></div>
           </div>
           <div className='search-list-itme-sub-box1'>
             <div className='search-list-item-title-box1'>

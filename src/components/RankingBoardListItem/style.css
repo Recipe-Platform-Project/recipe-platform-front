@@ -1,0 +1,118 @@
+.ranking-board-list-item-line-box{
+    width: 1233px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 40px;
+    column-gap: 25px;
+    padding: 80px 0 218px;
+}
+.ranking-board-list-item-main-box{
+    width: 290px;
+    height: 393px;
+    
+    display: flex;
+    flex-direction: column;
+}
+.ranking-board-list-item-image-box{
+    width: 290px;
+    height: 290px;
+
+    display: flex;
+}
+.ranking-board-list-item-image{
+    width: 290px;
+    height: 290px;
+    
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+.ranking-board-list-item-number-box{
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(53, 139, 67, 1);
+    border-radius: 10px;
+    margin: 5px;
+}
+/* padding을 주지않고 넣을수 있는 방법이 있을까요 */
+.ranking-board-list-item-number{
+    height: 20px;
+    width: 20px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+}
+.ranking-board-list-item-best-user-box{
+    width: 290px;
+    height: 103px;
+
+    display: flex;
+    flex-direction: column;
+}
+.ranking-board-list-item-best-user-title{
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 15px;
+    font-weight: 500;
+}
+.ranking-board-list-item-best-user-nickname{
+    margin-top: 10px;
+    display: flex;
+    color: #7B7777;
+    font-size: 12px;
+    font-weight: 400;
+}
+.ranking-board-list-item-best-user-star-favorite-box{
+    display: flex;
+    height: 18px;
+    justify-content: space-between;
+}
+.ranking-board-list-item-best-user-star-box{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.ranking-board-list-item-best-user-star-image{
+    width: 10px;
+    height: 10px;
+
+    background-image: url(assets/00694a38b8f6322a18d7c0b78baccbf6.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+.ranking-board-list-item-best-user-star-count{
+    display: flex;
+    color: #7B7777;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+}
+.ranking-board-list-item-best-user-favorite-box{
+    width: 45px;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+.ranking-board-list-item-best-user-favorite-image{
+    width: 15px;
+    height: 15px;
+
+    background-image: url(assets/624dfd70f4a1a33d1cc14f3d7a157f05.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+.ranking-board-list-item-best-user-favorite-count{
+    display: flex;
+    color: #7B7777;
+
+    font-size: 13px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+}

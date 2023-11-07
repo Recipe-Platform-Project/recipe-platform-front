@@ -1,10 +1,11 @@
 export default interface ChefItem {
-    email: string;
-    chefProfileImage: string | null;
-    chefNickname: string;
 
-    subscriptionNumber: number;
-    BulletinNumber: number;
-    likeNumber: number;
-    inquiryNumber: number;
+    email: string
+    chefNickname: string
+    chefProfileImage: string | null
+    subscriptionNumber: number
+    BulletinNumber: number
+    likeNumber: number
+    inquiryNumber: number
+
 }

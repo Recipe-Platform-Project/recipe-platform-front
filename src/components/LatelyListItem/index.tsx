@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useState,useEffect } from "react";
+import React, { forwardRef, useRef, useState, useEffect } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 import { BoardItem } from "Types";
@@ -31,7 +31,11 @@ export default function LatelyRecipe() {
       };
       //                  render: board 리스트 아이템 컴포넌트 렌더링                 //
       return (
-        <div ref={ref} className="lately-recipe-bottom-center-box" onClick={onLatelyRecipeClickHandler}>
+        <div
+          ref={ref}
+          className="lately-recipe-bottom-center-box"
+          onClick={onLatelyRecipeClickHandler}
+        >
           <div
             className="lately-recipe-bottom-center-image"
             style={{ backgroundImage: `url(${imageUrl})` }}
@@ -76,9 +80,12 @@ export default function LatelyRecipe() {
           <div className="left-icon"></div>
         </div>
         <div className="lately-recipe-bottom-center">
-          <div className="lately-recipe-list-container" ref={slideRef}
-            style={{ transform: `translateX(${translate}px)` }}>
-              {latelyBoardList.map((boardItem) => (
+          <div
+            className="lately-recipe-list-container"
+            ref={slideRef}
+            style={{ transform: `translateX(${translate}px)` }}
+          >
+            {latelyBoardList.map((boardItem) => (
               <LatelyRecipeListItem ref={itemRef} boardItem={boardItem} />
             ))}
           </div>

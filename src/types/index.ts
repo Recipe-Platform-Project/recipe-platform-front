@@ -11,4 +11,17 @@ import UserWriteCommentItem from "./user-write-comment-item.interface";
 import UserRecipeReviewItem from "./user-recipe-review-item.interface";
 import ChefItem from "./chef-item.interface";
 
-export type { ChefItem, ChefInfoItem, BoardItem, LoginUser, BestBoardItem, User, UserCommentItem, UserRecipeItem, UserWritingRecipeItem, UserWriteRecipeReviewItem, UserWriteCommentItem, UserRecipeReviewItem };
+export type {
+  ChefInfoItem,
+  BoardItem,
+  LoginUser,
+  BestBoardItem,
+  User,
+  UserCommentItem,
+  UserRecipeItem,
+  UserWritingRecipeItem,
+  UserWriteRecipeReviewItem,
+  UserWriteCommentItem,
+  UserRecipeReviewItem,
+  ChefItem,
+};

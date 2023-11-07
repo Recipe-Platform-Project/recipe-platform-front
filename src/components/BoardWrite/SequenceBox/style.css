@@ -1,0 +1,79 @@
+.cooking-sequence-box{
+    width: 1420px;
+    height: 260px;
+    margin: 0 50px;
+  
+    background-color: rgba(217,217,217,1);
+  
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  
+  .sequence-close-icon{
+    width: 25px;
+    height: 25px;
+    margin: 20px 30px 0 20px;
+    background-image: url(assets/9cf365477576efa58ec535ec56be3220.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+  }
+  
+  .cooking-sequence-box-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+  .cooking-sequence-number-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cooking-sequence-number{
+    font-size: 28px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .cooking-sequence-image-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 200px;
+    height: 200px;
+    
+    background-color: rgba(255, 255, 255, 1);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    position: relative;
+  }
+  
+  .cooking-sequence-image{
+  }
+
+  .cooking-sequence-image-icon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    background-image: url(assets/free-icon-camera-685655\ 1.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+  }
+  
+  .cooking-sequence-box textarea {
+    width: 870px;
+    height: 180px;
+    padding: 10px 25px;
+    
+    color: rgba(0, 0, 0, 1);
+    border-radius: 5px;
+    border: 1px solid rgba(174, 174, 174, 1);
+    outline: none;
+  
+    font-size: 20px;
+  
+    resize: none;
+  }

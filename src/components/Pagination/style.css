@@ -1,53 +1,107 @@
-.pagination-container {
+#pagination-container {
     display: flex;
-    gap: 20px;
-}
-
-.pagination-change-link-box {
-    cursor: pointer;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 4px;
 }
 
-.pagination-change-link-icon-box {
-    width: 16px;
-    height: 16px;
+.pagination-left-box {
+    width: 20px;
+    height: 20px;
+    
+    margin-right: 20px;
 }
 
-.pagination-change-link-text {
-    color: rgba(0, 0, 0, 0.7);
+.pagination-left-icon {
+    width: 100%;
+    height: 100%;
+    
+}
 
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 140%;
+.pagination-left-image{
+    background-image: url(assets/left.png);
+
+    width: 100%;
+    height: 100%;
+    
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.pagination-left-image:hover {
+    cursor: pointer;
 }
 
 .pagination-divider {
-    color: rgba(0, 0, 0, 0.1);
+    width: 1px;
+    height: 20px;
 
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 140%;
+    background: #AEAEAE;
+}
+
+.pagination-text-box {
+    margin-left: 10px;
+    margin-right: 10px;
+
+    width: 385px;
+    height: 20px;
+    
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
 .pagination-active-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     color: rgba(0, 0, 0, 1);
 
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 140%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
 }
 
 .pagination-text {
-    color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 140%;
+    color: #AEAEAE;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
 }
 
 .pagination-text:hover {
-    color: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}
+
+.pagination-change-box {
+    width: 20px;
+    height: 20px;
+    
+    margin-left: 20px;
+}
+
+.pagination-right-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.pagination-right-image {
+    background-image: url(assets/right.png);
+
+    width: 100%;
+    height: 100%;
+    
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.pagination-right-image:hover {
     cursor: pointer;
 }

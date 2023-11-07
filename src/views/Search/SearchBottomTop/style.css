@@ -1,0 +1,110 @@
+#search-board-top-box{
+    width: 1135px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.search-board-top-title{
+    color: rgba(0, 0, 0, 1);
+    
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+.search-board-top-type-box {
+    margin-right: 25px;
+    width:  360px;
+    display: flex;
+}
+.search-board-top-type-latest-box{
+    width: 120px;
+    display: flex;
+    border: 1px solid #AEAEAE;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 10px;
+}
+.search-board-top-type-latest-box:hover{
+    cursor: pointer;
+    background-color: #B2D3B7;
+}
+
+.search-board-top-type-latest-box-selected {
+    width: 120px;
+    display: flex;
+    border: 1px solid #AEAEAE;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 10px;
+    background-color: #B2D3B7;
+}
+
+.search-board-top-type-latest-title{
+    color: rgba(0, 0, 0, 1);
+
+    font-size: 20px;
+    font-weight: 700;
+    align-items: center;
+}
+.search-board-top-type-favorite-box{
+    width: 120px;
+    display: flex;
+    border-top: 1px solid #AEAEAE;
+    border-right: 1px solid #AEAEAE;
+    border-bottom: 1px solid #AEAEAE;
+    justify-content: center;
+    align-items: center;
+}
+.search-board-top-type-favorite-box:hover{
+    cursor: pointer;
+    background-color: #B2D3B7;
+}
+.search-board-top-type-favorite-box-selected {
+    width: 120px;
+    display: flex;
+    border-top: 1px solid #AEAEAE;
+    border-right: 1px solid #AEAEAE;
+    border-bottom: 1px solid #AEAEAE;
+    justify-content: center;
+    align-items: center;
+    background-color: #B2D3B7;
+}
+.search-board-top-type-favorite-title{
+    color: rgba(0, 0, 0, 1);
+
+    font-size: 20px;
+    font-weight: 700;
+    align-items: center;
+}
+.search-board-top-type-view-box{
+    width: 120px;
+    display: flex;
+    border-top: 1px solid #AEAEAE;
+    border-right: 1px solid #AEAEAE;
+    border-bottom: 1px solid #AEAEAE;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-board-top-type-view-box:hover{
+    cursor: pointer;
+    background-color: #B2D3B7;
+}
+
+.search-board-top-type-view-title{
+    color: rgba(0, 0, 0, 1);
+
+    font-size: 20px;
+    font-weight: 700;
+    align-items: center;
+}
+.search-board-top-type-view-box-selected{
+    width: 120px;
+    display: flex;
+    border-top: 1px solid #AEAEAE;
+    border-right: 1px solid #AEAEAE;
+    border-bottom: 1px solid #AEAEAE;
+    justify-content: center;
+    align-items: center;
+    background-color: #B2D3B7;
+}

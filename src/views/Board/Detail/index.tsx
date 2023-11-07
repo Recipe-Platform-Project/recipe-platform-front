@@ -12,7 +12,7 @@ import Modals from 'components/Modals';
 
 
 //          component: 게시물 상세보기 페이지          //
-export default function RecipeDetail() {
+export default function BoardDetail() {
     
     //          state: 로그인 유저 상태          //
     

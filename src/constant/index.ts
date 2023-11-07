@@ -1,23 +1,24 @@
 
-export const AUTH_PATH = '/auth';
-export const USER_RECIPE = (email:string) => `/user/${email}`;
-export const USER_WRITING_RECIPE = (email:string) => `/user/${email}/writing_recipe`;
-export const CHEF_PATH = '/chef';
-export const SEARCH_PATH = (word: string) => `/search/${word}`
-export const CHEF_SEARCH_PATH = (word:string) => `/chef/${word}`;
-export const USER_SEARCH_RECIPE = (email:string | undefined) => (word:string) => `/user/${email}/${word}`
 export const MAIN_PATH = "/";
-export const SIGN_IN_PATH = "/SignIn";
-export const SIGN_UP_PATH = "/SignUp";
-export const USER_UPDATE_PATH = "/UserUpdate";
-export const PASSWORD_UPDATE_PATH = "/PasswordUpdate";
-export const USER_FOUND_PATH = "/UserFound";
-export const USER_PATH = (email: string | null) => `/user/${email}`;
-export const CHEF_LIST_PATH = `/chef/list`;
-export const RECIPE_LIST_PATH = (word: string) => `/recipe/list/${word}`;
+
+export const SIGN_IN_PATH = "/signIn/";
+export const SIGN_UP_PATH = "/signUp/";
+export const USER_FOUND_PATH = "/userFound";
+export const USER_UPDATE_PATH = "/userUpdate";
+export const PASSWORD_UPDATE_PATH = "/passwordUpdate";
+export const MEMBERSHIP_WITHDRAWAL_PATH = "/membershipWithdrawal";
+
+export const USER_RECIPE = (email:string) => `/user/${email}`;
+export const USER_SEARCH_RECIPE = (email:string | undefined) => (word:string) => `/user/${email}/${word}`
+
 export const RANKING_PATH = "/ranking";
-export const RECIPE_DETAIL_PATH = (noticeNumber: number | string) => `/recipe/detail/${noticeNumber}`;
-export const RECIPE_WRITE_PATH =  `/recipe/write`;
-export const RECIPE_UPDATE_PATH = (noticeNumber: number | string) => `/recipe/update/${noticeNumber}`;
-export const POPULER_WORD = (word: string) => `/recipe/list/${word}`;
-export const MEMBERSHIP_WITHDRAWAL_PATH = "/MembershipWithdrawal";
+
+export const CHEF_PATH = '/chef';
+export const CHEF_LIST_PATH = `/chef/list`; //asd
+export const CHEF_SEARCH_PATH = (word:string | null) => `/chef/${word}`;
+
+export const SEARCH_PATH = (word: string) => `/search/${word}` //asd
+export const RECIPE_LIST_PATH = (word: string | null) => `/board/list/${word}`;
+export const RECIPE_DETAIL_PATH = (boardNumber: number | string) => `/board/detail/${boardNumber}`;
+export const RECIPE_WRITE_PATH =  `/board/write`;
+export const RECIPE_UPDATE_PATH = (boardNumber: number | string) => `/board/update/${boardNumber}`;

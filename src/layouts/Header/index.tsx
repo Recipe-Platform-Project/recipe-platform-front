@@ -12,7 +12,7 @@ import {
   USER_PATH,
 } from "constant";
 import { useCookies } from "react-cookie";
-import { useUserStore } from "stores";
+import useUserStore from "stores/user.store";
 
 //          component: 헤더 컴포넌트          //
 export default function Header() {

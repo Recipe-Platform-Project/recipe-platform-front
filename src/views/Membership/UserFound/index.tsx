@@ -61,7 +61,7 @@ export default function UserFound() {
                     <div className='userfound-email-found-detail-container'style={{display: pwFoundButton ? "flex" : "none"}}>
                         <div className='userfound-detail-box'>
                             <input type="text" className='name-box' placeholder='이름'/>
-                            <input type="text" className='email-box' placeholder='이메일'/>
+                            <input type="text" className='email-box' placeholder='전화번호'/>
                             <div className='userfound-tip'>{"가입한 이메일을 정확히 입력하세요."}</div>
                         </div>
                         <div className='userfound-button-box'>

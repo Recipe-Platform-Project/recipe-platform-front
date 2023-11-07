@@ -1,5 +1,5 @@
 export default interface LoginUser {
-    email: string
-    profileImage: string | null
-    nickname: string
+    email: string;
+    nickname: string;
+    profileImage: string | null;
 }

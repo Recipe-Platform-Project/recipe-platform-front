@@ -20,7 +20,7 @@ export default function NewBoardList() {
   //          function: 네비게이트 함수         //
   const navigator = useNavigate();
   //          component: best board 리스트 아이템 컴포넌트          //
-  const NewBoardListItem = forwardRef<HTMLDivElement, Props>(
+  const NewBoardItem = forwardRef<HTMLDivElement, Props>(
     ({ boardItem }: Props, ref) => {
       //          state: Propertites          //
       const { noticeNumber, title, imageUrl } = boardItem;
@@ -97,7 +97,7 @@ export default function NewBoardList() {
             style={{ transform: `translateX(${translate}px)` }}
           >
             {newBoardList.map((boardItem) => (
-              <NewBoardListItem ref={itemRef} boardItem={boardItem} />
+              <NewBoardItem ref={itemRef} boardItem={boardItem} />
             ))}
           </div>
         </div>

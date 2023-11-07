@@ -19,6 +19,7 @@ import {
   USER_FOUND_PATH,
   USER_UPDATE_PATH,
   RECIPE_WRITE_PATH,
+  RECIPE_LIST_PATH
 } from "constant";
 import SignUp from "views/Authentication/Sign-Up";
 import SignIn from "views/Authentication/Sign-In";
@@ -29,6 +30,8 @@ import MembershipWithdrawal from "views/Membership/MembershipWithdrawal";
 import UserFound from "views/Membership/UserFound";
 import User from 'views/User';
 import Chef from 'views/Chef';
+import Search from 'views/Search';
+import Ranking from 'views/Ranking';
 
 function App() {
   return (
@@ -57,6 +60,11 @@ function App() {
 
         <Route path='/search' element={<Main />} />
         <Route path='/search/:word' element={<Main/>} />
+
+        <Route path={RECIPE_LIST_PATH('')} element={<Search />} />
+        <Route path={RECIPE_LIST_PATH(':word')} element={<Search />} />
+        <Route path='/ranking' element={<Ranking />} />
+        <Route path='*' element={<h1>404 Not Found</h1>} />
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Route>

@@ -6,7 +6,6 @@ import './style.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { popularWordListMock, searchBoardListMock } from 'mocks';
 import Recently from './Recently';
-import { POPULER_WORD} from 'constant';
 import PopularBox from './PopularBox';
 import usePagination from 'hooks/pagination.hook';
 import { BoardItem, RecentlyItme, SearchItem } from 'Types';

@@ -9,7 +9,7 @@ import {
   RECIPE_WRITE_PATH,
   SIGN_IN_PATH,
   SIGN_UP_PATH,
-  USER_PATH,
+  USER_RECIPE,
 } from "constant";
 import { useCookies } from "react-cookie";
 import useUserStore from "stores/user.store";
@@ -88,7 +88,7 @@ export default function Header() {
     };
     //          event handler: 마이페이지 버튼 클릭 이벤트 처리         //
     const onMyPageButtonClickHandler = () => {
-      navigator(USER_PATH(cookies.email));
+      navigator(USER_RECIPE(cookies.email));
       // TODO: 경로수정
     };
     //          event handler: 로그아웃 버튼 클릭 이벤트 처리         //

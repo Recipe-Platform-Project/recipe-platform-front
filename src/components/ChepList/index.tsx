@@ -1,6 +1,7 @@
 import { ChefItem } from 'Types';
 import './style.css';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 
  
 interface Props { 
@@ -20,6 +21,9 @@ export default function ChefListItem({ chefItem }: Props) {
     const [count, setCount] = useState('1');
     //          state: text          //
     const [text, setText] = useState("");
+
+    //         function: 네비게이트 함수           //
+    const navigator = useNavigate;
 
     // useEffect (() => {
     //     if (count === ) {

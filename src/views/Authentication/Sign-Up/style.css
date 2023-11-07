@@ -1,0 +1,144 @@
+#sign-up-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+.sign-up-title-box{
+    height: 112px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sign-up-title{
+    color: #000;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 12.5px;
+}
+
+.sign-up-container{
+    width: 750px;
+}
+
+.password-tip{
+    color: #AEAEAE;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+    
+
+.check-container{
+    display: flex;
+    width: 740px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agreed-check{
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+
+
+.agreed-text{
+    color: rgba(0, 0, 0, 0.70);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.agreed-container{
+    width: 749px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+}
+
+.agreed-text-container{
+    padding: 10px;
+    width: 600px;
+}
+
+.check-button {
+    width: 20px;
+    height: 20px;
+    
+    display: flex;
+    justify-content: center;
+    
+}
+.uncheck {
+    width: 100%;
+    height: 100%;
+  
+    background-image: url(assets/CheckBox.png);
+    background-position: 50% 50%;
+    background-size: 100%;
+}
+.checked{
+    width: 100%;
+    height: 100%;
+  
+    background-image: url(assets/CheckBox-check.png);
+    background-position: 50% 50%;
+    background-size: 100%;
+}
+.agreed-check{
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.detail-check{
+    display: flex;
+}
+.user-generate-box{
+    display: flex;
+    width: 750px;
+    height: 144px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.user-generate-button {
+
+    background: #358B43;
+
+    display: flex;
+    width: 400px;
+    height: 44px;
+    padding: 7px 86px 7px 87px;
+    justify-content: center;
+    align-items: center;
+
+    color: #FFF;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 10px;
+  }
+  .user-generate-button:hover{
+    cursor: pointer;
+  }

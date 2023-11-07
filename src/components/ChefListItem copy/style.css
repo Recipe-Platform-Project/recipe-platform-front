@@ -1,0 +1,194 @@
+
+
+#chef-list-wrapper {
+  margin: 40px 200px 40px;
+  padding: 20px 0;
+  width: 1520px;
+
+  display: flex;
+
+  border: 1px solid rgba(53, 139, 67, 1);
+  border-left: none;
+  border-right: none;
+}
+
+
+.list-left {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  padding-left: 26px;
+}
+.list-left:hover {
+  cursor: pointer;
+}
+
+.list-bottom-left-icon {
+  width: 50px;
+  height: 70px;
+
+  background-image: url(assets/왼쪽\ 버튼\ 아이콘.png);
+}
+
+.list-right {
+  width: 100%;
+
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: row-reverse;
+
+  padding-right: 26px;
+}
+.list-right:hover {
+  cursor: pointer;
+}
+.list-bottom-right-icon {
+  width: 50px;
+  height: 70px;
+
+  background-image: url(assets/오른쪽\ 버튼\ 아이콘.png);
+}
+.chef-list-center {
+  width: 1270px;
+
+  display: flex;
+  flex-direction: column;
+}
+.chef-list-center-top {
+  /* margin: 0 64px; */
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.chef-list-center-top-title {
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "SUIT";
+}
+
+.chef-list-center-top-more-button {
+  width: 109px;
+  height: 26px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: rgba(53, 139, 67, 1);
+  font-family: "SUIT";
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+
+  border: 1px solid rgba(53, 139, 67, 1);
+  border-radius: 10px;
+}
+
+.chef-list-center-top-more-button:hover {
+  cursor: pointer;
+  background-color: rgba(53, 139, 67, 0.1);
+}
+
+.chef-list-center-bottom {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.chef-list-center-bottom-info-container {
+  width: 1270px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  transition: 0.5s;
+}
+.chef-list-center-bottom-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chef-list-center-bottom-profile-image-box:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.chef-list-center-bottom-profile-image {
+  width: 109px;
+  height: 109px;
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  border-radius: 50% 50%;
+}
+
+.chef-list-center-bottom-nickname {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 109px;
+  height: 44px;
+
+  background-color: rgba(217, 217, 217, 0.5);
+
+  color: rgba(0, 0, 0, 1);
+  font-family: "SUIT";
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.chef-list-center-bottom-subscription {
+  width: 106.5px;
+  height: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family: "SUIT";
+  color: rgba(53, 139, 67, 1);
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+
+  border-radius: 50px;
+  border: 1px solid rgba(53, 139, 67, 1);
+}
+
+.chef-list-center-bottom-subscription:hover {
+  cursor: pointer;
+  background-color: rgba(53, 139, 67, 0.1);
+}
+
+.chef-list-center-bottom-subscription-on {
+  width: 106.5px;
+  height: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family: "SUIT";
+  color: rgba(255, 255, 255, 1);
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+
+  background-color: rgba(53, 139, 67, 1);
+  border-radius: 50px;
+  border: 1px solid rgba(53, 139, 67, 1);
+}
+
+.chef-list-center-bottom-subscription-on:hover {
+  cursor: pointer;
+  background-color: rgba(53, 139, 67, 0.8);
+}

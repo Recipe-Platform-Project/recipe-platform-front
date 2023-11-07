@@ -1,0 +1,157 @@
+#ranking-wrapper{
+    display: flex;
+    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+}
+.ranking-main-box{
+    width: 1264px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.ranking-main-type-box{
+    display: flex;
+    border-bottom: 1px solid #358B43;
+    flex-direction: row;
+}
+.ranking-type-best-box{
+    width: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ranking-type-best-box:hover{
+    cursor: pointer;
+}
+.ranking-type-best-title{
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    padding: 14.17px 0 14.17px;
+}
+.ranking-type-favorite-box{
+    width: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ranking-type-favorite-box:hover{
+    cursor: pointer;
+}
+.ranking-type-favorite-title{
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    padding: 14.17px 0 14.17px;
+}
+.ranking-type-view-box{
+    width: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ranking-type-view-box:hover{
+    cursor: pointer;
+}
+.ranking-type-view-title{
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    padding: 14.17px 0 14.17px; 
+}
+.ranking-time-type-box{
+    width: 576px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+.ranking-time-day-box{
+    width: 121px;
+    display: flex;
+    border: 1px solid #AEAEAE;
+    justify-content: center;
+    padding: 18px 0 18px;
+}
+.ranking-time-day-title{
+    font-size: 20px;
+    font-weight: 400;
+    align-items: center;
+}
+.ranking-time-day-title:hover{
+    color: #358B43;
+    cursor: pointer;
+}
+.ranking-time-weekend-box{
+    width: 121px;
+    display: flex;
+    border: 1px solid #AEAEAE;
+    justify-content: center;
+    padding: 18px 0 18px;
+}
+.ranking-time-weekend-title{
+    font-size: 20px;
+    font-weight: 400;
+    align-items: center;
+}
+.ranking-time-weekend-title:hover{
+    color: #358B43;
+    cursor: pointer;
+}
+.ranking-time-month-box{
+    width: 121px;
+    display: flex;
+    border: 1px solid #AEAEAE;
+    justify-content: center;
+    padding: 18px 0 18px;
+}
+.ranking-time-month-title{
+    font-size: 20px;
+    font-weight: 400;
+    align-items: center;
+}
+.ranking-time-month-title:hover{
+    color: #358B43;
+    cursor: pointer;
+}
+.ranking-pagination-box{
+    display: flex;
+    width: 482px;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+.ranking-type-view-box-selected{
+    width: 230px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #358B43;
+    border-right: 1px solid #358B43;
+    border-left: 1px solid #358B43;
+    justify-content: center;
+}
+.ranking-time-title-view-box-selected{
+    color: #358B43;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 400;
+    width: 121px;
+    text-align: center;
+    display: flex;
+    border: 1px solid #AEAEAE;
+    justify-content: center;
+    padding: 18px 0 18px;
+}

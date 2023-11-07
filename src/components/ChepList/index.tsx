@@ -1,6 +1,8 @@
 import { ChefItem } from 'Types';
 import './style.css';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
+import { USER_PATH } from 'constant';
 
  
 interface Props { 
@@ -20,6 +22,15 @@ export default function ChefListItem({ chefItem }: Props) {
     const [count, setCount] = useState('1');
     //          state: text          //
     const [text, setText] = useState("");
+    
+    const [email] = useState();
+
+    //         function: 네비게이트 함수           //
+    const navigator = useNavigate;
+
+    const onChefPageButtonClickHandler = () => {
+        navigator(USER_PATH(email))
+    }
 
     // useEffect (() => {
     //     if (count === ) {

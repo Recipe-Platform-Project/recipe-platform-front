@@ -246,18 +246,20 @@ export default function User() {
                                 {isMypage ? (
                                 <>
                                 <a className='user-main-recipe-title' style={{color:'#358B43',  border: '1px solid #358B43', borderBottom: '0'}} onClick={onChangeRecipeClickHandler}>{'레시피'}</a>
+                                <div className='user-main-recipe-title-nop' style={{borderBottom: '1px solid #358B43'}}></div>
+                                </>
+                                
+                                ) : (
+                                <>
+                                <a className='user-main-recipe-title' style={{color:'#358B43',  border: '1px solid #358B43', borderBottom: '0'}} onClick={onChangeRecipeClickHandler}>{'레시피'}</a>
                                 <a className="user-main-writing-title" style={{color:'#000',  borderBottom: '1px solid #358B43'}} onClick={onChangeWritingRecipeClickHandler}>{'작성중인 레시피'}</a>
                                 <a className="user-main-recipe-review-title" style={{color:'#000',  borderBottom: '1px solid #358B43'}} onClick={onChangeRecipeReviewClickHandler}>{'레시피 후기'}</a>
                                 <a className="user-main-recipe-comments-title" style={{color:'#000',  borderBottom: '1px solid #358B43'}} onClick={onChangeRecipeCommentClickHandler}>{'댓글'}</a>
                                 </>
-                                ) : (
-                                <>
-                                <a className='user-main-recipe-title' style={{color:'#358B43',  border: '1px solid #358B43', borderBottom: '0'}} onClick={onChangeRecipeClickHandler}>{'레시피'}</a>
-                                <div className='user-main-recipe-title-nop' style={{borderBottom: '1px solid #358B43'}}></div>
-                                {/* <a className="user-main-writing-title" style={{borderBottom: '1px solid #358B43', cursor: "none"}}></a>
-                                <a className="user-main-recipe-review-title" style={{borderBottom: '1px solid #358B43'}}></a>
-                                <a className="user-main-recipe-comments-title" style={{borderBottom: '1px solid #358B43'}}></a> */}
-                                </>
+                                // <>
+                                // <a className='user-main-recipe-title' style={{color:'#358B43',  border: '1px solid #358B43', borderBottom: '0'}} onClick={onChangeRecipeClickHandler}>{'레시피'}</a>
+                                // <div className='user-main-recipe-title-nop' style={{borderBottom: '1px solid #358B43'}}></div>
+                                // </>
                                 )}
                             </div>
                             {page === 1 && (
@@ -826,7 +828,7 @@ export default function User() {
     useEffect(() => {
         const isMyPage = searchEmail === user?.email;
         setMypage(isMyPage);
-    }, [searchEmail]);
+    }, [searchEmail, user]);
 
     //          render: 유저 페이지 렌더링          //
     return (

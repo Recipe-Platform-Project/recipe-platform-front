@@ -1,4 +1,4 @@
-import { ChefInfoItem } from "types";
+import { ChefInfoItem } from "Types";
 
 const chefInfoMock: ChefInfoItem[] = [
     {

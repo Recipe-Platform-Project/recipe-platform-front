@@ -1,0 +1,171 @@
+.user-writing-recipe-review-whites {
+    padding-left: 0px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    gap: 5px;
+
+}
+
+.user-writing-recipe-review-whites:hover {
+    cursor: pointer;
+}
+
+.user-writing-recipe-review-recipe {
+    width: 1135px;
+    height: 360px;
+
+    border-bottom: 1px solid #358B43;
+}
+
+.user-writing-recipe-review-image {
+    width: 280px;
+    height: 280px;
+    margin: 40px 0;
+    
+    float: left;
+
+    display: flex;
+
+    background: #358B43;
+}
+
+.user-writing-recipe-review-image-url {
+    width: 100%;
+    height: 100%;
+    
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.user-writing-recipe-review-recipe-box {
+    height: 360px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.user-writing-recipe-review-title {
+    height: 80px;
+
+    margin-top: 40px;
+    margin-left: 30px;
+    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: rgba(0, 0, 0, 1);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-writing-recipe-review-horoscope-box {
+    height: 40px;
+
+    margin-left: 30px;
+
+    border-bottom: 1px solid #AEAEAE;
+
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.user-writing-recipe-review-horoscope-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.user-writing-recipe-review-horoscope-image {
+    background-image: url(assets/horoscope.png);
+
+    width: 100%;
+    height: 100%;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.user-writing-recipe-review-contents {
+    height: 99px;
+
+    margin-left: 30px;
+    padding-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #AEAEAE;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-writing-review-button-box {
+    width: 825px;
+    height: 40px;
+    padding-right: 20px;
+    margin-bottom: 40px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    position: absolute;
+    bottom: 0;
+}
+
+.user-writing-review-button-delete {
+    width: 100px;
+    height: 40px;
+    
+    margin-right: 60px;
+    margin-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 10px;
+    border: 1px solid #358B43;
+    background: rgba(255, 255, 255, 1);
+
+    color: #358B43;
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-writing-review-button-modify {
+    width: 100px;
+    height: 40px;
+    
+    margin-right: 60px;
+    margin-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 10px;
+    border: 1px solid #358B43;
+    background: rgba(255, 255, 255, 1);
+
+    color: #358B43;
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}

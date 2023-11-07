@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, forwardRef } from "react";
 import "./style.css";
-import { ChefInfoItem } from "types";
+import { ChefInfoItem } from "Types";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { useCookies } from "react-cookie";

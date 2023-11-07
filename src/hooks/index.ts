@@ -1,3 +1,4 @@
-import useChefPagination from './pagination.hook'
+import usePagination from "./pagination.hook";
+import useChefPagination from './chef-pagination.hook'
 
-export{useChefPagination}
+export { usePagination, useChefPagination };

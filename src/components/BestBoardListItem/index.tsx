@@ -1,6 +1,6 @@
 import React, { useState, forwardRef, useRef, useEffect } from "react";
 import "./style.css";
-import { BestBoardItem } from "types";
+import { BestBoardItem } from "Types";
 import { useNavigate } from "react-router-dom";
 import { bestBoardListMock } from "mocks";
 import { cutString } from "utils";

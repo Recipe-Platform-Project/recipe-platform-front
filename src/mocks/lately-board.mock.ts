@@ -1,4 +1,4 @@
-import { BoardItem } from "types";
+import { BoardItem } from "Types";
 
 const latelyBoardListMock: BoardItem[] = [
     {

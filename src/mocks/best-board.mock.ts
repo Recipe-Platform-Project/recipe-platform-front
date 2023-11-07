@@ -1,4 +1,4 @@
-import { BestBoardItem } from "types";
+import { BestBoardItem } from "Types";
 
 const bestBoardListMock: BestBoardItem[] = [
 

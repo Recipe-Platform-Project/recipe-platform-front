@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./style.css";
-import { BoardItem } from "types";
+import { BoardItem } from "Types";
 import { useNavigate } from "react-router-dom";
 import { boardListMock } from "mocks";
 import { RECIPE_LIST_PATH } from "constant";

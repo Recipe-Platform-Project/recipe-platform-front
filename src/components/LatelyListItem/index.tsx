@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef, useState,useEffect } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-import { BoardItem } from "types";
+import { BoardItem } from "Types";
 import { boardListMock, latelyBoardListMock } from "mocks";
 
 //          component: 최근 본 레시피 컴포넌트          //

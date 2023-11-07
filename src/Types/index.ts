@@ -10,8 +10,24 @@ import UserWritingRecipeItem from "./user-writing-recipe-item.interface";
 import UserWriteRecipeReviewItem from "./user-write-recipe-review-item.interface";
 import UserWriteCommentItem from "./user-write-comment-item.interface";
 import UserRecipeReviewItem from "./user-recipe-review-item.interface";
-import RankingItem from './ranking-board-list-item.interface';
+import RankingItem from "./ranking-board-list-item.interface";
 import SearchItem from "./search-board-item.interface";
 import RecentlyItme from "./recently-board-item.interface";
 
-export type { ChefItem, ChefInfoItem, BoardItem, LoginUser, BestBoardItem, User, UserCommentItem, UserRecipeItem, UserWritingRecipeItem, UserWriteRecipeReviewItem, UserWriteCommentItem, UserRecipeReviewItem, RankingItem, SearchItem, RecentlyItme };
+export type {
+  ChefItem,
+  ChefInfoItem,
+  BoardItem,
+  LoginUser,
+  BestBoardItem,
+  User,
+  UserCommentItem,
+  UserRecipeItem,
+  UserWritingRecipeItem,
+  UserWriteRecipeReviewItem,
+  UserWriteCommentItem,
+  UserRecipeReviewItem,
+  RankingItem,
+  SearchItem,
+  RecentlyItme,
+};

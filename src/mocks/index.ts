@@ -18,8 +18,8 @@ import userWritingRecipeListMock from "./user-writing-recipe-list.mock";
 import userWriteRecipeReviewListMock from "./user-write-recipe-review.mock";
 
 export {
-    userMock,
     chefListMock,
+    userMock,
     boardListMock,
     userRecipeListMock,
     chefSearchListMock,

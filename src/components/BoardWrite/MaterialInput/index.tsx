@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
+//  component //
 export default function MaterialInput() {
+  //  component //
   const MaterialSub = () => {
+    //  event handler //
+    const onDeleteButtonClickHandler = () => {};
+    // render //
     return (
       <div className="material-sub-box">
         <div className="drag-drop-icon"></div>
@@ -12,6 +17,8 @@ export default function MaterialInput() {
       </div>
     );
   };
+
+  // render //
   return (
     <div className="material-main">
       <div className="material-main-box">
@@ -20,13 +27,10 @@ export default function MaterialInput() {
         <div className="close-icon"></div>
       </div>
       <MaterialSub />
-      <MaterialSub />
-      <MaterialSub />
-      <div className="material-add-button-box">
+      <div className="material-add-button-box" onClick={() => {}}>
         <div className="material-add-button"></div>
-        <div className="material-add-text">{'추가'}</div>
+        <div className="material-add-text">{"추가"}</div>
       </div>
     </div>
-    
   );
 }

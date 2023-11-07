@@ -21,7 +21,7 @@ export default function KeywordBoardList() {
   //          function: 네비게이트 함수         //
   const navigator = useNavigate();
   //          component: best board 리스트 아이템 컴포넌트          //
-  const KeywordBoardListItem = forwardRef<HTMLDivElement, Props>(
+  const KeywordBoardItem = forwardRef<HTMLDivElement, Props>(
     ({ boardItem }: Props, ref) => {
       //          state: Propertites          //
       const { noticeNumber, title, imageUrl } = boardItem;
@@ -99,7 +99,7 @@ export default function KeywordBoardList() {
             style={{ transform: `translateX(${translate}px)` }}
           >
             {keywordBoardList.map((boardItem) => (
-              <KeywordBoardListItem ref={itemRef} boardItem={boardItem} />
+              <KeywordBoardItem ref={itemRef} boardItem={boardItem} />
             ))}
           </div>
         </div>

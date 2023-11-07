@@ -1,0 +1,202 @@
+#header {
+  height: 168px;
+  /* padding: 0 200px; */
+
+  display: flex;
+  flex-direction: column;
+
+  /* background-color: rgba(53, 139, 67, 1); */
+}
+
+.header-top-box {
+  padding: 0 200px;
+
+  width: 1520px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo-box {
+  width: 365px;
+  height: 120px;
+}
+
+.header-logo-box:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header-logo {
+  width: 100%;
+  height: 100%;
+
+  background-image: url(assets/Logo.png);
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+.header-top-center-box {
+  display: flex;
+}
+
+.header-top-center-search {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 0 12px;
+  width: 492px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-top-center-search-bar {
+  flex: 1;
+
+  border: none;
+  background: none;
+  outline: none;
+
+  color: rgba(0, 0, 0, 1);
+  font-family: 'SUIT';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+}
+
+.search-icon {
+  width: 100%;
+  height: 100%;
+
+  background-image: url(assets/search-icon.png);
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.header-top-right-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header-top-right-sign-in {
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'SUIT';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.header-top-right-sign-in:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  border-radius: 10px;
+}
+
+.header-top-right-divider {
+  color: rgba(0, 0, 0, 0.3);
+  font-family: 'SUIT';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.header-top-right-sign-up {
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'SUIT';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.header-top-right-sign-up:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  border-radius: 10px;
+}
+
+.header-top-right-upload-button {
+  width: 108px;
+  height: 40px;
+  border-radius: 5px;
+
+  color: rgba(255, 255, 255, 1);
+  font-family: 'SUIT';
+  font-size: 17px;
+  font-weight: 400;
+
+  background-color: rgba(53, 139, 67, 1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-top-right-upload-button:hover {
+  cursor: pointer;
+  background-color: rgba(53, 139, 67, 0.8);
+}
+
+.header-bottom {
+  width: 1520px;
+  padding: 0 200px;
+  display: flex;
+
+  /* background-color: rgba(53, 139, 67, 1); */
+}
+
+.header-navi-bar {
+  display: flex;
+
+  gap: 20px;
+}
+
+.header-navi-bar:hover {
+  cursor: pointer;
+}
+.navi-menu-box-click{
+  border-bottom: 1px solid rgba(53, 139, 67, 1);
+  color: rgba(53, 139, 67, 1);
+}
+.navi-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 365px;
+  height: 48px;
+  font-family: 'SUIT';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 10px;
+}
+
+.navi-menu:hover {
+  background-color: rgba(53, 139, 67, 0.5);
+}
+
+.divider {
+  width: 1920px;
+  border-top: 1px solid rgba(174, 174, 174, 1);
+}

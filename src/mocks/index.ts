@@ -1,6 +1,9 @@
+import boardListMock from "./board.mock";
+import chefInfoMock from "./chef-info.mock";
+import loginInfoMock from "./login-info.mock";
+import bestBoardListMock from "./best-board.mock";
 import userMock from "./user.mock";
 import chefListMock from "./chef-list.mock";
-import boardListMock from "./board-list.mock";
 import userRecipeListMock from "./user-recipe-list.mock";
 import chefSearchListMock from "./chef-search-list.mock";
 import userCommentListMock from "./user-comment-list.mock";
@@ -19,11 +22,14 @@ export {
     userRecipeListMock,
     chefSearchListMock,
     userCommentListMock,
-    latelyBoardListMock,
     popularWordListMock,
     userRecipeReviewListMock,
     userLatelyBoardListMock,
     userWriteCommentListMock,
     userWritingRecipeListMock,
     userWriteRecipeReviewListMock,
+    chefInfoMock,
+    loginInfoMock,
+    bestBoardListMock,
+    latelyBoardListMock,
 };

@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import Main from "./views/Main";
 import { Outlet, Route, Routes } from "react-router-dom";
-import Container from "./layouts/Container";
 
 import {
   MAIN_PATH,
@@ -32,6 +31,11 @@ import User from 'views/User';
 import Chef from 'views/Chef';
 import Search from 'views/Search';
 import Ranking from 'views/Ranking';
+import Container from './layouts/Container';
+import RecipeDetail from 'views/Board/Detail';
+import CookingReviewComments from 'components/Reviewcomments';
+import Comments from 'components/Comments';
+import Modals from 'components/Modals';
 
 function App() {
   return (
@@ -64,9 +68,14 @@ function App() {
         <Route path={RECIPE_LIST_PATH('')} element={<Search />} />
         <Route path={RECIPE_LIST_PATH(':word')} element={<Search />} />
         <Route path='/ranking' element={<Ranking />} />
+
+        <Route path='/board/detail' element={<RecipeDetail />} />
+        <Route path='/board/comments' element={<Comments />} />
+        
+        <Route path='/modal' element={<Modals/>} />
+
         <Route path='*' element={<h1>404 Not Found</h1>} />
 
-        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Route>
     </Routes>
   );

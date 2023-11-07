@@ -1,0 +1,220 @@
+#steps-wrapper {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.steps-box {
+
+    width: 1520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid #358B43;
+
+
+}
+
+.steps-title-box {
+
+    width: 1520px;
+
+}
+
+.steps-title {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+.steps-sub-title {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 12px;
+    font-weight: 400;
+    
+}
+
+.view-image-box {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.view-image {
+
+    width: 50px;
+    height: 40px;
+
+    background-image: url(assets/view-image-small.png);
+    background-position: center;
+    background-size: 100% 100%;
+    border: 1px  solid #AEAEAE;
+
+}
+
+.view-image:hover {
+
+    cursor: pointer;
+
+}
+
+.view-text-image {
+
+    width: 50px;
+    height: 40px;
+
+    background-image: url(assets/view-text.png);
+    background-position: center;
+    background-size: 100% 100%;
+    border: 1px  solid #AEAEAE;
+
+}
+
+.view-text-image:hover {
+
+    cursor: pointer;
+
+}
+
+.steps-sequence-image-view-box {
+
+    margin-top: 50px;
+    padding: 10px 10px 60px;
+    width: 1200px;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+
+}
+
+.sequence-number {
+
+    width: 45px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255, 255, 255, 1);
+    font-size: 15px;
+    
+    background-color: #358B43;
+    border-radius: 50% 50%;
+
+}
+
+.sequence-content-text {
+
+    width: 950px;
+
+    white-space: normal;
+
+    color: #000;
+
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.sequence-image {
+
+    width: 300px;
+    height: 170px;
+
+    background-image: url(assets/khloe-arledge-ND3edEmzcdQ-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+
+}
+
+.sequence-image:hover {
+
+    cursor: pointer;
+
+}
+
+.steps-tip-box {
+    
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+.steps-tip-image {
+
+    width: 210px;
+    height: 50px;
+    
+    background-image: url(assets/tip-iamge.gif);
+    background-size: 100%;
+
+}
+
+
+.steps-tip-comment {
+
+    width: 1200px;
+    height: 90px;
+
+    white-space: normal;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+
+.steps-sequence-text-view-box {
+
+    margin-top: -50px;
+    margin-bottom: 100px;
+    padding: 10px 10px 60px;
+    width: 1200px;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+
+}
+
+.sequence-text-view-content-text {
+
+    width: 1200px;
+
+    white-space: normal;
+
+    color: #000;
+
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}

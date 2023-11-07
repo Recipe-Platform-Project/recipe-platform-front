@@ -1,0 +1,652 @@
+#cooking-review-wrapper {
+
+    margin-bottom: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.cooking-review-container {
+
+    border-bottom: 1px solid #358B43;
+
+}
+
+.cooking-review-title-box {
+
+    width: 1520px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #358B43;
+
+}
+
+.cooking-review-title {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+
+}
+
+.cooking-review-host-container {
+
+    padding-top: 50px;
+    padding-bottom: 10px;
+    
+    width: 1520px;
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid #AEAEAE;
+
+}
+
+.cooking-review-host-profile-box {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.reviewer-profile-image {
+
+    margin-bottom: 10px;
+
+    width: 120px;
+    height: 120px;
+
+    background-image: url(assets/egg-8289259_1280.png);
+    background-size: 100% 100%;
+    border-radius: 50%;
+    position: relative;
+
+
+}
+
+.reviewer-profile-image:hover {
+
+    cursor: pointer;
+
+}
+
+.comment-more-button-box {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.comment-text {
+
+    margin-top: 10px;
+
+    display: flex;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+    gap: 20px;
+
+}
+
+.comment-text:hover {
+
+    cursor: pointer;
+
+}
+
+.comments-count {
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.cooking-reviewer-write-info-box {
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.cooking-review-host-nickname-and-datetime-box {
+
+    margin-left: 30px;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+
+}
+
+.cooking-review-host-reviewer-nickname {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.cooking-review-host-reviewer-nickname:hover {
+
+    cursor: pointer;
+
+}
+
+.cooking-review-host-reviewer-write-datetime {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.cooking-review-host-reviewer-stars-image-box {
+
+    margin-left: 20px;
+
+    display: flex;
+
+    gap: 5px;
+
+}
+
+.cooking-review-host-reviewer-star {
+
+    width: 15px;
+    height: 15px;
+
+    background-image: url(assets/icon-star.png);
+    background-size: 100% 100%;
+
+}
+
+.cooking-review-host-reviewer-basics-star {
+
+    width: 15px;
+    height: 15px;
+
+    background-image: url(assets/icon-basics-star.png);
+    background-size: 100% 100%;
+
+}
+
+.comment-edit-box {
+
+    margin-left: 20px;
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.update-comment-text-button {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.update-comment-text-button:hover {
+
+    cursor: pointer;
+
+}
+
+.delete-comment-text-button {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.delete-comment-text-button:hover {
+
+    cursor: pointer;
+
+}
+
+.write-comment-container {
+
+    margin-left: 80px;
+
+    width: 1319.7px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.reviewer-write-comment {
+
+    white-space: normal;
+
+    width: 1000px;
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.reviewer-write-photo {
+
+    width: 100px;
+    height: 100px;
+
+    background-image: url(assets/khloe-arledge-ND3edEmzcdQ-unsplash.jpg);
+    background-size: 100% 100%;
+
+}
+
+.reviewer-write-photo:hover {
+
+    cursor: pointer;
+
+}
+
+.board-writer-container {
+
+    width: 1520px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.review-comment-input-container {
+
+    padding: 20px 0 50px 0;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.review-comment-input-box {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.add-photo-box {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #F6F6F6;
+    border: 1px solid #AEAEAE;
+
+}
+
+.add-photo-box:hover {
+
+    cursor: pointer;
+    background-color: rgba(240, 240, 240, 1);
+
+
+}
+
+.add-photo {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100px;
+    height: 100px;
+
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.review-comment-input-box textarea {
+    
+    margin-top: 43px;
+    margin-left: 30px;
+    padding: 10px;
+
+    width: 900px;
+    height: 78px;
+
+    resize: none;
+    outline: none;
+
+    color: rgba#000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+    border: 1px solid #AEAEAE;
+
+}
+
+
+.review-comment-input-button-box button {
+
+    margin: 43px 0 0 30px;
+    width: 100px;
+    height: 100px;
+
+}
+
+.cooking-review-comment-pagination-container {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.board-writer-container {
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.board-writer-box {
+
+    width: 1320px;
+
+    display: flex;
+
+    border-bottom: 1px solid #AEAEAE;
+
+}
+
+.board-writer-profile-image {
+
+    width: 120px;
+    height: 120px;
+
+    background-image: url(assets/egg-8289259_1280.png);
+    background-size: 100% 100%;
+    border-radius: 50%;
+
+}
+
+.board-writer-profile-image:hover {
+
+    cursor: pointer;
+
+}
+
+.board-writer-nickname-and-datetime-container {
+
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+
+}
+
+.board-writer-nickname-and-datetime-box {
+
+    margin-left: 20px;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+
+}
+
+.board-writer-nickname {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.board-writer-nickname:hover {
+
+    cursor: pointer;
+
+}
+
+.board-writer-datetime {
+
+    color:#AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.reply-comment-edit-box {
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+
+}
+
+.reply-update-comment-text-button {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.reply-update-comment-text-button:hover {
+
+    cursor: pointer;
+
+}
+
+.reply-comment-divider {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.reply-delete-comment-text-button {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.reply-delete-comment-text-button:hover {
+
+    cursor: pointer;
+
+}
+
+.reply-comment-box {
+
+    margin: 10px;
+
+    margin-left: 50px;
+
+    width: 1000px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.reply-comment {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.reply-comment-input-box {
+
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+}
+
+.reply-comment-input-container textarea {
+
+    width: 800px;
+    height: 90px;
+
+    padding-top: 5px;
+    padding-left: 5px;
+
+    margin-top: 5px;
+
+    resize: none;
+    outline: none;
+
+    color: rgba#000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 140%;
+
+    border: 1px solid #AEAEAE;
+
+}
+
+.reply-comment-button button {
+
+    margin-left: 20px;
+
+    width: 100px;
+    height: 98px;
+
+}
+
+
+
+/* 별점 스타일 */
+
+.review-star-selection-box {
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.selected-star-container {
+    border: 1px solid #AEAEAE;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.selected-star-box {
+    flex: 1;
+    display: flex;
+}
+
+.select-star-button {
+
+    width: 15px;
+    height: 15px;
+
+    background-image: url(assets/down-icon.png);
+    background-size: 100% 100%;
+
+}
+
+.select-star-button:hover {
+
+    cursor: pointer;
+
+}
+
+.select-star-container {
+    position: absolute;
+    top: 42px;
+    border: 1px solid #AEAEAE;
+    padding: 8px 12px;
+
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.select-star-box {
+    padding: 4px;
+    display: flex;
+    cursor: pointer;
+}
+
+.select-star-box:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}

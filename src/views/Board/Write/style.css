@@ -1,0 +1,470 @@
+#board-write-wrapper {
+  width: 1920px;
+  background-color: rgba(53, 139, 67, 0.5);
+}
+.write-divider {
+  width: 1420px;
+  height: 1px;
+  background-color: rgba(53, 139, 67, 1);
+  margin: 40px 50px;
+}
+
+.board-write-main {
+  width: 1520px;
+
+  margin: 0 200px 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.board-write {
+  width: 1520px;
+
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.board-write-title-box {
+  width: 1520px;
+  height: 50px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(53, 139, 67, 1);
+}
+
+.board-write-title {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 16px;
+}
+
+.board-write-info-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin: 0 50px 0;
+}
+
+
+
+.board-write-title-image {
+  width: 400px;
+  height: 590px;
+
+  background-color: rgba(217, 217, 217, 1);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.title-icon-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.title-camera-icon {
+  width: 150px;
+  height: 150px;
+  background-image: url(assets/free-icon-camera.png);
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+.title-image-box{
+  width: 400px;
+  height: 590px;
+
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.title-image{
+
+}
+.board-write-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-write-info-title-box {
+  width: 970px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.required-value {
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 500;
+}
+.board-write-info-title-message{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.board-write-info-title {
+  
+  height: 27px;
+
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.info-input1 {
+  padding: 5px 25px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 400;
+
+  color: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  border: 1px solid rgba(174, 174, 174, 1);
+  background: none;
+  outline: none;
+}
+
+.info-input2 {
+  padding: 5px 25px;
+  height: 80px;
+
+  font-weight: 400;
+
+  color: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  border: 1px solid rgba(174, 174, 174, 1);
+  background: none;
+  outline: none;
+  resize: none;
+  font-family: "SUIT";
+  font-size: 20px;
+}
+
+.info-input3 {
+  padding: 5px 25px;
+  height: 80px;
+  font-size: 20px;
+  font-weight: 400;
+
+  color: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  border: 1px solid rgba(174, 174, 174, 1);
+  background: none;
+  outline: none;
+}
+
+.board-write-description-box {
+  width: 970px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-write-description-title {
+  height: 27px;
+
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.board-write-info-choice-box {
+  display: flex;
+  gap: 30px;
+}
+
+.board-write-cooking-choice-title {
+  height: 27px;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  color: rgba(0, 0, 0, 1);
+}
+
+.board-write-choice {
+  border: 1px solid rgba(174, 174, 174, 1);
+  border-radius: 5px;
+  width: 168px;
+  height: 23px;
+  outline: none;
+  background: none;
+  padding: 5px 25px;
+  font-size: 20px;
+}
+
+.board-write-choice1 {
+  padding: 5px 25px;
+  border: 1px solid rgba(174, 174, 174, 1);
+  border-radius: 5px;
+  width: 220px;
+  height: 35px;
+  outline: none;
+  background: none;
+  font-size: 20px;
+}
+
+.board-write-cooking-time-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-write-cooking-level-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-write-cooking-person-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-write-category-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-write-category-choice {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.board-write-tag-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-write-tag-title {
+  height: 27px;
+
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.board-write-video-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.board-write-video-title {
+  height: 27px;
+
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.write-material-wrapper {
+  width: 1520px;
+
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.write-material-title {
+  display: flex;
+  justify-content: center;
+
+  height: 27px;
+
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.write-material-input-box {
+  width: 1420px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.material-bundle-add-box {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-bundle-add-button {
+  width: 25px;
+  height: 25px;
+
+  background-image: url(assets/plus-icon-big.png);
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+.material-bundle-add-text {
+  font-size: 25px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+}
+.cooking-sequence-wrapper {
+  width: 1520px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.write-cooking-sequense-title {
+  display: flex;
+  justify-content: center;
+
+  height: 27px;
+
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.cooking-tip-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0 50px;
+}
+
+.cooking-tip {
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  background-image: url(assets/tip-iamge\ 1.png);
+  height: 35px;
+  width: 150px;
+}
+
+.cooking-tip-box input {
+  width: 1215px;
+  height: 25px;
+  padding: 5px 25px;
+
+  color: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  border: 1px solid rgba(174, 174, 174, 1);
+  background: none;
+  outline: none;
+}
+
+.board-button-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 100px;
+  gap: 20px;
+
+  height: 50px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.save-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100%;
+
+  background-color: rgba(135, 138, 137, 1);
+  border-radius: 10px;
+}
+
+.upload-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+
+  background-color: rgba(53, 139, 67, 1);
+  border-radius: 10px;
+}
+
+.cancle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100%;
+
+  background-color: rgba(255, 145, 77, 1);
+  border-radius: 10px;
+}
+
+.cooking-completion-image-box {
+  width: 1520px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.cooking-completion-image-title {
+  display: flex;
+  justify-content: center;
+
+  height: 27px;
+
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+.cooking-completion-image-upload{
+  margin: 0 50px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 105px;
+
+  width: 1420px;
+  height: 200px;
+}
+.cooking-completion-image-upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 200px;
+  height: 100%;
+  
+  background-color: rgba(217, 217, 217, 1);
+}
+.cooking-completion-image-upload-box {
+
+}
+
+.cooking-completion-image-upload-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+
+  background-image: url(assets/free-icon-camera.png);
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}

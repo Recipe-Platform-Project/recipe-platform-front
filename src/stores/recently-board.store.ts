@@ -1,4 +1,4 @@
-import { RecentlyItme } from "types";
+import { RecentlyItme } from "Types";
 import { create } from "zustand";
 
 interface RecentlyBoardStore{

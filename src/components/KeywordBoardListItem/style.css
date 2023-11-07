@@ -30,8 +30,12 @@
 .new-recipe-list-center-top-title {
   color: rgba(0, 0, 0, 1);
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   font-family: 'SUIT';
+}
+
+.new-recipe-list-center-top-title-keyword{
+  color: rgb(249, 54, 54);
 }
 
 .new-recipe-list-center-top-more-button {

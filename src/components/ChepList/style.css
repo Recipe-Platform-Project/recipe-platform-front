@@ -1,0 +1,174 @@
+.chef-list {
+    width: 1005px;
+    height: 120px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.chef-ranking-number {
+    width: 85px;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 42px;
+
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+
+    font-size: 60px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.chef-profile {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50% 50%;
+
+    background-color: rgba(200, 200, 200, 1);
+}
+
+.chef-info-container {
+    width: 758px;
+    height: 100%;
+
+    margin-top: 14px;
+    margin-left: 51px;
+    
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.chef-info-nickname {
+    width: 100%;
+    height: 24px;
+
+    color: rgba(0, 0, 0, 1);
+    
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.chef-info-box {
+    width: 100%;
+    height: 36px;
+
+    position: absolute;
+    bottom: 14px;
+
+    display: flex;
+    gap: 14px;
+}
+
+.chef-info-Number-box {
+    width: auto;
+    height: 100%;
+
+    display: flex;
+    gap: 10px;
+}
+
+.chef-info-image {
+    width: 36px;
+    height: 36px;
+}
+
+.chef-info-subscriptionNumber-icon {
+    background-image: url(assets/subscriptions-icon.png);
+
+    width: 100%;
+    height: 100%;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.chef-info-subscriptionNumber {
+    min-width: 100px;
+    color: rgba(0, 0, 0, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.chef-info-BulletinNumber-icon {
+    background-image: url(assets/bulletin-icon.png);
+
+    width: 100%;
+    height: 100%;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.chef-info-BulletinNumber {
+    min-width: 100px;
+    color: rgba(0, 0, 0, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.chef-info-likeNumber-icon {
+    background-image: url(assets/like-icon.png);
+
+    width: 100%;
+    height: 100%;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.chef-info-likeNumber {
+    min-width: 100px;
+    color: rgba(0, 0, 0, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.chef-info-inquiryNumber-icon {
+    background-image: url(assets/inquiry-icon.png);
+
+    width: 100%;
+    height: 100%;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.chef-info-inquiryNumber {
+    min-width: 100px;
+    color: rgba(0, 0, 0, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}

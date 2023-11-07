@@ -1,5 +1,5 @@
 import { url } from "inspector"
-import { RankingItem } from "types"
+import { RankingItem } from "Types"
 
 const rankingBoardListMock: RankingItem[] = [
     {

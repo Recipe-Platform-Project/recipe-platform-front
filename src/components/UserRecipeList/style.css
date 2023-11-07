@@ -1,0 +1,119 @@
+
+.user-board-container {
+    margin-bottom: 40px;
+    padding-left: 0px;
+
+    float: left; 
+
+    display: flex;
+    gap: 5px;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user-board-whites {
+    position: relative;
+
+    display: flex;
+    gap: 5px;
+}
+
+.user-board-whites:hover {
+    cursor: pointer;
+}
+
+.user-board-white-recipe {
+    width: 280px;
+    height: 280px;
+    
+}
+
+.user-board-recipe-image {
+    width: 280px;
+    height: 180px;
+
+    background: aliceblue;
+}
+
+.recipe-image-url {
+    width: 100%;
+    height: 100%;
+    
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+
+}
+
+.user-board-recipe-box {
+    margin: 10px 15px 0px 15px;
+    width: 250px;
+    height: 57px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+.user-board-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-board-nickname {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #AEAEAE;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-board-modify-button {
+    width: 250px;
+    height: 18px;
+
+    margin: 2px 15px 0px 15px;
+
+    position: absolute;
+    bottom: 0px;
+
+    display: flex;
+    justify-content: right;
+}
+
+.user-board-modify-button-click {
+    width: 65px;
+
+    border-radius: 10px;
+    border: 1px solid #358B43;
+    background: rgba(255, 255, 255, 1);
+
+    display: flex;
+    justify-content: center;
+}
+
+.user-board-modify-button-click:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.user-board-modify-button-text {
+    color: #358B43;
+    text-align: center;
+
+    font-size: 12px;
+    font-weight: 40;
+    line-height: normal;
+}

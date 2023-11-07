@@ -1,6 +1,6 @@
 import React, { forwardRef, useRef, useState,useEffect } from "react";
 import './style.css';
-import { RecentlyItme } from 'types';
+import { RecentlyItme } from 'Types';
 import { useRecentlyBoardStore } from 'stores';
 import { useNavigate } from "react-router-dom";
 

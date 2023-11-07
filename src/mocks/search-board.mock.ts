@@ -1,4 +1,4 @@
-import { SearchItem } from "types";
+import { SearchItem } from "Types";
 
 const searchBoardListMock: SearchItem[] =[
     {

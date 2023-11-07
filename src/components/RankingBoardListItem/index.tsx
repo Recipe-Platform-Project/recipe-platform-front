@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css';
-import { RankingItem } from 'types';
+import { RankingItem } from 'Types';
 import { useNavigate } from 'react-router-dom';
 import { RECIPE_DETAIL_PATH } from 'constant';
 

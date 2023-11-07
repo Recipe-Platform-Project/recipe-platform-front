@@ -2,9 +2,9 @@ import React, { Dispatch, SetStateAction, useState, useEffect } from 'react'
 import "./style.css";
 import Pagination from 'components/Pagination';
 import usePagination from 'hooks/pagination.hook';
-import { BestBoardItem } from 'types';
+import { BestBoardItem } from 'Types';
 import RankingListItem from 'components/RankingBoardListItem';
-import RankingItem from 'types/ranking-board-list-item.interface';
+import RankingItem from 'Types/ranking-board-list-item.interface';
 import { rankingBoardListMock } from 'mocks';
 
 

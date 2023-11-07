@@ -1,0 +1,81 @@
+.user-writing-board-whites {
+    padding-left: 0px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    gap: 5px;
+
+}
+
+.user-writing-board-whites:hover {
+    cursor: pointer;
+}
+
+.user-writing-board-whiting-recipe {
+    width: 1135px;
+    height: 360px;
+
+    border-bottom: 1px solid #358B43;
+}
+
+.user-writing-board-recipe-image {
+    width: 280px;
+    height: 280px;
+    margin: 40px 0;
+    
+    float: left;
+
+    display: flex;
+
+    background: #358B43;
+}
+
+.recipe-writing-image-url {
+    width: 100%;
+    height: 100%;
+    
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.user-writing-board-recipe-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-writing-board-title {
+    height: 90px;
+
+    margin-top: 40px;
+    margin-left: 30px;
+
+    border-bottom: 1px solid #AEAEAE;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: rgba(0, 0, 0, 1);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-writing-board-contents {
+    margin-bottom: 40px;
+    margin-left: 30px;
+    padding-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #AEAEAE;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}

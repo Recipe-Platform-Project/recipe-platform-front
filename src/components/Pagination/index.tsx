@@ -20,6 +20,7 @@ export default function Pagination(props: Props) {
     //          event handler: 페이지 번호 클릭 이벤트 처리          //
     const onPageNumberClickHandler = (pageNumber: number) => {
         setCurrentPageNumber(pageNumber);
+        window.scrollTo(0,0);
         
     }
     //          event handler: 다음 버튼 클릭 이벤트 처리          //
@@ -43,7 +44,7 @@ export default function Pagination(props: Props) {
 
     //          render: 페이지네이션 컴포넌트 렌더링          //
     return (
-        <div className='pagination-container'>
+        <div id='pagination-container'>
             <div className='pagination-left-box' onClick={onPreviousButtonClickHandler}>
                 <div className='pagination-left-icon'>
                     <div className='pagination-left-image'></div>

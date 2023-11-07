@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css';
-import { SearchItem } from 'types';
+import { SearchItem } from 'Types';
 
 interface Props{
   onClick: (item: SearchItem) => void;

@@ -1,4 +1,4 @@
-import { LoginUser } from "types";
+import { LoginUser } from "Types";
 import { create } from "zustand";
 
 interface UserStore {

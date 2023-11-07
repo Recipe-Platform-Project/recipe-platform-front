@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Catagory from './Catagory'
-import BoardItem from './BoardItem';
+import BoardViewItem from './BoardItem';
 import SearchBottomTop from './SearchBottomTop'
 import './style.css';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -9,7 +9,7 @@ import Recently from './Recently';
 import { POPULER_WORD} from 'constant';
 import PopularBox from './PopularBox';
 import usePagination from 'hooks/pagination.hook';
-import { BoardListItem, RecentlyItme, SearchItem } from 'types';
+import { BoardItem, RecentlyItme, SearchItem } from 'Types';
 import Pagination from 'components/Pagination';
 import { useRecentlyBoardStore } from 'stores';
 
@@ -42,7 +42,7 @@ export default function Search() {
         <div>
           <SearchBottomTop />
           <div id='search-list-item-line-box'>
-            {viewBoardList.map(item => <BoardItem item={item} onClick={onBoardItemClickHandler} />)}
+            {viewBoardList.map(item => <BoardViewItem item={item} onClick={onBoardItemClickHandler} />)}
           </div>
         </div>
         <div>

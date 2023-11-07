@@ -28,9 +28,9 @@ export default function ChefListItem({ chefItem }: Props) {
     //         function: 네비게이트 함수           //
     const navigator = useNavigate;
 
-    const onChefPageButtonClickHandler = () => {
-        navigator(USER_PATH(email))
-    }
+    // const onChefPageButtonClickHandler = () => {
+    //     navigator(USER_PATH(email))
+    // }
 
     // useEffect (() => {
     //     if (count === ) {

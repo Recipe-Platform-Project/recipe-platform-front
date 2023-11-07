@@ -1,0 +1,1023 @@
+#user-information {
+    padding-top: 50px;
+
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.user-container {
+    width: 1520px;
+    height: 364px;
+
+
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.user-left {
+    width: 365px;
+    height: 364px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.user-image {
+    width: 250px;
+    height: 250px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.user-default-profile-image {
+    background-image: url(assets/default-profile-image-1.jpg);
+
+
+    border-radius: 50% 50%;
+    width: 100%;
+    height: 100%;
+   
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+
+.user-right {
+    margin-top: 40px;
+    padding-left: 40px,0,0,0;
+
+
+    width: 1005px;
+    height: 324px;
+
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.user-right-top {
+    width: 1005px;
+    height: 84px;
+
+
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #358B43;
+}
+
+
+.user-nickname {
+    padding-left: 40px;
+    width: 885px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    color: rgba(0, 0, 0, 1);
+   
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.user-modifying-information {
+    width: 80px;
+    height: 30px;
+
+
+    margin-top: 34px;
+   
+    display: flex;
+    justify-content: center;
+}
+
+
+.user-modifying-information-button {
+    width: 80px;
+    height: 30px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    color: #358B43;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+
+
+    border-radius: 10px;
+    border: 1px solid #358B43;
+    background: #FFF;
+}
+
+
+.user-modifying-information-button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+
+.user-right-middle {
+    display: flex;
+    flex-wrap: row;
+    direction: ltr;
+
+
+    margin-top: 20px;
+    margin-right: 0;
+    margin-bottom: 20px;
+    margin-left: 20px;
+
+
+    list-style-type: none;
+   
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+   
+}
+
+
+.user-middle-box {
+   
+    display: list-item;
+    display: flex;
+    align-items: center;
+
+
+    margin-left: 0;
+    margin-right: 60px;
+
+
+    text-align: center;
+    font-size: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.emphasis {
+    display: flex;
+    align-items: center;
+
+
+    margin-left: 20px;
+    padding: 0;
+   
+    height: 38px;
+
+
+    display: flex;
+    flex-direction: row;
+
+
+    color: #AEAEAE;
+
+
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.user-right-bottom {
+    width: 980px;
+    height: 159px;
+    margin-left: 20px;
+}
+
+
+.user-introduction {
+    width: 100%;
+    height: 159px;
+}
+
+
+.user-introduction-text-input {
+    width: 100%;
+    height: 100%;
+
+
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
+    padding: 0;
+
+
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-weight: 400px;
+    line-height: normal;
+}
+
+
+.user-introduction-text {
+    width: 100%;
+    height: 100%;
+
+
+    color: rgba(0, 0, 0, 1);
+    font-size: 15px;
+    font-weight: 400px;
+    line-height: normal;
+}
+
+#user-board {
+    display: inline-block;
+    width: 1135px;
+
+    margin-left: 200px;
+
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+.user-board-main {
+    display: flex;
+    float: left;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+.user-board-main-container {
+    width: 1135px;
+
+
+    margin-top: 40px;
+
+
+    box-sizing: border-box;
+
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.user-main-recipe-box {
+    width: 100%;
+    height: 100%;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-recipe-title-bundle {
+    width: 1135px;
+    height: 85px;
+
+    display: flex;
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-main-recipe-title {
+    width: 284px;
+    height: 85px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-main-writing-title {
+    width: 284px;
+    height: 85px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-main-recipe-review-title {
+    width: 284px;
+    height: 85px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-main-recipe-comments-title {
+    width: 284px;
+    height: 85px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-main-recipe-title-nop {
+    width: 851px;
+    height: 85px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-main-recipe-title:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #358B43;
+}
+
+.user-main-writing-title:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #358B43;
+}
+
+.user-main-recipe-review-title:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #358B43;
+}
+
+.user-main-recipe-comments-title:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #358B43;
+}
+
+
+.user-recipe-nothing {
+    width: 100%;
+    height: 1380px;
+    margin-top: 190px;
+
+
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+
+.user-recipe-nothing-icon {
+    width: 173px;
+    height: 173px;
+
+
+    margin-bottom: 40px;
+}
+
+
+.user-recipe-nothing-image {
+    background-image: url(assets/recipe-nothing.png);
+
+
+    width: 100%;
+    height: 100%;
+
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+
+.user-recipe-nothing-text {
+    width: 567px;
+    height: 86px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    color: rgba(0, 0, 0, 1);
+
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+
+    white-space: pre-wrap;
+
+}
+
+
+.user-recipe-registration-button {
+    width: 176px;
+    height: 57px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    border-radius: 10px;
+    background: #358B43;
+
+
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.user-writing-recipe-box {
+    width: 100%;
+    height: 100%;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.user-writing-recipe-title {
+    width: 284px;
+    height: 85px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    color: #358B43;
+   
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+
+
+    border: 1px solid #358B43;
+    border-bottom: 0;
+
+
+    background: none;
+}
+.user-main-recipe-title:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #358B43;
+}
+
+
+.user-writing-recipe-nothing {
+    width: 100%;
+    margin-top: 190px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+
+.user-writing-recipe-nothing-icon {
+    width: 173px;
+    height: 173px;
+
+
+    margin-bottom: 40px;
+}
+
+
+.user-writing-recipe-nothing-image {
+    background-image: url(assets/recipe-nothing.png);
+
+
+    width: 100%;
+    height: 100%;
+
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+
+.user-writing-recipe-nothing-text {
+    width: 567px;
+    height: 86px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    color: rgba(0, 0, 0, 1);
+
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+
+
+    white-space: pre-wrap;
+}
+
+
+.user-recipe-registration-button {
+    width: 176px;
+    height: 57px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    border-radius: 10px;
+    background: #358B43;
+
+
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-tep-list {
+    display: flex;
+    flex-wrap: row;
+    direction: ltr;
+
+
+    list-style-type: none;
+   
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+
+
+.user-board-content {
+    width: 1135px;
+    height: 1526px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-board-sub-tep {
+    width: 1095px;
+    height: 86px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+.user-board-surch-box {
+    width: 494px;
+    height: 44px;
+
+
+    /* margin-left: 60px; */
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    border-radius: 5px;
+    border: 1px solid #AEAEAE;
+    background: rgba(255, 255, 255, 1);
+}
+
+
+.user-board-surch {
+    margin: 10px;
+    width: 500px;
+
+
+    display: inline-block;
+
+
+    border: none;
+    background: none;
+    outline: none;
+ 
+    color: rgba(0, 0, 0, 1);
+ 
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+
+.surch-image-box {
+    margin-right: 2px;
+    width: 34px;
+    height: 34px;
+
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.surch-icon {
+    background-image: url(assets/search-icon.png);
+
+
+    width: 100%;
+    height: 100%;
+   
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+
+.surch-icon:hover {
+    cursor: pointer;
+}
+
+
+.user-board-sequence {
+    width: 240px;
+    height: 60px;
+    margin-right: 40px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    list-style-type: none;
+    text-decoration: none;
+
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+   
+}
+
+.user-sub-tep-title-latest  {
+    width: 120px;
+    height: 60px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    border: 1px solid#AEAEAE;
+    border-right: none;
+
+
+}
+
+.user-sub-tep-title-latest:hover {
+    cursor: pointer;
+}
+
+/* .user-sub-tep-title-latest:active {
+    background-color: #358B43;
+}
+
+.user-sub-tep-title-latest:visited {
+    background-color: #358B43;
+} */
+
+/* .color-button {
+    width: 100%;
+    height: 100%;
+    /* background-color: #358B43; */
+ */
+
+.not-color-button {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.user-sub-tep-title-like  {
+    width: 120px;
+    height: 60px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    border: 1px solid#AEAEAE;
+
+
+}
+
+.user-sub-tep-title-like:hover {
+    cursor: pointer;
+}
+
+
+a {
+    color: rgba(0, 0, 0, 1);
+}
+
+.user-board-box {
+    margin-top: 30px;
+
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.user-recipe-pagenation {
+    width: 1570px;
+    height: 20px;
+
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-recipe-review-nothing-image {
+    background-image: url(assets/comment-nothing.png);
+
+    width: 100%;
+    height: 100%;
+
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.user-review-board-content {
+    width: 1135px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-review-board-sub-tep {
+    width: 1095px;
+    height: 60px;
+
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.user-review-board-sequence {
+    width: 568px;
+    height: 60px;
+    padding-left: 0;
+
+    display: flex;
+
+    list-style-type: none;
+    text-decoration: none;
+
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-review-sub-tep-title-latest  {
+    width: 284px;
+    height: 60px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid#AEAEAE;
+    border-right: none;
+}
+
+.user-review-sub-tep-title-latest:hover {
+    cursor: pointer;
+}
+
+.user-review-sub-tep-title-like  {
+    width: 284px;
+    height: 60px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    border: 1px solid#AEAEAE;
+}
+
+.user-review-sub-tep-title-like:hover {
+    cursor: pointer;
+}
+
+.user-review-board-box {
+    height: 1500px;
+}
+
+
+
+.user-comment-board-container {
+    margin-top: 80px;
+
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+
+
+
+#user-board-sub {
+    margin-left: 20px;
+
+    display: inline-block;
+    width: 365px;
+
+    position: absolute;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.user-recent-post-container {
+    margin-top: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+
+.user-recent-post-main-title {
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+
+.user-recent-post-list-button-top {
+    width: 50px;
+    height: 50px;
+}
+
+
+.circle-top-button-icon {
+    background-image: url(assets/circle-top-button.png);
+
+    border-radius: 50% 50%;
+    width: 100%;
+    height: 100%;
+    
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+
+.circle-top-button-icon:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+.user-recent-post-list {
+    width: 236px;
+    height: 1228px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+}
+
+.user-recipe-list-container {
+    height: 1228px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: 0.5s;
+}
+
+.user-recent-post-box {
+    width: 236px;
+    height: 236px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-recent-post-box:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.user-recent-post-image {
+    width: 236px;
+    height: 186px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.user-recent-post-title {
+    height: 40px;
+
+    color: rgba(0, 0, 0, 1);
+
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+.user-recent-post-list-button-bottom {
+    width: 50px;
+    height: 50px;
+}
+.circle-bottom-button-icon {
+    background-image: url(assets/circle-bottom-button.png);
+
+
+    border-radius: 50% 50%;
+    width: 100%;
+    height: 100%;
+    
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+
+.circle-bottom-button-icon:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+    

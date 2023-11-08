@@ -1,57 +1,134 @@
-.recently-board-item-list-main-box{
-    width: 365px;
-    padding-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.recently-board-item-list-box-title{
-    width: 100%;
-    color: rgba(0, 0, 0, 1);
-
-    padding-left: 129px;
-
-    font-size: 20px;
-    font-weight: 700;
-}   
-.up-button{
-    margin-bottom: -25px;
-    z-index: 999;
-    width: 50px;
-    height: 50px;
-    margin-top: 15px;
-    align-items: center;
-    justify-content: center;
-    background-image: url(assets/윗쪽버튼\ \(1\).png);
-    background-position: 50% 50%;
-    background-size: 100% 100%;
-}
-.recently-board-item-list-sub-box{
+.lately-recipe-in-center-box {
     width: 236px;
+    height: 277px;
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-.user-recently-board{
+  }
+ 
+  .lately-recipe-in-center-image {
     width: 236px;
     height: 236px;
-
-    background: #D9D9D9;
+  
     background-position: 50% 50%;
     background-size: 100% 100%;
-}
-.user-recently-board-title{
+
+    
+    border-radius: 10px;
+  }
+
+  .lately-recipe-in-center-image:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .lately-recipe-in-title {
+    width: 236px;
+    height: 41px;
+
+    display: flex;
+    align-items: center;
+
     color: rgba(0, 0, 0, 1);
+
     font-size: 12px;
     font-weight: 700;
+  }
+  #chef-lately-recipe-list {
+    width: 365px;
+    padding-top: 92px;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chef-lately-recipe-out {
+    width: 365px;
+    height: 30px;
 
-}
+    margin-bottom: 26px;
 
-.down-button{
-    margin-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .chef-lately-recipe-out-title {
+    color: rgba(0, 0, 0, 1);
+    
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .chef-lately-recipe-in {
+    width: 365px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .chef-lately-recipe-top {
     width: 50px;
     height: 50px;
-    background-image: url(assets/아래쪽\ 버튼.png);
+
+    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .chef-top-icon {
+    width: 50px;
+    height: 50px;
+
     background-position: 50% 50%;
     background-size: 100% 100%;
-}
+
+    background-image: url(assets/윗쪽버튼\ \(1\).png);
+  }
+
+  .chef-top-icon:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+  }
+
+  .chef-lately-recipe-bottom {
+    width: 50px;
+    height: 50px;
+
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .chef-bottom-icon {
+    width: 50px;
+    height: 50px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+
+    background-image: url(assets/아래쪽\ 버튼.png);
+  }
+
+  .chef-bottom-icon:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+  }
+
+  .chef-lately-recipe-in-center {
+    width: 236px;
+    height: 882px;
+
+    display: flex;
+    gap: 21px;
+    flex-direction: column;
+    overflow: hidden;
+  }

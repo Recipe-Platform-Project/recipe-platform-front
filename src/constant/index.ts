@@ -19,5 +19,4 @@ export const RANKING_PATH = "/ranking";
 export const RECIPE_DETAIL_PATH = (noticeNumber: number | string) => `/recipe/detail/${noticeNumber}`;
 export const RECIPE_WRITE_PATH =  `/recipe/write`;
 export const RECIPE_UPDATE_PATH = (noticeNumber: number | string) => `/recipe/update/${noticeNumber}`;
-export const POPULER_WORD = (word: string) => `/recipe/list/${word}`;
 export const MEMBERSHIP_WITHDRAWAL_PATH = "/MembershipWithdrawal";

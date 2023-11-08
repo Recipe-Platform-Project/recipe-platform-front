@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import "./style.css"
 import CookingReviewComments from 'components/Reviewcomments';
 import Comments from 'components/Comments';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 import ReactPlayer from 'react-player';
 import Steps from 'components/Steps';
 import Modals from 'components/Modals';

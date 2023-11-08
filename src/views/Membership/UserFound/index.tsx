@@ -12,14 +12,12 @@ export default function UserFound() {
         //          function: useLocation 함수        //
         const locationNow = useLocation();
 
-        //            state: path name 상태         //
-        const { pathname } = useLocation();
+        //            state: Id page 상태         //
+        const [isIdFoundPage, setIdFoundPage] = useState(true);
+        
+        //            state: Password page 상태         //
+        const [isPasswordFoundPage, setPasswordFoundPage] = useState(false);
 
-        //          variable: Email Page 논리 변수         //
-        const isEmailFoundPage = pathname === EMAIL_FOUND_PATH;
-
-        //          variable: Email Page 논리 변수         //
-        const isPasswordFoundPage = pathname === PASSWORD_FOUND_PATH;
         
         //              component: ID Found component            //
         const [idFoundButton, setIdFoundButton] = useState(true);
@@ -35,16 +33,15 @@ export default function UserFound() {
 
         //              event handler: Found ID Button Click Event          //
         const foundIdButtonClickHandler = () => {
-            setIdFoundButton(false);
-            setPwFoundButton(true);
-            
-        }
+            setIdFoundPage(true);
+            setPasswordFoundPage(false);
+          }
 
         //              event handler: Found PW Button Click Event           //
-        const foundPwButtonClickHandler =() => {
-            setIdFoundButton(true);
-            setPwFoundButton(false);
-        }
+        const foundPwButtonClickHandler = () => {
+            setIdFoundPage(false);
+            setPasswordFoundPage(true);
+          }
         
 
         //              event handler: Login Button Click Event                //
@@ -64,11 +61,11 @@ export default function UserFound() {
                 </div>
                 <div className='userfound-container'>
                     <div className='userfound-title-box'>
-                        <div className={isEmailFoundPage ? 'userfound-button-click': 'userfound-id'} onClick={foundIdButtonClickHandler}>{"아이디 찾기"}</div>
+                        <div className={isIdFoundPage ? 'userfound-button-click' : 'userfound-id'} onClick={foundIdButtonClickHandler}>{"아이디 찾기"}</div>
                         <div className='userfound-line'></div>
-                        <div className={isPasswordFoundPage ? 'userfound-pw' : 'userfound-button-click'} onClick={foundPwButtonClickHandler}>{"비밀번호 찾기"}</div>
+                        <div className={isPasswordFoundPage ? 'userfound-button-click' : 'userfound-pw'} onClick={foundPwButtonClickHandler}>{"비밀번호 찾기"}</div>
                     </div>
-                    <div className= 'userfound-email-found-detail-container'style={{display: pwFoundButton ? "flex" : "none"}}>
+                    <div className='userfound-email-found-detail-container' style={{ display: isPasswordFoundPage ? "none" : "flex" }}>
                         <div className='userfound-detail-box'>
                             <input type="text" className='name-box' placeholder='이름'/>
                             <input type="text" className='email-box' placeholder='전화번호'/>
@@ -87,7 +84,7 @@ export default function UserFound() {
                             </div>
                         </div>
                     </div> */}
-                    <div className='userfound-password-found-detail-container'style={{display: idFoundButton ? "flex" : "none"}}>
+                    <div className='userfound-password-found-detail-container' style={{ display: isIdFoundPage ? "none" : "flex" }}>
                         <div className='userfound-password-detail-box'>
                             <input type="text" className='name-box' placeholder='이름'/>
                             <input type="text" className='email-box' placeholder='이메일' />

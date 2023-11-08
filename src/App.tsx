@@ -26,8 +26,8 @@ import {
 import SignUp from "views/Authentication/Sign-Up";
 import SignIn from "views/Authentication/Sign-In";
 import BoardWrite from "views/Board/Write";
-import UserUpdate from "views/User/UserUpdate";
-import PasswordUpdate from "views/User/PasswordUpdate";
+import UserUpdate from "views/update/UserUpdate";
+import PasswordUpdate from "views/update/PasswordUpdate";
 import MembershipWithdrawal from "views/Membership/MembershipWithdrawal";
 import UserFound from "views/Membership/UserFound";
 import User from 'views/User';

@@ -55,7 +55,7 @@ export default function User() {
         //          state: 자기소개 변경 상태          //
         const [changeIntroduction, setChangeIntroduction] = useState<boolean>(true);
         //          state: 구독 버튼 상태          //
-        const [subscription, setSubscription] = useState<boolean>(fail);
+        const [subscription, setSubscription] = useState<boolean>(false);
         //          state: followers number 상태          //
         const [followers, setFollowers] = useState<number>(0);
         //          state: followers number 상태          //
@@ -79,14 +79,14 @@ export default function User() {
 
         //         event handler: 회원정보 수정 버튼 클릭 이벤트 처리          //
         const onInfoModifyingButtonClickHandler = () => {
-            if (!isMypage) return;
-            navigator(USER_UPDATE_PATH)
+            // if (!isMypage) return;
+            navigator(USER_UPDATE_PATH) 
         }
         
         //          event handler: 구독 상태 이벤트 처리          //
         const onSubscriptionButtonClickHandler = () => {
             if (subscription) {
-                return followers -1
+                setFollowers(followers-1)
             }
             if (!subscription) {
                 setSubscription(true)
@@ -99,6 +99,7 @@ export default function User() {
             if (!isMyPage) return;
             setChangeIntroduction(!changeIntroduction);
         }
+        
         //          event handler: 자기소개 변경 이벤트 처리          //
         const onIntroductionChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
             const introduction = event.target.value;

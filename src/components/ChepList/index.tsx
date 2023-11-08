@@ -31,15 +31,9 @@ export default function ChefListItem({ chefItem }: Props) {
     const navigator = useNavigate();
 
     const onChefPageButtonClickHandler = () => {
-        if(!user) return;
+        // if(!user) return;
         navigator(USER_RECIPE(searchEmail));
     }
- 
-    // useEffect (() => {
-    //     if (count === setCount) {
-    //         setCount(count+1);
-    //     }
-    // });
 
     //          render: 쉐프 리스트 아이템 컴포넌트 렌더링          //
     return(

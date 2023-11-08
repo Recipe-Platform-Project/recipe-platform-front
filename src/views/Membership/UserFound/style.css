@@ -129,6 +129,11 @@
     border-bottom: 1px solid;
 
 }
+.userfound-button-click{
+    color: #358B43;
+    border-bottom: #358B43;
+    border-bottom: 1px solid;
+}
 
 .userfound-email-found-detail-container{
     display: flex;

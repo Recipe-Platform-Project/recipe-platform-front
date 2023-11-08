@@ -25,8 +25,10 @@ export default function Footer() {
   //          event handler: 헤더 Hidden 처리       //
   if (locationNow.pathname === "/SignIn") return null;
   if (locationNow.pathname === "/SignUp") return null;
-  if (locationNow.pathname === "/user") return null;
-  if (locationNow.pathname === "/membership") return null;
+  if (locationNow.pathname === "/passwordUpdate") return null;
+  if (locationNow.pathname === "/userUpdate") return null;
+  if (locationNow.pathname === "/MembershipWithdrawal") return null;
+  if (locationNow.pathname === "/UserFound") return null;
 
   //          render: 푸터 컴포넌트 렌더링         //
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import './style.css';
 import { UserWritingRecipeItem } from "Types";
 import { useNavigate } from "react-router-dom";
-import { RECIPE_DETAIL_PATH } from "constant";
+import { RECIPE_DETAIL_PATH, RECIPE_UPDATE_PATH } from "constant";
 
 //          interface: 작성중인 레시피 리스트 아이템 컴포넌트 Props          //
 interface Props {
@@ -20,7 +20,7 @@ export default function UserWritingRecipeList({ userWritingRecipeItem }: Props) 
 
     //          event handler: Writing Recipe Click 이벤트 처리 함수          //
     const onWritingRecipeClickHandler = () => {
-        navigator(RECIPE_DETAIL_PATH(boardNumber));
+        navigator(RECIPE_UPDATE_PATH(boardNumber));
     }
 
     //          render: 게시물 리스트 아이템 컴포넌트 렌더링          //

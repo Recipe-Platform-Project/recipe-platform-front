@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { userCommentListMock, userMock, userRecipeListMock, userRecipeReviewListMock, userWriteCommentListMock, userWriteRecipeReviewListMock, userWritingRecipeListMock } from "mocks";
 import { usePagination } from "hooks";
 import { BoardItem, UserCommentItem, UserRecipeItem, UserRecipeReviewItem, UserWriteCommentItem, UserWriteRecipeReviewItem, UserWritingRecipeItem } from "Types";
-import { USER_RECIPE, USER_SEARCH_RECIPE } from "constant";
+import { USER_RECIPE, USER_SEARCH_RECIPE, USER_UPDATE_PATH } from "constant";
 import UserRecipeList from "components/UserRecipeList";
 import Pagination from "components/Pagination";
 import UserWritingRecipeList from "components/UserWritingRecipeList";
@@ -16,7 +16,6 @@ import userSearchListMock from "mocks/user-search-list-mock";
 import userLatelyBoardListMock from "mocks/user-lately-board-list.mock";
 import UserWriteRecipeReviewList from "components/UserWriteRecipeReviewList";
 import UserWriteCommentListItem from "components/UserWriteCommentList";
-import {useCookies} from 'react-cookie'
 
 //          component: 유저 페이지          //
 export default function User() {
@@ -55,6 +54,15 @@ export default function User() {
         const [introduction, setIntroduction] = useState<string>('');
         //          state: 자기소개 변경 상태          //
         const [changeIntroduction, setChangeIntroduction] = useState<boolean>(true);
+        //          state: 구독 버튼 상태          //
+        const [subscription, setSubscription] = useState<boolean>(fail);
+        //          state: followers number 상태          //
+        const [followers, setFollowers] = useState<number>(0);
+        //          state: followers number 상태          //
+        const [following, setFollowing] = useState<number>(0);
+        //          state: followers number 상태          //
+        const [post, setPost] = useState<number>(0);
+
 
         // TODO: 프로필 이미지, 닉네임 정보수정에서 불러오기로 고치기
         //          event handler: 프로필 이미지 변경 이벤트 처리          //
@@ -67,6 +75,23 @@ export default function User() {
         const onNicknameChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
             const nickname = event.target.value;
             setNickname(nickname);
+        }
+
+        //         event handler: 회원정보 수정 버튼 클릭 이벤트 처리          //
+        const onInfoModifyingButtonClickHandler = () => {
+            if (!isMypage) return;
+            navigator(USER_UPDATE_PATH)
+        }
+        
+        //          event handler: 구독 상태 이벤트 처리          //
+        const onSubscriptionButtonClickHandler = () => {
+            if (subscription) {
+                return followers -1
+            }
+            if (!subscription) {
+                setSubscription(true)
+                return followers +1
+            }
         }
 
         //          event handler: 자기소개 변경 버튼 클릭 이벤트 처리          //
@@ -101,18 +126,22 @@ export default function User() {
                         <div className='user-right-top'>
                             <div className='user-nickname'>{nickname}</div>
                             <div className='user-modifying-information'>
-                                <div className='user-modifying-information-button'>{'회원정보 수정'}</div>
+                                {isMypage ? (
+                                <div className='user-modifying-information-button' onClick={onSubscriptionButtonClickHandler}>{'구독'}</div>
+                                ) : (
+                                <div className='user-modifying-information-button' onClick={onInfoModifyingButtonClickHandler}>{'회원정보 수정'}</div>
+                                )}
                             </div>
                         </div>
                         <div className='user-right-middle'>
                             <li className='user-middle-box'>{'followers '}
-                                    <span className='emphasis'>{count}</span>
+                                    <span className='emphasis'>{followers}</span>
                             </li>
                             <li className='user-middle-box'>{'following '}
-                                    <span className='emphasis'>{count}</span>
+                                    <span className='emphasis'>{following}</span>
                             </li>
                             <li className='user-middle-box'>{'post '}
-                                    <span className='emphasis'>{count}</span>
+                                    <span className='emphasis'>{post}</span>
                             </li>
                         </div>
                         <div className='user-right-bottom'>
@@ -256,10 +285,6 @@ export default function User() {
                                 <a className="user-main-recipe-review-title" style={{color:'#000',  borderBottom: '1px solid #358B43'}} onClick={onChangeRecipeReviewClickHandler}>{'레시피 후기'}</a>
                                 <a className="user-main-recipe-comments-title" style={{color:'#000',  borderBottom: '1px solid #358B43'}} onClick={onChangeRecipeCommentClickHandler}>{'댓글'}</a>
                                 </>
-                                // <>
-                                // <a className='user-main-recipe-title' style={{color:'#358B43',  border: '1px solid #358B43', borderBottom: '0'}} onClick={onChangeRecipeClickHandler}>{'레시피'}</a>
-                                // <div className='user-main-recipe-title-nop' style={{borderBottom: '1px solid #358B43'}}></div>
-                                // </>
                                 )}
                             </div>
                             {page === 1 && (
@@ -450,19 +475,6 @@ export default function User() {
  
         //          function: 네비게이트 함수          //
         const navigator = useNavigate();
-
-
-        //          event handler: 버튼 클릭 이벤트 처리          //
-        const onButtonClickHandler = () => {
-            if (!user) {
-                alert('로그인이 필요합니다.');
-                navigator('/');
-                return;
-            }
-
-            if (isMypage) navigator('/게시물수정페이지');
-            else navigator(USER_RECIPE(user.email));
-        }
 
         //          event handler: 서브버튼 클릭 이벤트 처리          //
         const onSubTepButtonClickHandler = () => {
@@ -664,7 +676,7 @@ export default function User() {
                             <div className="user-recipe-title-bundle">
                                 <a className='user-main-recipe-title' style={{color:'#000', borderBottom: '1px solid #358B43'}} onClick={onChangeRecipeClickHandler}>{'레시피'}</a>
                                 <a className="user-main-writing-title" style={{color:'#000', borderBottom: '1px solid #358B43'}}  onClick={onChangeWritingRecipeClickHandler}>{'작성중인 레시피'}</a>
-                                <a className="user-main-recipe-review-title" style={{color:'#358B43', borderBottom: '1px solid #358B43'}} onClick={onChangeRecipeReviewClickHandler}>{'레시피 후기'}</a>
+                                <a className="user-main-recipe-review-title" style={{color:'#000', borderBottom: '1px solid #358B43'}} onClick={onChangeRecipeReviewClickHandler}>{'레시피 후기'}</a>
                                 <a className="user-main-recipe-comments-title" style={{color:'#358B43', border: '1px solid #358B43', borderBottom: '0'}} onClick={onChangeRecipeCommentClickHandler}>{'댓글'}</a>
                             </div>
                             {page === 1 && (
@@ -832,13 +844,15 @@ export default function User() {
 
     //          render: 유저 페이지 렌더링          //
     return (
-        <>
+        <div id="user-my-page">
             <UserInformation />
+            <div id="recipe-sub-page">
             { view === 'user-recipe' && <UserRecipe />}
             { view === 'user-writing-recipe' && <UserWritingRecipe />}
             { view === 'user-recipe-review' && <UserRecipeReview />}
             { view === 'user-recipe-comment' && <UserRecipeComment />}
             <UserSubRecipe />
-        </>
+            </div>
+        </div>
     )
 }

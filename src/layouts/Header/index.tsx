@@ -3,6 +3,7 @@ import "./style.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   CHEF_LIST_PATH,
+  CHEF_PATH,
   MAIN_PATH,
   RANKING_PATH,
   RECIPE_LIST_PATH,
@@ -38,7 +39,7 @@ export default function Header() {
   //          variable: 랭킹 페이지 논리 변수         //
   const isRankingPage = pathname === RANKING_PATH;
   //          variable: 셰프 페이지 논리 변수         //
-  const isChefPage = pathname.startsWith(CHEF_LIST_PATH);
+  const isChefPage = pathname.startsWith(CHEF_PATH);
 
   //          event handler: 검색 값 변경 이벤트 처리           //
   const onSearchValueChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -53,8 +54,8 @@ export default function Header() {
   //          event handler: 헤더 Hidden 처리       //
   if (locationNow.pathname === "/SignIn") return null;
   if (locationNow.pathname === "/SignUp") return null;
-  if (locationNow.pathname === "/PasswordFound") return null;
-  if (locationNow.pathname === "/UserUpdate") return null;
+  if (locationNow.pathname === "/passwordUpdate") return null;
+  if (locationNow.pathname === "/userUpdate") return null;
   if (locationNow.pathname === "/MembershipWithdrawal") return null;
   if (locationNow.pathname === "/UserFound") return null;
 
@@ -155,7 +156,7 @@ export default function Header() {
   };
   //          event handler: 네비바 쉐프 버튼 클릭 이벤트 처리         //
   const onChefClickHandler = () => {
-    navigator(CHEF_LIST_PATH);
+    navigator(CHEF_PATH); 
   };
   //          render: 헤더 컴포넌트 렌더링         //
   return (

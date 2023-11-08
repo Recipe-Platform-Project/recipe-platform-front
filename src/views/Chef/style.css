@@ -1,6 +1,4 @@
 #chef-page {
-    
-    width: 1920px;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -314,12 +312,12 @@
   padding: 5px 0px 0px 0px
 }
 
-.search-bottom-popular-card-box{
+.chef-search-bottom-popular-card-box{
   display: flex;
   flex-direction: column;
 }
 
-.search-bottom-popular-card-title{
+.chef-search-bottom-popular-card-title{
   width: 140px;
   height: 40px;
 
@@ -335,7 +333,7 @@
   font-weight: 700;
 }
 
-.search-bottom-popular-card-contents{
+.chef-search-bottom-popular-card-contents{
   width: 280px;
   height: 280px;
   
@@ -343,12 +341,13 @@
   
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-content: space-between;
 
   gap: 20px;
 }
 
-.word-badge{
+.chef-word-badge{
   width: max-content;
   min-width: 60px;
   height: 40px;

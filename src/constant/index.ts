@@ -4,11 +4,13 @@ export const MAIN_PATH = "/";
 export const SIGN_IN_PATH = "/signIn/";
 export const SIGN_UP_PATH = "/signUp/";
 export const USER_FOUND_PATH = "/userFound";
+export const EMAIL_FOUND_PATH = "/emailFound";
+export const PASSWORD_FOUND_PATH = "/passwordFound";
 export const USER_UPDATE_PATH = "/userUpdate";
-export const PASSWORD_UPDATE_PATH = "/passwordUpdate";
+export const PASSWORD_UPDATE_PATH = "/passwordUpdate"; 
 export const MEMBERSHIP_WITHDRAWAL_PATH = "/membershipWithdrawal";
 
-export const USER_RECIPE = (email:string) => `/user/${email}`;
+export const USER_RECIPE = (email:string | undefined) => `/user/${email}`;
 export const USER_SEARCH_RECIPE = (email:string | undefined) => (word:string) => `/user/${email}/${word}`
 
 export const RANKING_PATH = "/ranking";

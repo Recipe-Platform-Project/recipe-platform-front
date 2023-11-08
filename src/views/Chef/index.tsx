@@ -1,6 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, forwardRef, useEffect, useRef, useState } from "react";
 import "./style.css";
-import { CHEF_PATH, CHEF_SEARCH_PATH, SEARCH_PATH } from "constant";
+import { CHEF_LIST_PATH, CHEF_PATH, CHEF_SEARCH_PATH, SEARCH_PATH } from "constant";
 import { useNavigate, useParams } from "react-router-dom";
 import { usePagination } from "hooks";
 import { BoardItem, ChefItem } from "Types";
@@ -234,6 +234,7 @@ export default function Chef() {
         //          event handler: 쉐프 검색 페이지 전환 이벤트 처리          //
         const onChangeChefSearchClickHandler = () => {
             setView('chef-search-page')
+            // navigator(CHEF_LIST_PATH)
         }
 
         return (
@@ -370,11 +371,11 @@ export default function Chef() {
             <div className='chef-sub-container'>
                 <div className='chef-sub-top'>
                     <div className='chef-popular-search'>
-                        <div className='search-bottom-populer-word-card'>
-                            <div className='search-bottom-popular-card-box'>
-                                <div className='search-bottom-popular-card-title'>{'인기 검색어'}</div>
-                                <div className='search-bottom-popular-card-contents'>
-                                {popularWordList.map(word => <div className='word-badge' onClick={() => onPopulerWordBadgeClickHandler(word)}>{word}</div>)}
+                        <div className='chef-search-bottom-populer-word-card'>
+                            <div className='chef-search-bottom-popular-card-box'>
+                                <div className='chef-search-bottom-popular-card-title'>{'인기 검색어'}</div>
+                                <div className='chef-search-bottom-popular-card-contents'>
+                                {popularWordList.map(word => <div className='chef-word-badge' onClick={() => onPopulerWordBadgeClickHandler(word)}>{word}</div>)}
                                 </div>
                             </div>
                         </div>

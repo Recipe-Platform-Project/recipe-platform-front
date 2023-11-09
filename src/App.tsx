@@ -18,7 +18,8 @@ import {
   USER_FOUND_PATH,
   USER_UPDATE_PATH,
   RECIPE_WRITE_PATH,
-  RECIPE_LIST_PATH
+  RECIPE_LIST_PATH,
+  BOARD_DETAIL_PATH
 } from "constant";
 import SignUp from "views/Authentication/Sign-Up";
 import SignIn from "views/Authentication/Sign-In";
@@ -32,10 +33,9 @@ import Chef from 'views/Chef';
 import Search from 'views/Search';
 import Ranking from 'views/Ranking';
 import Container from './layouts/Container';
-import RecipeDetail from 'views/Board/Detail';
-import CookingReviewComments from 'components/Reviewcomments';
 import Comments from 'components/Comments';
 import Modals from 'components/Modals';
+import BoardDetail from "views/Board/Detail";
 
 function App() {
   return (
@@ -48,6 +48,7 @@ function App() {
         <Route path={USER_FOUND_PATH} element={<UserFound />} />
         <Route path={USER_UPDATE_PATH} element={<UserUpdate />} />
         <Route path={PASSWORD_UPDATE_PATH} element={<PasswordUpdate />} />
+        <Route path={BOARD_DETAIL_PATH} element={<BoardDetail />} />
         <Route
           path={MEMBERSHIP_WITHDRAWAL_PATH}
           element={<MembershipWithdrawal />}
@@ -69,7 +70,7 @@ function App() {
         <Route path={RECIPE_LIST_PATH(':word')} element={<Search />} />
         <Route path='/ranking' element={<Ranking />} />
 
-        <Route path='/board/detail' element={<RecipeDetail />} />
+        <Route path='/board/detail' element={<BoardDetail />} />
         <Route path='/board/comments' element={<Comments />} />
         
         <Route path='/modal' element={<Modals/>} />

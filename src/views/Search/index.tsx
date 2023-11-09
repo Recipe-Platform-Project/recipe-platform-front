@@ -10,7 +10,7 @@ import PopularBox from './PopularBox';
 import usePagination from 'hooks/pagination.hook';
 import { BoardItem, RecentlyItme, SearchItem } from 'Types';
 import Pagination from 'components/Pagination';
-import { useRecentlyBoardStore } from 'stores';
+import { useRecentlyBoardStore, useSearchBoardListStore } from 'stores';
 
 
 
@@ -23,6 +23,7 @@ export default function Search() {
   // const [recentlyList, setRecentlyList] = useState<RecentlyItme[]>([]);
   
   const { recentlyList, setRecentlyList } = useRecentlyBoardStore(); 
+  const { searchBoardList } = useSearchBoardListStore();
 
   const onBoardItemClickHandler = (item: SearchItem) => {
     const newRecentlyList = recentlyList.map(item => item);
@@ -33,6 +34,10 @@ export default function Search() {
   useEffect(() => {
     setBoardList(searchBoardListMock);
   }, []);
+  
+  useEffect(() => {
+    setBoardList(searchBoardList);
+  }, [searchBoardList]);
 
   return (
     <div id='search-wrapper'>

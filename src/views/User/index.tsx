@@ -1,6 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, forwardRef, useEffect, useRef } from "react";
 import './style.css';
-import { useUserStore } from "stores";
+import useUserStore from "stores/user.store";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { userCommentListMock, userMock, userRecipeListMock, userRecipeReviewListMock, userWriteCommentListMock, userWriteRecipeReviewListMock, userWritingRecipeListMock } from "mocks";

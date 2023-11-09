@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef, useState,useEffect } from "react";
 import './style.css';
 import { RecentlyItme } from 'Types';
-import { useRecentlyBoardStore } from 'stores';
+import useRecentlyBoardStore from "stores/recently-board.store";
 import { useNavigate } from "react-router-dom";
 
 //              component: 최근 본 게시물 리스트 아이템 컴포넌트                //

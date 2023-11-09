@@ -27,6 +27,8 @@ export default function MaterialInput() {
         <div className="close-icon"></div>
       </div>
       <MaterialSub />
+      <MaterialSub />
+      <MaterialSub />
       <div className="material-add-button-box" onClick={() => {}}>
         <div className="material-add-button"></div>
         <div className="material-add-text">{"추가"}</div>

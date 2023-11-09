@@ -1,4 +1,4 @@
-import { POPULER_WORD } from 'constant';
+import { RECIPE_LIST_PATH } from 'constant';
 import { popularWordListMock } from 'mocks';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
@@ -15,7 +15,7 @@ export default function PopularBox() {
 
 //              event handler: 인기 검색어 뱃지 클릭 이벤트 처리         //
 const onPopulerWordBadgeClickHandler = (word: string) => {
-  navigater(POPULER_WORD(word));
+  navigater(RECIPE_LIST_PATH(word));
 }
 
   useEffect(() => {

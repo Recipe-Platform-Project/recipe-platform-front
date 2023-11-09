@@ -77,7 +77,7 @@
 
 .recipe-detail-writer-nickname {
 
-    margin-left: 130px;
+    margin-left: 165px;
 
     display: flex;
     justify-content: center;
@@ -406,11 +406,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-}
-
-.video-thumbnail {
-
 
 }
 
@@ -984,4 +979,37 @@
   .chef-list-center-bottom-subscription-on:hover {
     cursor: pointer;
     background-color: rgba(53, 139, 67, 0.8);
+  }
+
+  /* 좋아요 버튼 스타일 */
+  .favorite-button-on {
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(assets/like-icon.png);
+    background-size: 100% 100%;
+
+  }
+
+  .favorite-button-on:hover {
+
+    cursor: pointer;
+
+  }
+
+  .favorite-button-off {
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(assets/un-like-icon-7476962.png);
+    background-size: 100% 100%;
+    
+  }
+
+  .favorite-button-off:hover {
+
+    cursor: pointer;
+
   }

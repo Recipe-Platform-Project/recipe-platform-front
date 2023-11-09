@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import Steps from 'components/Steps';
 import Modals from 'components/Modals';
+import LatelyRecipe from 'components/LatelyListItem';
 
 
 
@@ -20,6 +21,8 @@ export default function BoardDetail() {
 
     //          state: 구독 상태          //
     const [subscription, setSubscription] = useState<boolean>(false);
+    //          state: 좋아요 상태          //
+    const [favorite, setFavorite] = useState<boolean>(false);
     
     //          function: 네비게이트 함수          //
     const navigator = useNavigate();
@@ -27,6 +30,11 @@ export default function BoardDetail() {
     //          event handler: 구독 버튼 클릭 이벤트 처리 함수          //
     const onSubscriptionClickHandler = () => {
         setSubscription(!subscription);
+    };
+
+    //          event handler: 좋아요 버튼 클릭 이벤트 처리 함수          //
+    const onFavoriteButtonHandler = () => {
+        setFavorite(!favorite);
     };
     
     //           event handler: user 마이페이지 페이지 이동 버튼 클릭 이벤트 처리          //
@@ -54,6 +62,13 @@ const RecipeInfo = () => {
                             {"구독하기"}
                         </div>
                         )}
+                        </div>
+                        <div onClick={onFavoriteButtonHandler}>
+                            {favorite ? (
+                                <div className='favorite-button-on'></div>
+                            ) : (
+                                <div className='favorite-button-off'></div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -124,34 +139,6 @@ const Video = () => {
         </div>
     );
 };
-
-//          render: 게시물 상세보기 페이지 조리순서 렌더링          //
-// const Steps = () => {
-//     return (
-//         <div id='steps-wrapper'>
-//             <div className='steps-box'>
-//                 <div className='steps-title-box'>
-//                     <div className='steps-title'>{'조리순서'}
-//                         <div className='steps-sub-title'>{'Steps'}</div>
-//                     </div>
-//                 </div>
-//                 <div className='view-image-box'>
-//                     <div className='view-image-small'></div>
-//                     <div className='view-text-image'></div>
-//                 </div>
-//             </div>
-//             <div className='steps-sequence-box'>
-//                 <div className='sequence-number'>{'1'}</div>
-//                 <div className='sequence-content'>{'미안하다 이거 보여주려고 어그로끌었다.. 나루토 사스케 싸움수준 ㄹㅇ실화냐? 진짜 세계관최강자들의 싸움이다.. 그찐따같던 나루토가 맞나? 진짜 나루토는 전설이다..진짜옛날에 맨날나루토봘는데 왕같은존재인 호카게 되서 세계최강 전설적인 영웅이된나루토보면 진짜내가다 감격스럽고'}</div>
-//                 <div className='sequence-image'></div>
-//             </div>
-//             <div className='steps-tip-box'>
-//                 <div className='steps-tip-image'></div>
-//                 <div className='steps-tip-comment'>{'나루토 노래부터 명장면까지 가슴울리는장면들이 뇌리에 스치면서 가슴이 웅장해진다.. '}</div>
-//             </div>
-//         </div>
-//     );
-// };
 
 //          render: 게시물 상세보기 페이지 레시피작성자 렌더링          //
 const RecipeWriter = () => {
@@ -234,6 +221,7 @@ const PhotoReview = () => {
     <div></div>
     <Comments />
     <div></div>
+    <LatelyRecipe />
     </>
   );
 };

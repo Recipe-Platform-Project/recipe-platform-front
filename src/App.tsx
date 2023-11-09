@@ -21,7 +21,7 @@ import {
   RECIPE_UPDATE_PATH,
   RANKING_PATH,
   CHEF_LIST_PATH,
-  SEARCH_PATH
+  SEARCH_PATH 
 } from "constant";
 import SignUp from "views/Authentication/Sign-Up";
 import SignIn from "views/Authentication/Sign-In";
@@ -35,8 +35,6 @@ import Chef from 'views/Chef';
 import Search from 'views/Search';
 import Ranking from 'views/Ranking';
 import Container from './layouts/Container';
-import RecipeDetail from 'views/Board/Detail';
-import CookingReviewComments from 'components/Reviewcomments';
 import Comments from 'components/Comments';
 import Modals from 'components/Modals';
 import BoardUpdate from "views/Board/Update";

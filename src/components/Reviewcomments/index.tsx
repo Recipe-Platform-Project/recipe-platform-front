@@ -111,6 +111,47 @@ export default function CookingReviewComments() {
 
     const CookingReviews = () => {
 
+        const AddPhotos = () => {
+            //                  state: 요리후기 사진 상태                 //
+            const [addPhotos, setAddPhotos] = useState<string | null>("");
+            //                  state: 요리후기 사진 input ref 상태                 //
+            const addPhotosFileInputRef = useRef<HTMLInputElement | null>(null);
+            //          event handler: 요리후기 사진 업데이트 클릭 이벤트 처리          //
+            const onAddPhotosFileUpdateClickHabdler = () => {
+                if (!addPhotosFileInputRef.current) return;
+                addPhotosFileInputRef.current.click();
+            };
+            //          event handler: 요리후기 사진 업데이트 변경 이벤트 처리          //
+            const onAddPhotosFileUpdateChangeHabdler = (
+                    event: ChangeEvent<HTMLInputElement>
+                ) => {
+                    if (!event.target.files || !event.target.files.length) return;
+                    const imageUrl = URL.createObjectURL(event.target.files[0]);
+                    setAddPhotos(imageUrl);
+            };
+            return (
+                <div onClick={onAddPhotosFileUpdateClickHabdler}>
+                    <input 
+                        ref={addPhotosFileInputRef}
+                        type='file'
+                        accept='image/*'
+                        style={{display: "none" }}
+                        onChange={onAddPhotosFileUpdateChangeHabdler
+                        }
+                     />
+                     {addPhotos === "" ? (
+                        <div className='add-photo-box' >
+                            <div className='add-photo'>+</div>
+                        </div>
+                     ) : (
+                        <div className='in-add-image-box' style={{backgroundImage: `url(${addPhotos})`}}>
+                            <div className='in-add-image'></div>
+                        </div>
+                     )}
+                </div>
+            );
+            };
+
 //          render: 게시물 상세보기 페이지 요리후기 댓글 렌더링          //
             const Reply = () => {
                 return(
@@ -215,9 +256,7 @@ export default function CookingReviewComments() {
                             </div>
                         </div>
                         )}
-                        <div className='add-photo-box'>
-                            <div className='add-photo'>+</div>
-                        </div>
+                        <AddPhotos />
                     </div>
                     <div className='review-comment-input-box'>
                         <textarea ref={textareaRef} value={comment} form='comment-textarea' placeholder='후기를 작성해주세요.' spellCheck='false' />

@@ -245,9 +245,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
 
 }
+
 
 .reviewer-write-comment {
 
@@ -264,6 +264,8 @@
 }
 
 .reviewer-write-photo {
+
+    margin-left: 217px;
 
     width: 100px;
     height: 100px;
@@ -298,6 +300,12 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+
+}
+
+.box {
+
+    margin-top: 41px;
 
 }
 
@@ -412,6 +420,8 @@
 }
 
 .board-writer-box {
+
+    padding-bottom: 30px;
 
     width: 1320px;
 

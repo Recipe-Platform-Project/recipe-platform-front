@@ -316,19 +316,47 @@
 
 }
 
-.ingredients-cooking-container {
+.ingredients-cooking-title-material-box {
+
+    display: flex;
+    align-items: center;
+
+    margin-left: 42px;
+    margin-top: 30px;
+
+}
+
+.material-container {
 
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.ingredients-cooking-container {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ingredients-cooking-title-material {
+
+    color: rgba(255, 0, 0, 0.7);
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
 
 }
 
 .ingredients-cooking-box {
 
-    margin: 50px;
+    margin: 0 50px;
 
-    width: 622px;
-    height: 59px;
+    width: 660px;
+    height: 65px;
 
     display: flex;
     flex-direction: row;

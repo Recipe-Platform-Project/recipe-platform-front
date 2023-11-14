@@ -23,6 +23,11 @@ export default function BoardDetail() {
     const [subscription, setSubscription] = useState<boolean>(false);
     //          state: 좋아요 상태          //
     const [favorite, setFavorite] = useState<boolean>(false);
+
+    //          state: modal 상태          //
+    const [modal , setModal] = useState<boolean>(false);
+    //          state: modal image 상태          //
+    const [modalImage , setModalImage] = useState<string>('');
     
     //          function: 네비게이트 함수          //
     const navigator = useNavigate();
@@ -39,7 +44,7 @@ export default function BoardDetail() {
     
     //           event handler: user 마이페이지 페이지 이동 버튼 클릭 이벤트 처리          //
     const onUserMyPageButtonClickHandler = () => {
-        navigator('/user/')
+        // navigator(USER_RECIPE(email));
     }
     
 //          render: 게시물 상세보기 페이지 상단 렌더링          //
@@ -104,14 +109,15 @@ const Ingredients = () => {
                 <div className='ingredients-title'>{'재료'}
                     <div className='ingredients-sub-title'>{'Ingredients'}</div>
                 </div>
-                <div className='ingredients-cooking-container'>
-                    <div className='ingredients-cooking-box'>
-                        <div className='ingredients-cooking-name'>{'라면'}</div>
-                        <div className='ingredients-cooking-number'>{'1개'}</div>
-                    </div>
-                    <div className='ingredients-cooking-box'>
-                        <div className='ingredients-cooking-name'>{'라면'}</div>
-                        <div className='ingredients-cooking-number'>{'1개'}</div>
+                <div className='material-container'>
+                    <div className='ingredients-cooking-container'>
+                        <div className='ingredients-cooking-title-material-box'>
+                            <div className='ingredients-cooking-title-material'>{'[재료]'}</div>
+                        </div>
+                        <div className='ingredients-cooking-box'>
+                            <div className='ingredients-cooking-name'>{'라면'}</div>
+                            <div className='ingredients-cooking-number'>{'1개'}</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,6 +183,15 @@ const RecipeWriter = () => {
 
 //          render: 게시물 상세보기 페이지 요리완성 사진 렌더링          //
 const PhotoReview = () => {
+
+    let image = 'https://blog.kakaocdn.net/dn/kJ7EZ/btrCdIcjWcp/2bqeLRfoKbFfbm7nPGt0hk/img.jpg';
+
+    //          event handler: 이미지 모달 버튼 클릭 이벤트 처리 함수          //
+    const onPhotoClickHandler = (image: string) => {
+        setModalImage(image);
+        setModal(true);
+    }
+
     return (
         <div id='photo-review-wrapper'>
             <div className='photo-review-title-box'>
@@ -186,19 +201,16 @@ const PhotoReview = () => {
             </div>
             <div className='photo-review-container'>
                 <div className='photo-review-box'>
-                    <div className='revie-photo'></div>
-                    <div className='revie-photo'></div>
-                    <div className='revie-photo'></div>
-                    <div className='revie-photo'></div>
-                    <div className='revie-photo'></div>
+                    <div className='revie-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
+                    <div className='revie-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
+                    <div className='revie-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
+                    <div className='revie-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
+                    <div className='revie-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
                 </div>
             </div>
         </div>
     );
 };
-
-
-//          component: 게시물 상세보기 페이지 최근본 게시물 컴포넌트          //
 
 //                  render: 메인 페이지 렌더링                  //
   return (
@@ -213,7 +225,7 @@ const PhotoReview = () => {
     <div></div>
     <PhotoReview /> 
     <div></div>
-    <Modals/>
+    {modal && <Modals image={modalImage} setModal={setModal} />}
     <div></div>
     <RecipeWriter /> 
     <div></div>

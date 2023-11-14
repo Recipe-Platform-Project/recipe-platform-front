@@ -105,32 +105,28 @@ const onCommentUpdateButtonClickHandler = () => {
 
 //          render: 게시물 상세보기 페이지 댓글 렌더링          //
 
-  //          state: 댓글 수정 입력 상태          //
-  const [commentsUpdate, setCommentsUpdate] = useState<string>('');
-  //          state: 본문 텍스트 영역 ref 상태          //
-  const commentsTextAreaRef = useRef<HTMLTextAreaElement | null>(null);
-  //          state: 댓글 삭제 상태          //
-  // TODO: API
-
-  //          event handler: 내용 변경 이벤트 처리          //
-  const onCommentsChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    const commentsUpdate = event.target.value;
-    setCommentsUpdate(commentsUpdate);
-    if (!commentsTextAreaRef.current) return;
-    commentsTextAreaRef.current.style.height = 'height: 90px';
-  }
-
-  //           event handler: 댓글 수정 입력 이벤트 처리          //
-  const onUpdateComment = () => {
-    setCommentUpdate(false);
-  }
-
-  //          effect: 댓글 리스트 열때 변경될 때마다 실행될 함수          //
-  useEffect(() => {
-    if (!commentsListOpen) setCommentUpdate(false);
-  }, [commentsListOpen]);
-
   const WriteComments = () => {
+
+    //          state: 댓글 수정 입력 상태          //
+    const [commentsUpdate, setCommentsUpdate] = useState<string>('');
+    //          state: 본문 텍스트 영역 ref 상태          //
+    const commentsTextAreaRef = useRef<HTMLTextAreaElement | null>(null);
+    //          state: 댓글 삭제 상태          //
+    // TODO: API
+
+    //          event handler: 내용 변경 이벤트 처리          //
+    const onCommentsChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
+      const commentsUpdate = event.target.value;
+      setCommentsUpdate(commentsUpdate);
+      if (!commentsTextAreaRef.current) return;
+      commentsTextAreaRef.current.style.height = 'height: 90px';
+    }
+
+    //           event handler: 댓글 수정 입력 이벤트 처리          //
+    const onUpdateComment = () => {
+      setCommentUpdate(false);
+    }
+
     return (
       <div id='comments-wrapper'>
         <div className='comments-container'>

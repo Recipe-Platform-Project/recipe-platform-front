@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./style.css"
 import { url } from 'inspector';
+import Modals from 'components/Modals';
 
 
 //          component: 게시물 상세보기 페이지 조리순서         //
@@ -8,6 +9,11 @@ export default function Steps() {
 
     //          state: text, 이미지 보기 상태          //
     const [page, setPage] = useState<1 | 2>(1);
+
+    //          state: modal 상태          //
+    const [modal , setModal] = useState<boolean>(false);
+    //          state: modal image 상태          //
+    const [modalImage , setModalImage] = useState<string>('');
 
 
     //          event handler: text와 이미지 같이 보기 버튼 클릭 이벤트 처리 함수          //
@@ -21,6 +27,16 @@ export default function Steps() {
 
     //          render: 게시물 상세보기 페이지 조리순서 렌더링          //
     const CookingSteps = () => {
+
+    let image = 'https://mblogthumb-phinf.pstatic.net/MjAyMDEwMTZfMTk1/MDAxNjAyODQxOTgzMjUw.m635StuUC8n1VutCCPVitsnphwnrmNE9hvDowCppWwgg.5M6NDKAm3vgXW33iNzxDmUvlf6NQJSiFfdPFsNNWCtkg.JPEG.dnks0206/%EC%A3%BC%EB%A7%90%EC%A0%90%EC%8B%AC__2.jpg?type=w800';
+
+
+    //          event handler: 이미지 모달 버튼 클릭 이벤트 처리 함수          //
+    const onPhotoClickHandler = (image: string) => {
+        setModalImage(image);
+        setModal(true);
+    }
+
         return (
             <div id='steps-wrapper'>
                 <div className='steps-box'>
@@ -38,7 +54,7 @@ export default function Steps() {
                     {page === 1 && (<>
                         <div className='sequence-number'>{'1'}</div>
                         <div className='sequence-content-text'>{'미안하다 이거 보여주려고 어그로끌었다.. 나루토 사스케 싸움수준 ㄹㅇ실화냐? 진짜 세계관최강자들의 싸움이다.. 그찐따같던 나루토가 맞나? 진짜 나루토는 전설이다..진짜옛날에 맨날나루토봘는데 왕같은존재인 호카게 되서 세계최강 전설적인 영웅이된나루토보면 진짜내가다 감격스럽고'}</div>
-                        <div className='sequence-image'></div>
+                        <div className='sequence-image' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
                     </>)}
                 </div>
                 <div className='steps-sequence-text-view-box'>
@@ -60,6 +76,9 @@ export default function Steps() {
   return (
     <>
     <CookingSteps/>
+    <div>
+    {modal && <Modals image={modalImage} setModal={setModal} />}
+    </div>
     </>
   );
 };

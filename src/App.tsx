@@ -71,7 +71,7 @@ function App() {
         <Route path={RECIPE_WRITE_PATH} element={<BoardWrite />} />
         <Route path={RECIPE_UPDATE_PATH(':boardNumber')} element={<BoardUpdate />} />
         
-        <Route path='/modal' element={<Modals/>} />
+        {/* <Route path='/modal' element={<Modals/>} /> */}
 
         <Route path='*' element={<h1>404 Not Found</h1>} />
 

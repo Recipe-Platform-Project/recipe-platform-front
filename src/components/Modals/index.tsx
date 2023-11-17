@@ -4,7 +4,7 @@ import { url } from 'inspector';
 import {  } from 'redux';
 
 interface Props {
-    image: string;
+    image: string | null;
     setModal: Dispatch<SetStateAction<boolean>>;
 }
 

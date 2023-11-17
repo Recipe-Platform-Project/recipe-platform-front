@@ -5,9 +5,21 @@ import "./style.css"
 import { useNavigate } from 'react-router-dom';
 import Modals from 'components/Modals';
 import dayjs from 'dayjs';
+import CookingReviewCommentsListItem from 'Types/cooking-review-comments-list.interface';
+import { SIGN_IN_PATH } from 'constant';
+
+//          interface: 게시물 상세보기 요리 후기 댓글 리스트 아이템 컴포넌트 Props          //
+interface Props {
+
+    boardNumber : string | undefined;
+
+}
 
 //          component: 게시물 상세보기 요리 후기 댓글 컴포넌트          //
-export default function CookingReviewComments() {
+export default function CookingReviewComments({boardNumber}: Props) {
+
+    //          state: 리뷰 상태           //
+    const [ reviews, setReviews ] = useState<number>(0);
 
     //          state: 별점 상태           //
     const [selectStarView, setSelectStarView] = useState<boolean>(false);
@@ -166,69 +178,68 @@ export default function CookingReviewComments() {
         );
         };
 
-    //          component: 요리 후기 컴포넌트          //
-    const CookingReviews = () => {
+    //          component: 답글 컴포넌트          //
+        const Reply = () => {
 
-//          render: 게시물 상세보기 페이지 요리후기 댓글 렌더링          //
-            const Reply = () => {
+            //          state: 답글 후기 수정 텍스트 영역 ref 상태          //
+            const replyCommentUpdateTextAreaRef = useRef<HTMLTextAreaElement | null>(null);
+            //          state: 답글 수정 입력 상태          //
+            const [replyCommentUpdateInput, setReplyCommentUpdateInput] = useState<string>('');
+            //          state: 답글 수정 버튼 상태          //
+            const [replyCommentUpdate, setReplyCommentUpdate] = useState<boolean>(false);
 
-                //          state: 답글 후기 수정 텍스트 영역 ref 상태          //
-                const replyCommentUpdateTextAreaRef = useRef<HTMLTextAreaElement | null>(null);
-                //          state: 답글 수정 입력 상태          //
-                const [replyCommentUpdateInput, setReplyCommentUpdateInput] = useState<string>('');
-                //          state: 답글 수정 버튼 상태          //
-                const [replyCommentUpdate, setReplyCommentUpdate] = useState<boolean>(false);
-
-                //           event handler: 요리후기 답글 수정 버튼 클릭 이벤트 처리          //
-                const onCookingReviewReplyCommentChangeButtonClickHandler = () => {
-                    setReplyCommentUpdate(!replyCommentUpdate);
-                }
-                //           event handler: 요리후기 답글 입력 버튼 클릭 이벤트 처리          //
-                const onCookingReviewReplyCommentClickButtonClickHandler = () => {
-                    setReplyCommentUpdate(false);
-                }
-                //           event handler: 요리후기 답글 내용 변경 이벤트 처리          //
-                const onReplyCommentChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
-                    const replyCommentUpdateInput = event.target.value;
-                    setReplyCommentUpdateInput(replyCommentUpdateInput);
-                    if (!replyCommentUpdateTextAreaRef.current) return;
-                    replyCommentUpdateTextAreaRef.current.style.height = 'height: 90px';
-                }
-
-                return(
-                    <div className='board-writer-container'>
-                        <div className='board-writer-box'>
-                            <div className='board-writer-profile-image' onClick={onUserMyPageButtonClickHandler} ></div>
-                            <div className='board-writer'>
-                                <div className='board-writer-nickname-and-datetime-container'>
-                                    <div className='board-writer-nickname-and-datetime-box'>
-                                        <div className='board-writer-nickname' onClick={onUserMyPageButtonClickHandler} >{'닉네임닉네임닉네임'}</div>
-                                        <div className='board-writer-datetime'>{getElapsedTime()}</div>
-                                    </div>
-                                    <div className='reply-comment-edit-box'>
-                                        <div className='reply-update-comment-text-button' onClick={onCookingReviewReplyCommentChangeButtonClickHandler}>{'수정'}</div>
-                                        <div className='reply-comment-divider'>{'\|'}</div>
-                                        <div className='reply-delete-comment-text-button'>{'삭제'}</div>
-                                    </div>
+            //           event handler: 요리후기 답글 수정 버튼 클릭 이벤트 처리          //
+            const onCookingReviewReplyCommentChangeButtonClickHandler = () => {
+                setReplyCommentUpdate(!replyCommentUpdate);
+            }
+            //           event handler: 요리후기 답글 입력 버튼 클릭 이벤트 처리          //
+            const onCookingReviewReplyCommentClickButtonClickHandler = () => {
+                setReplyCommentUpdate(false);
+            }
+            //           event handler: 요리후기 답글 내용 변경 이벤트 처리          //
+            const onReplyCommentChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
+                const replyCommentUpdateInput = event.target.value;
+                setReplyCommentUpdateInput(replyCommentUpdateInput);
+                if (!replyCommentUpdateTextAreaRef.current) return;
+                replyCommentUpdateTextAreaRef.current.style.height = 'height: 90px';
+            }
+        //          render: 게시물 상세보기 페이지 요리후기 답글 렌더링          //
+            return(
+                <div className='board-writer-container'>
+                    <div className='board-writer-box'>
+                        <div className='board-writer-profile-image' onClick={onUserMyPageButtonClickHandler} ></div>
+                        <div className='board-writer'>
+                            <div className='board-writer-nickname-and-datetime-container'>
+                                <div className='board-writer-nickname-and-datetime-box'>
+                                    <div className='board-writer-nickname' onClick={onUserMyPageButtonClickHandler} >{'닉네임닉네임닉네임'}</div>
+                                    <div className='board-writer-datetime'>{getElapsedTime()}</div>
                                 </div>
-                                <div className='reply-comment-box'>
-                                    {replyCommentUpdate ? (
-                                    <div className='reply-comment-input-box'>
-                                    <div className='reply-comment-input-container'>
-                                        <textarea ref={replyCommentUpdateTextAreaRef} form='reply-textarea' placeholder='답글을 작성해주세요.' maxLength={300} spellCheck={false} value={replyCommentUpdateInput} onChange={onReplyCommentChangeHandler} /></div>
-                                        <div className='reply-comment-button' onClick={onCookingReviewReplyCommentClickButtonClickHandler}><button>{'등록'}</button></div>
-                                    </div>
-                                    ) : (
-                                        <div className='reply-comment'>{'그리고인터닛에 쳐봣는디 이거 ㄹㅇㄹㅇ 진짜팩트냐?? 저적이 보루토에 나오는 신급괴물임?ㅡ 나루토사스케 합체한거봐라 진짜 ㅆㅂ 이거보고 개충격먹어가지고 와 소리 저절로 나오더라 ;; 진짜 저건 개오지는데.. 저게 ㄹㅇ이면 진짜 꼭봐야돼 진짜 세계도 파괴시키는거아니야 .. 와 진짜 나루토사스케가 저렇게 되다니 진짜 눈물나려고했다.. 버루토그라서 계속보는중인데 저거 ㄹㅇ이냐..? 하.. ㅆㅂ 사스케 보고싶다..  진짜언제 이렇게 신급 최강들이 되었을까 옛날생각나고 나 중딩때생각나고 뭔가 슬프기도하고 좋기도하고 감격도하고 여러가지감정이 복잡하네.. 아무튼 나루토는 진짜 애니중최거명작임...'}</div>
-                                    )}
+                                <div className='reply-comment-edit-box'>
+                                    <div className='reply-update-comment-text-button' onClick={onCookingReviewReplyCommentChangeButtonClickHandler}>{'수정'}</div>
+                                    <div className='reply-comment-divider'>{'\|'}</div>
+                                    <div className='reply-delete-comment-text-button'>{'삭제'}</div>
                                 </div>
+                            </div>
+                            <div className='reply-comment-box'>
+                                {replyCommentUpdate ? (
+                                <div className='reply-comment-input-box'>
+                                <div className='reply-comment-input-container'>
+                                    <textarea ref={replyCommentUpdateTextAreaRef} form='reply-textarea' placeholder='답글을 작성해주세요.' maxLength={300} spellCheck={false} value={replyCommentUpdateInput} onChange={onReplyCommentChangeHandler} /></div>
+                                    <div className='reply-comment-button' onClick={onCookingReviewReplyCommentClickButtonClickHandler}><button>{'등록'}</button></div>
+                                </div>
+                                ) : (
+                                    <div className='reply-comment'>{'그리고인터닛에 쳐봣는디 이거 ㄹㅇㄹㅇ 진짜팩트냐?? 저적이 보루토에 나오는 신급괴물임?ㅡ 나루토사스케 합체한거봐라 진짜 ㅆㅂ 이거보고 개충격먹어가지고 와 소리 저절로 나오더라 ;; 진짜 저건 개오지는데.. 저게 ㄹㅇ이면 진짜 꼭봐야돼 진짜 세계도 파괴시키는거아니야 .. 와 진짜 나루토사스케가 저렇게 되다니 진짜 눈물나려고했다.. 버루토그라서 계속보는중인데 저거 ㄹㅇ이냐..? 하.. ㅆㅂ 사스케 보고싶다..  진짜언제 이렇게 신급 최강들이 되었을까 옛날생각나고 나 중딩때생각나고 뭔가 슬프기도하고 좋기도하고 감격도하고 여러가지감정이 복잡하네.. 아무튼 나루토는 진짜 애니중최거명작임...'}</div>
+                                )}
                             </div>
                         </div>
                     </div>
-                );
-            };
-                
-//          render: 요리후기 렌더링          //
+                </div>
+            );
+        };
+
+
+//          component: 요리 후기 컴포넌트          //
+const CookingReviews = () => {        
 
     //          state: 리뷰작성자 후기 수정 텍스트 영역 ref 상태          //
     const reviewUpdateTextAreaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -265,6 +276,13 @@ export default function CookingReviewComments() {
         if (!commentsTextAreaRef.current) return;
         commentsTextAreaRef.current.style.height = 'height: 90px';
     }
+    //           event handler: 요리후기 작성 유저 확인 이벤트 처리          //
+    const onSaveButtonClickHandler = () => {
+        // TODO: API 쿠키 연결띠
+        if (window.confirm("로그인을 하신 후 이용해 주시기 바랍니다.")) {
+          navigator(SIGN_IN_PATH)
+        }
+    }
     //           event handler: 요리후기 수정 댓글 내용 변경 이벤트 처리          //
     const onReviewUpdateChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
         const reviewUpdate = event.target.value;
@@ -273,13 +291,18 @@ export default function CookingReviewComments() {
         reviewUpdateTextAreaRef.current.style.height = 'height: 90px';
     }
 
-
+    //          render: 요리후기 렌더링          //
     return (
         <div id='cooking-review-wrapper'>
             <div className='cooking-review-container'>
                 <div className='cooking-review-title-box'>
                     <div className='cooking-review-title'>{'요리 후기'}</div>
                 </div>
+                {reviews === 0 ? (
+                    <div className='no-cooking-review-state-box'>
+                        <div className='no-registered-text'>{'등록된 요리 후기가 없습니다.'}</div>
+                    </div>
+                ) : (
                 <div className='cooking-review-host-container'>
                     <div className='cooking-review-host-profile-box'>
                         <div className='reviewer-profile-image' onClick={onUserMyPageButtonClickHandler} ></div>
@@ -314,10 +337,10 @@ export default function CookingReviewComments() {
                                 <div className='box'>
                                     <AddPhotos />
                                 </div>
-                                    <div className='review-comment-input-box'>
-                                        <textarea ref={reviewUpdateTextAreaRef} className='update-review-comments-text-button-textarea' placeholder='수정할 내용을 작성해 주세요.' spellCheck={false} value={reviewUpdate} onChange={onReviewUpdateChangeHandler} />
-                                        <div className='review-comment-input-button-box' onClick={onUpdateComment}><button>수정 완료</button></div>
-                                    </div>
+                                <div className='review-comment-input-box'>
+                                    <textarea ref={reviewUpdateTextAreaRef} className='update-review-comments-text-button-textarea' placeholder='수정할 내용을 작성해 주세요.' spellCheck={false} value={reviewUpdate} onChange={onReviewUpdateChangeHandler} />
+                                    <div className='review-comment-input-button-box' onClick={onUpdateComment}><button>수정 완료</button></div>
+                                </div>
                                 </>
                             ) : (
                                 <>
@@ -326,8 +349,9 @@ export default function CookingReviewComments() {
                                 </>
                             )}
                         </div>
-                        </div>
                     </div>
+                </div>
+                )}
                 {replyCommentsOpen ? <Reply /> : <></>}
                 </div>
             <div className='review-comment-input-container'>
@@ -361,7 +385,7 @@ export default function CookingReviewComments() {
                         <AddPhotos />
                     </div>
                     <div className='review-comment-input-box'>
-                        <textarea ref={commentsTextAreaRef} value={comment} placeholder='후기를 작성해주세요.' spellCheck='false' onChange={onCommentChangeHandler} />
+                        <textarea ref={commentsTextAreaRef} value={comment} placeholder='후기를 작성해주세요.' spellCheck='false' onChange={onCommentChangeHandler} onClick={onSaveButtonClickHandler} />
                     </div>
                     <div className='review-comment-input-button-box' onClick={onCookingReviewCommentButtonClickHandler}><button>{'등록'}</button></div>
                 </div>

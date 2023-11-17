@@ -41,6 +41,27 @@
 
 }
 
+.no-cooking-review-state-box {
+    
+    height: 220px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.no-registered-text {
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+
+}
+
 .cooking-review-host-container {
 
     padding-top: 50px;

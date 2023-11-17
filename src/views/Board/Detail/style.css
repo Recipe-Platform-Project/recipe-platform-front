@@ -35,6 +35,53 @@
 
 }
 
+.view-counte-box {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.view-counte-container {
+
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+    gap: 15px;
+    
+
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100px;
+    height: 20px;
+
+    position: absolute;
+    bottom: 310px;
+
+    border-radius: 10px;
+
+}
+.view-counte-icon {
+
+    margin-left: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(assets/eye-icon.png);
+    background-size: 100% 100%;
+
+}
+
+.view-counte-number {
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
 .recipe-detail-write-info-box {
 
     display: flex;
@@ -83,7 +130,7 @@
     justify-content: center;
     align-items: center;
 
-    width: 91px;
+    width: 120px;
     height: 29px;
 
     border-radius: 50px;
@@ -201,9 +248,9 @@
 
 .servings-text {
 
-    color: rgba(0, 0, 0, 0.50);
+    color: rgba(0, 0, 0, 1);
     font-family: SUIT;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
 
 }
@@ -233,9 +280,9 @@
 
 .cooking-time-text {
 
-    color: rgba(0, 0, 0, 0.50);
+    color: rgba(0, 0, 0, 1);
     font-family: SUIT;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
 
 }
@@ -265,9 +312,9 @@
 
 .cooking-level-text {
 
-    color: rgba(0, 0, 0, 0.50);
+    color: rgba(0, 0, 0, 1);
     font-family: SUIT;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
 
 }
@@ -361,8 +408,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 90%;
-    
+    justify-content: space-between;
     
     border-bottom: 1px solid #AEAEAE;
 
@@ -525,7 +571,7 @@
 
 .reciper-writer-profile-nickname {
 
-    width: 200px;
+    width: 120px;
     display: flex;
     justify-content: center;
 
@@ -648,7 +694,7 @@
 
 }
 
-.revie-photo {
+.review-photo {
 
     width: 200px;
     height: 200px;

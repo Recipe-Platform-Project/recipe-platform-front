@@ -41,6 +41,27 @@
 
 }
 
+.no-cooking-review-state-box {
+    
+    height: 220px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.no-registered-text {
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+
+}
+
 .cooking-review-host-container {
 
     padding-top: 50px;
@@ -245,9 +266,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
 
 }
+
 
 .reviewer-write-comment {
 
@@ -264,6 +285,8 @@
 }
 
 .reviewer-write-photo {
+
+    margin-left: 217px;
 
     width: 100px;
     height: 100px;
@@ -298,6 +321,12 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+
+}
+
+.box {
+
+    margin-top: 41px;
 
 }
 
@@ -412,6 +441,8 @@
 }
 
 .board-writer-box {
+
+    padding-bottom: 30px;
 
     width: 1320px;
 

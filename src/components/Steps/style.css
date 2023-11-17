@@ -100,9 +100,20 @@
     width: 1200px;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     gap: 20px;
+
+}
+
+.steps-sequence-image-view {
+
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 30px;
 
 }
 
@@ -126,6 +137,7 @@
 .sequence-content-text {
 
     width: 950px;
+    padding-top: 5px;
 
     white-space: normal;
 
@@ -185,7 +197,7 @@
 
     color: #000;
     font-family: SUIT;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
 
 }
@@ -194,15 +206,27 @@
 .steps-sequence-text-view-box {
 
     margin-top: -50px;
-    margin-bottom: 100px;
     padding: 10px 10px 60px;
     width: 1200px;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     gap: 20px;
 
+}
+
+.steps-sequence-text-view {
+
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+    
 }
 
 .sequence-text-view-content-text {

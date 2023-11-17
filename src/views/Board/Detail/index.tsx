@@ -1,20 +1,21 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import "./style.css"
 import CookingReviewComments from 'components/Reviewcomments';
 import Comments from 'components/Comments';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import Steps from 'components/Steps';
 import Modals from 'components/Modals';
 import LatelyRecipe from 'components/LatelyListItem';
-
-
+import { boardDetailItemMock, materialItemMock } from 'mocks';
 
 
 
 //          component: 게시물 상세보기 페이지          //
 export default function BoardDetail() {
-    
+
+    //          state: 게시물 번호 path variable 상태          //
+    const { boardNumber } = useParams();
     //          state: 로그인 유저 상태          //
     
     //          state: cookie 상태          //
@@ -23,6 +24,11 @@ export default function BoardDetail() {
     const [subscription, setSubscription] = useState<boolean>(false);
     //          state: 좋아요 상태          //
     const [favorite, setFavorite] = useState<boolean>(false);
+
+    //          state: modal 상태          //
+    const [modal , setModal] = useState<boolean>(false);
+    //          state: modal image 상태          //
+    const [modalImage , setModalImage] = useState<string>('');
     
     //          function: 네비게이트 함수          //
     const navigator = useNavigate();
@@ -39,7 +45,7 @@ export default function BoardDetail() {
     
     //           event handler: user 마이페이지 페이지 이동 버튼 클릭 이벤트 처리          //
     const onUserMyPageButtonClickHandler = () => {
-        navigator('/user/')
+        // navigator(USER_RECIPE(email));
     }
     
 //          render: 게시물 상세보기 페이지 상단 렌더링          //
@@ -47,19 +53,25 @@ const RecipeInfo = () => {
     return (
     <div id='recipe-detail-wrapper'>
         <div className='recipe-detail-box'>
-            <div className='recipe-detail-food-image'>
+            <div className='recipe-detail-food-image' style={{ backgroundImage: `url(${boardDetailItemMock.boardMainImage})` }}>
+                <div className='view-counte-box'>
+                    <div className='view-counte-container'>
+                    <div className='view-counte-icon'></div>
+                    <div className='view-counte-number'>{`${boardDetailItemMock.viewCount}`}</div>
+                    </div>
+                </div>
                 <div className='recipe-detail-write-info-box'>
-                    <div className='recipe-detail-writer-profile-image' onClick={onUserMyPageButtonClickHandler}></div>
+                    <div className='recipe-detail-writer-profile-image' style={{ backgroundImage:`url(${boardDetailItemMock.writerProfileImage})` }} onClick={onUserMyPageButtonClickHandler} ></div>
                     <div className='nickname-follow-box'>
-                        <div className='recipe-detail-writer-nickname' onClick={onUserMyPageButtonClickHandler} >{'닉네임'}</div>
+                        <div className='recipe-detail-writer-nickname' onClick={onUserMyPageButtonClickHandler} >{boardDetailItemMock.writerNickname}</div>
                         <div onClick={onSubscriptionClickHandler}>
                         {subscription ? (
                         <div className="chef-list-center-bottom-subscription-on">
-                            {"구독중"}
+                            {`구독중`}
                         </div>
                         ) : (
                         <div className="chef-list-center-bottom-subscription">
-                            {"구독하기"}
+                            {`구독하기`}
                         </div>
                         )}
                         </div>
@@ -74,21 +86,21 @@ const RecipeInfo = () => {
                 </div>
             </div>
             <div className='recipe-detail-title-box'>
-                <div className='recipe-detail-title'>{'오늘 점심은 미역국으로 정했지만 사실 비빔밥이지'}</div>
-                <div className='recipe-detail-introduction-cooking'>{'진짜 저건 개오지는데.. 저게 ㄹㅇ이면 진짜 꼭봐야돼 진짜 세계도 파괴시키는거아니야 .. 와 진짜 나루토사스케가 저렇게 되다니 진짜 눈물나려고했다.. 버루토그라서 계속보는중인데 저거 ㄹㅇ이냐..? 하.. ㅆㅂ 사스케 보고싶다..  진짜언제 이렇게 신급 최강들이 되었을까 옛날생각나고 나 중딩때생각나고 뭔가 슬프기도하고 좋기도하고 감격도하고 여러가지감정이 복잡하네.. 아무튼 나루토는 진짜 애니중최거명작임.'}</div>
+                <div className='recipe-detail-title'>{`${boardDetailItemMock.title}`}</div>
+                <div className='recipe-detail-introduction-cooking'>{`${boardDetailItemMock.introduce}`}</div>
             </div>
                 <div className='cooking-info-container'>
                     <div className='servings-image-box'>
                         <div className='servings-image'></div>
-                        <div className='servings-text'>{'1인분'}</div>
+                        <div className='servings-text'>{`${boardDetailItemMock.peopleCount}`}</div>
                     </div>
                 <div className='cooking-time-box'>
                     <div className='cooking-time-image'></div>
-                    <div className='cooking-time-text'>{'10분'}</div>
+                    <div className='cooking-time-text'>{`${boardDetailItemMock.requiredTime}`}</div>
                 </div> 
                 <div className='cooking-level-box'>
                     <div className='cooking-level-image'></div>
-                    <div className='cooking-level-text'>{'아무나'}</div>
+                    <div className='cooking-level-text'>{`${boardDetailItemMock.difficulty}`}</div>
                 </div>
             </div>
         </div>
@@ -104,14 +116,15 @@ const Ingredients = () => {
                 <div className='ingredients-title'>{'재료'}
                     <div className='ingredients-sub-title'>{'Ingredients'}</div>
                 </div>
-                <div className='ingredients-cooking-container'>
-                    <div className='ingredients-cooking-box'>
-                        <div className='ingredients-cooking-name'>{'라면'}</div>
-                        <div className='ingredients-cooking-number'>{'1개'}</div>
-                    </div>
-                    <div className='ingredients-cooking-box'>
-                        <div className='ingredients-cooking-name'>{'라면'}</div>
-                        <div className='ingredients-cooking-number'>{'1개'}</div>
+                <div className='material-container'>
+                    <div className='ingredients-cooking-container'>
+                        <div className='ingredients-cooking-title-material-box'>
+                            <div className='ingredients-cooking-title-material'>{`[${materialItemMock.materialCategory}]`}</div>
+                        </div>
+                        <div className='ingredients-cooking-box'>
+                            <div className='ingredients-cooking-name'>{`${materialItemMock.materials}`}</div>
+                            <div className='ingredients-cooking-number'>{`${materialItemMock.measurement}`}</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,7 +142,7 @@ const Video = () => {
                 </div>
                 <div className='video-thumbnail-container'>
                     <div className='video-thumbnail'>
-                        <ReactPlayer url={'https://www.youtube.com/watch?v=2sUjx8PE_vg'}
+                        <ReactPlayer url={`${boardDetailItemMock.videoLink}`}
                         width={'750px'} height={'400px'}
                         controls={true}
                         />  
@@ -152,10 +165,10 @@ const RecipeWriter = () => {
                 </div>
             </div>
                 <div className='reciper-writer-profile-container'>
-                    <div className='reciper-writer-profile-image' onClick={onUserMyPageButtonClickHandler} ></div>
+                    <div className='reciper-writer-profile-image' style={{ backgroundImage:`url(${boardDetailItemMock.writerProfileImage})` }} onClick={onUserMyPageButtonClickHandler} ></div>
                     <div className='reciper-writer-profile-box'>
                         <div className='recipe-writer-profile-view'>
-                            <div className='reciper-writer-profile-nickname' onClick={onUserMyPageButtonClickHandler} >{'닉네임닉네임닉네임닉네임'}</div>
+                            <div className='reciper-writer-profile-nickname' onClick={onUserMyPageButtonClickHandler} >{`${boardDetailItemMock.writerNickname}`}</div>
                             <div onClick={onSubscriptionClickHandler}>
                             {subscription ? (
                             <div className="chef-list-center-bottom-subscription-on">
@@ -177,6 +190,15 @@ const RecipeWriter = () => {
 
 //          render: 게시물 상세보기 페이지 요리완성 사진 렌더링          //
 const PhotoReview = () => {
+
+    let image = 'https://blog.kakaocdn.net/dn/kJ7EZ/btrCdIcjWcp/2bqeLRfoKbFfbm7nPGt0hk/img.jpg';
+
+    //          event handler: 이미지 모달 버튼 클릭 이벤트 처리 함수          //
+    const onPhotoClickHandler = (image: string) => {
+        setModalImage(image);
+        setModal(true);
+    }
+
     return (
         <div id='photo-review-wrapper'>
             <div className='photo-review-title-box'>
@@ -186,19 +208,20 @@ const PhotoReview = () => {
             </div>
             <div className='photo-review-container'>
                 <div className='photo-review-box'>
-                    <div className='revie-photo'></div>
-                    <div className='revie-photo'></div>
-                    <div className='revie-photo'></div>
-                    <div className='revie-photo'></div>
-                    <div className='revie-photo'></div>
+                    <div className='review-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
+                    <div className='review-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
+                    <div className='review-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
+                    <div className='review-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
+                    <div className='review-photo' style={{ backgroundImage: `url(${image})` }} onClick={() => onPhotoClickHandler(image)}></div>
                 </div>
             </div>
         </div>
     );
 };
 
-
-//          component: 게시물 상세보기 페이지 최근본 게시물 컴포넌트          //
+useEffect((
+    // setBoard();
+) => {}, [boardNumber]);
 
 //                  render: 메인 페이지 렌더링                  //
   return (
@@ -213,11 +236,11 @@ const PhotoReview = () => {
     <div></div>
     <PhotoReview /> 
     <div></div>
-    <Modals/>
+    {modal && <Modals image={modalImage} setModal={setModal} />}
     <div></div>
     <RecipeWriter /> 
     <div></div>
-    <CookingReviewComments />
+    <CookingReviewComments boardNumber={boardNumber} />
     <div></div>
     <Comments />
     <div></div>

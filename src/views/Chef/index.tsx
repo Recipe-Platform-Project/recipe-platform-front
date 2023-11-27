@@ -7,7 +7,7 @@ import { BoardItem, ChefItem } from "Types";
 import { chefListMock, chefSearchListMock, latelyBoardListMock, popularWordListMock } from "mocks";
 import ChefListItem from "components/ChepList";
 import Pagination from "components/Pagination";
-import GetPopulerListResponseDto from "apis/dto/response/get-populer-list-response.dto";
+import { GetPopulerListResponseDto } from "apis/dto/response/search";
 import ResponseDto from "apis/dto/response";
 
 //          component: 쉐프 페이지          //

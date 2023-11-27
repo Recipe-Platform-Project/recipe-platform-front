@@ -29,7 +29,7 @@ import MembershipWithdrawal from "views/Membership/MembershipWithdrawal";
 import UserFound from "views/Membership/UserFound";
 import User from 'views/User';
 import Chef from 'views/Chef';
-import Search from 'views/Search';
+import Search from "views/RecipeList";
 import Ranking from 'views/Ranking';
 import Container from './layouts/Container';
 import RecipeDetail from 'views/Board/Detail';

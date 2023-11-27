@@ -1,6 +1,10 @@
 #board-write-wrapper {
-  width: 1920px;
+  /* width: 1920px; */
   background-color: rgba(53, 139, 67, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(174, 174, 174, 1);
 }
 .write-divider {
   width: 1420px;
@@ -49,7 +53,9 @@
   margin: 0 50px 0;
 }
 
-
+.material-bundle-add-box:hover{
+  cursor: pointer;
+}
 
 .board-write-title-image {
   width: 400px;
@@ -59,7 +65,9 @@
   background-position: 50% 50%;
   background-size: cover;
 }
-
+.board-write-title-image:hover{
+  cursor: pointer;
+}
 .title-icon-box {
   height: 100%;
   display: flex;
@@ -80,7 +88,7 @@
   height: 590px;
 
   background-position: 50% 50%;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .title-image{
@@ -299,7 +307,13 @@
   flex-wrap: wrap;
 }
 
+.material-bundle-add-box-container{
+  display: flex;
+  justify-content: center;
+}
+
 .material-bundle-add-box {
+  width: 150px;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -340,7 +354,6 @@
   font-weight: 400;
   letter-spacing: 5px;
 }
-
 .cooking-tip-box {
   display: flex;
   align-items: center;
@@ -451,12 +464,21 @@
   align-items: center;
   position: relative;
   width: 200px;
-  height: 100%;
+  height: 200px;
   
   background-color: rgba(217, 217, 217, 1);
 }
-.cooking-completion-image-upload-box {
-
+.cooking-completion-image-upload-container:hover{
+  cursor: pointer;
+}
+.save-button:hover {
+  cursor: pointer;
+}
+.upload-button:hover {
+  cursor: pointer;
+}
+.cancle-button:hover {
+  cursor: pointer;
 }
 
 .cooking-completion-image-upload-icon {
@@ -467,4 +489,108 @@
   background-image: url(assets/free-icon-camera.png);
   background-position: 50% 50%;
   background-size: 100% 100%;
+}
+
+.cooking-completion-image {
+  width: 200px;
+  height: 200px;
+
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+
+
+
+
+.cooking-sequence-box{
+  width: 1420px;
+  height: 260px;
+  margin: 0 50px;
+
+  background-color: rgba(217,217,217,1);
+
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  /* align-items: center; */
+}
+
+.sequence-close-icon{
+  width: 25px;
+  height: 25px;
+  margin: 20px 30px 0 20px;
+  background-image: url(assets/9cf365477576efa58ec535ec56be3220.png);
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+.sequence-close-icon:hover{
+  cursor: pointer;
+}
+
+.sequence-sub-box{
+  width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.cooking-sequence-box-container{
+  width: 1280px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 23px;
+}
+.cooking-sequence-number-box{
+  width: 110px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cooking-sequence-number{
+  font-size: 28px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+}
+
+.cooking-sequence-image-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 200px;
+  height: 200px;
+  
+  background-color: rgba(255, 255, 255, 1);
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.cooking-sequence-image{
+}
+
+.cooking-sequence-image-icon{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+
+  background-image: url(assets/free-icon-camera-685655\ 1.png);
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+.cooking-sequence-box textarea {
+  width: 870px;
+  height: 180px;
+  padding: 10px 25px;
+  
+  color: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  border: 1px solid rgba(174, 174, 174, 1);
+  outline: none;
+
+  font-size: 20px;
+
+  resize: none;
 }

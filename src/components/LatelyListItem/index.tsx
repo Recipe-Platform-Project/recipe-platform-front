@@ -23,11 +23,11 @@ export default function LatelyRecipe() {
   const LatelyRecipeListItem = forwardRef<HTMLDivElement, Props>(
     ({ boardItem }: Props, ref) => {
       //          state: Propertites          //
-      const { noticeNumber, title, imageUrl } = boardItem;
+      const { boardNumber, title, boardMainImage } = boardItem;
       //          event handler: Card Click 이벤트 처리 함수          //
       // TODO: 클릭시 게시물 이동 만들기
       const onLatelyRecipeClickHandler = () => {
-        navigator(`/board/detail/${noticeNumber}`);
+        navigator(`/board/detail/${boardNumber}`);
       };
       //                  render: board 리스트 아이템 컴포넌트 렌더링                 //
       return (
@@ -38,7 +38,7 @@ export default function LatelyRecipe() {
         >
           <div
             className="lately-recipe-bottom-center-image"
-            style={{ backgroundImage: `url(${imageUrl})` }}
+            style={{ backgroundImage: `url(${boardMainImage})` }}
           ></div>
           <div className="lately-recipe-bottom-center-title">{title}</div>
         </div>

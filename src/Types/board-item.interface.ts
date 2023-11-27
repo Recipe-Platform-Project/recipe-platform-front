@@ -1,5 +1,5 @@
 export default interface BoardItem {
-    noticeNumber: number;
+    boardNumber: number;
     title: string;
-    imageUrl: string;
+    boardMainImage: string;
 }

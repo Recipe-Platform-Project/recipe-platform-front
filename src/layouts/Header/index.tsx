@@ -3,6 +3,7 @@ import "./style.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   CHEF_LIST_PATH,
+  CHEF_PATH,
   MAIN_PATH,
   RANKING_PATH,
   RECIPE_LIST_PATH,
@@ -37,7 +38,7 @@ export default function Header() {
   //          variable: 랭킹 페이지 논리 변수         //
   const isRankingPage = pathname === RANKING_PATH;
   //          variable: 셰프 페이지 논리 변수         //
-  const isChefPage = pathname.startsWith(CHEF_LIST_PATH);
+  const isChefPage = pathname.startsWith(CHEF_PATH);
 
   //          event handler: 검색 값 변경 이벤트 처리           //
   const onSearchValueChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {

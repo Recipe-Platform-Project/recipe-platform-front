@@ -13,7 +13,6 @@ import Pagination from 'components/Pagination';
 import { useRecentlyBoardStore, useSearchBoardListStore } from 'stores';
 
 
-
 export default function Search() {
 
   //          state: 검색어 path variable          //

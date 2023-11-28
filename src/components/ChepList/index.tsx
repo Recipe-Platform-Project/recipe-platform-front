@@ -2,7 +2,7 @@ import { ChefItem } from 'Types';
 import './style.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { USER_PATH } from 'constant';
+import { USER_RECIPE } from 'constant';
 
  
 interface Props { 
@@ -29,7 +29,10 @@ export default function ChefListItem({ chefItem }: Props) {
     const navigator = useNavigate;
 
     const onChefPageButtonClickHandler = () => {
+<<<<<<< HEAD
         // navigator(USER_PATH(email));
+=======
+>>>>>>> 7ec6a2dc948913bde2bd06f407cb1993cc27ab12
     }
 
     // useEffect (() => {

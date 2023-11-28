@@ -1,0 +1,155 @@
+.sign-in-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1920px;
+    height: 1500px;
+
+}
+
+.authentication-header{
+    width: 1920px;
+    height: 210px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authentication-logo-box{
+    width: 365px;
+    height: 120px;
+
+}
+
+.authentication-logo-box:hover{
+    cursor: pointer;
+}
+
+.authentication-logo{
+    width: 100%;
+    height: 100%;
+
+    background-image: url(assets/Logo.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.sign-in-title-box{
+    height: 112px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sign-in-title{
+    color: #000;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 12.5px;
+}
+
+.sign-in-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    height: 400px;
+    border-radius: 10px;
+    border: 1px solid #AEAEAE;
+}
+
+.sign-in-place-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.inputbox{
+    width: 494px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.sign-in-place {
+    width: 494px;
+    height: 125px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.find-button-container {
+    width: 494px;
+    height: 112px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.70);
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 6px;
+    
+}
+
+.user-find-button{
+    width: 193px;
+    height: 47px;
+
+}
+
+.user-find-button:hover{
+    cursor: pointer;
+}
+
+.user-sign-up-button{
+    width: 102px;
+    height: 47px;
+}
+
+.user-sign-up-button:hover{
+    cursor: pointer;
+}
+
+
+
+.input-button-box{
+    border-radius: 30px;
+    background: #358B43;
+
+    width: 180px;
+    height: 48px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-button {
+    color: #FFF;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 10px;
+  }
+  
+  .input-button-box:hover {
+    cursor: pointer;
+  }

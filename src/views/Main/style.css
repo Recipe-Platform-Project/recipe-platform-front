@@ -1,235 +1,122 @@
-#main-best-wrapper {
-    width: 1520px;
-    padding: 100px 200px 40px;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items: center;
-}
-
-.main-best-box {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.main-best-title {
-    height: 50px;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.main-best-image {
-    display: flex;
-
-    gap: 10px;
-}
-
-.main-best-left-image-box {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.main-best-left-image {
-    width: 310px;
-    height: 500px;
-    border-radius: 10px;
-
-    background-image: url(assets/왼쪽.png);
-}
-
-.main-best-left-icon {
-    position: absolute;
-    margin-left: 25px;
-
-    width: 50px;
-    height: 50px;
-    background-image: url(assets/왼쪽\ 버튼.png);
-}
-
-.main-best-left-icon:hover {
-    cursor: pointer;
-}
-
-.main-best-center-image {
-    width: 880px;
-    height: 500px;
-    border-radius: 10px;
-
-    background-image: url(assets/가운데.png);
-}
-
-.main-best-right-image-box {
-    position: relative;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-.main-best-right-image {
-    width: 310px;
-    height: 500px;
-    border-radius: 10px;
-
-    background-image: url(assets/오른쪽.png);
-}
-
-.main-best-right-icon {
-    position: absolute;
-
-    width: 50px;
-    height: 50px;
-
-    margin-right: 25px;
-
-    background-image: url(assets/오른쪽\ 버튼.png);
-}
-
-.main-best-right-icon:hover {
-    cursor: pointer;
-}
-
-.main-divider {
-    margin: 0 200px 0 200px;
-    width: 1520px;
-    border-top: 1px solid rgba(53, 139, 67, 1);
+#main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 #chef-list-wrapper {
-    width: 1520px;
-    padding: 20px 200px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  margin: 40px 200px 40px;
+  padding: 20px 0;
+  width: 1520px;
+
+  display: flex;
+
+  border: 1px solid rgba(53, 139, 67, 1);
+  border-left: none;
+  border-right: none;
 }
 
-.chef-list-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-left: 26px;
+.chef-list-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.chef-list-bottom-left-icon{
-    width: 50px;
-    height: 70px;
+.list-left {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
 
-    background-image: url(assets/왼쪽\ 버튼\ 아이콘.png);
+  padding-left: 26px;
+}
+.list-left:hover {
+  cursor: pointer;
 }
 
-.chef-list-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.list-bottom-left-icon {
+  width: 50px;
+  height: 70px;
 
-    margin-right: 26px;
+  background-image: url(assets/왼쪽\ 버튼\ 아이콘.png);
 }
-.chef-list-bottom-right-icon{
-    width: 50px;
-    height: 70px;
 
-    background-image: url(assets/오른쪽\ 버튼\ 아이콘.png);
+.list-right {
+  width: 100%;
+
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: row-reverse;
+
+  padding-right: 26px;
 }
-.chef-list-center{
-    display: flex;
-    flex-direction: column;
+.list-right:hover {
+  cursor: pointer;
+}
+.list-bottom-right-icon {
+  width: 50px;
+  height: 70px;
+
+  background-image: url(assets/오른쪽\ 버튼\ 아이콘.png);
+}
+.chef-list-center {
+  width: 1270px;
+
+  display: flex;
+  flex-direction: column;
 }
 .chef-list-center-top {
+  /* margin: 0 64px; */
 
-    margin: 0 64px;
-
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .chef-list-center-top-title {
-    color: rgba(0, 0, 0, 1);
-    font-size: 20px;
-    font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "SUIT";
 }
 
 .chef-list-center-top-more-button {
-    width: 109px;
-    height: 26px;
+  width: 109px;
+  height: 26px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
 
-    color: rgba(53, 139, 67, 1);
+  color: rgba(53, 139, 67, 1);
+  font-family: "SUIT";
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
 
-    text-align: center;
-    font-size: 12px;
-    font-weight: 400;
-
-    border: 1px solid rgba(53, 139, 67, 1);
-    border-radius: 10px;
+  border: 1px solid rgba(53, 139, 67, 1);
+  border-radius: 10px;
 }
 
 .chef-list-center-top-more-button:hover {
-    cursor: pointer;
-    background-color: rgba(53, 139, 67, 0.1);
+  cursor: pointer;
+  background-color: rgba(53, 139, 67, 0.1);
 }
 
-.chef-list-center-bottom{
-    margin: 20px 49px 0;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+.chef-list-center-bottom {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow: hidden;
 }
 
-.chef-list-center-bottom-info-box {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+.chef-list-center-bottom-info-container {
+  width: 100%;
 
-.chef-list-center-bottom-profile-image{
-    width: 109px;
-    height: 109px;
-
-    background-image: url(assets/Ellipse\ 8.png);
-
-    border-radius: 50% 50%;
-}
-
-.chef-list-center-bottom-nickname{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 109px;
-    height: 44px;
-
-    background-color: rgba(217, 217, 217, 0.5);
-    
-    color: rgba(0, 0, 0, 1);
-    
-    
-    font-size: 15px;
-    font-weight: 400;
-    
-}
-
-.chef-list-center-bottom-subscription{
-    width: 109px;
-    height: 20px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    color: rgba(53, 139, 67, 1);
-    font-size: 15px;
-    font-weight: 400;
-    text-align: center;
-
-    border-radius: 50px;
-    border: 1px solid rgba(53, 139, 67, 1);
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }

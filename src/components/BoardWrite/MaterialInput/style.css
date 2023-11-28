@@ -1,0 +1,118 @@
+.material-main{
+    width: 570px;
+
+    display: flex;
+    flex-direction: column;
+    /* gap: 30px; */
+    
+    margin-left: 120px;
+    
+    margin-bottom: 40px;
+}
+
+.material-main-box{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 120px;
+}
+
+.drag-drop-icon{
+    width: 15px;
+    height: 25px;
+
+    background-image: url(assets/위치이동.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+.drag-drop-icon:hover{
+    cursor: pointer;
+}
+.close-icon{
+    width: 15px;
+    height: 15px;
+
+    background-image: url(assets/free-icon-cancelled-5191424\ 3.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.sub-close-icon{
+    width: 15px;
+    height: 15px;
+
+    background-image: url(assets/free-icon-cancelled-5191424\ 3.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+.close-icon:hover{
+    cursor: pointer;
+}
+
+.sub-close-icon:hover{
+    cursor: pointer;
+}
+.material-input{
+    width: 250px;
+    height: 30px;
+    padding: 5px 25px;
+
+    outline: none;
+    border: 1px solid rgba(174, 174, 174, 1);
+    border-radius: 5px;
+
+    font-size: 20px;
+    text-align: center;
+}
+.material-input1{
+    width: 180px;
+    height: 30px;
+    padding: 5px 25px;
+
+    outline: none;
+    border: 1px solid rgba(174, 174, 174, 1);
+    border-radius: 5px;
+    
+    font-size: 20px;
+    text-align: center;
+}
+
+.material-sub-box{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.material-add-button-box{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-add-button-box:hover{
+    cursor: pointer;
+}
+
+.material-add-button{
+    width: 20px;
+    height: 20px;
+
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-image: url(assets/free-icon-plus-4315609\ 1.png);
+}
+
+.material-add-text{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+}
+
+.do-not{
+    list-style-type: none;
+}

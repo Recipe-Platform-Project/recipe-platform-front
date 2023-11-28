@@ -1,0 +1,1089 @@
+#recipe-detail-wrapper {
+
+    margin: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.recipe-detail-box {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 20px;
+
+    
+    position: relative;
+
+}
+
+.recipe-detail-food-image {
+
+    width: 750px;
+    height: 400px;
+
+    background-image: url(assets/khloe-arledge-ND3edEmzcdQ-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.view-counte-box {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.view-counte-container {
+
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+    gap: 15px;
+    
+
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100px;
+    height: 20px;
+
+    position: absolute;
+    bottom: 310px;
+
+    border-radius: 10px;
+
+}
+.view-counte-icon {
+
+    margin-left: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(assets/eye-icon.png);
+    background-size: 100% 100%;
+
+}
+
+.view-counte-number {
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.recipe-detail-write-info-box {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 20px;
+
+    position: relative;
+    bottom: -85%;
+
+}
+
+.recipe-detail-writer-profile-image {
+
+    width: 120px;
+    height: 120px;
+
+    background-image: url(assets/egg-8289259_1280.png);
+    background-size: 100% 100%;
+    border-radius: 50%;
+
+}
+
+.recipe-detail-writer-profile-image:hover {
+
+    cursor: pointer;
+
+}
+
+.nickname-follow-box {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.recipe-detail-writer-nickname {
+
+    margin-left: 165px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 120px;
+    height: 29px;
+
+    border-radius: 50px;
+    background: #D9D9D9;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.recipe-detail-writer-nickname:hover {
+
+    cursor: pointer;
+    background: #d9d9d9ac;
+
+}
+
+.follow-button {
+
+    display: flex;
+    justify-content: center;
+
+    width: 50px;
+    height: 20px;
+
+    color: rgba(255, 255, 255, 1);
+
+    font-family: SUIT;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 30px;
+    background: rgba(53, 139, 67, 1);
+
+}
+
+.follow-button:hover {
+
+    cursor: pointer;
+    background-color: rgba(53, 139, 67, 0.8);
+
+}
+
+.recipe-detail-title-box {
+
+    width: 750px;
+
+    margin-top: 15%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.recipe-detail-title {
+
+    width: 750px;
+    height: 35px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+.recipe-detail-introduction-cooking {
+
+    color: rgba(0, 0, 0, 0.50);
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.cooking-info-container {
+
+    height: 80px;
+    width: 750px;
+
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid #AEAEAE;
+
+}
+
+.servings-image-box {
+
+    margin-top: 5px;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.servings-image {
+
+    height: 45px;
+    width: 45px;
+
+    background-image: url(assets/free-icon-group-3771999.png);
+    background-position: center;
+    background-size: 100% 100%;
+
+    gap: 10px;
+
+}
+
+.servings-text {
+
+    color: rgba(0, 0, 0, 1);
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.cooking-time-box {
+
+    margin-top: 5px;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cooking-time-image {
+
+    height: 45px;
+    width: 45px;
+
+    background-image: url(assets/free-icon-alarm-clock-3865348.png);
+    background-position: center;
+    background-size: 100% 100%;
+
+}
+
+.cooking-time-text {
+
+    color: rgba(0, 0, 0, 1);
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.cooking-level-box {
+
+    margin-top: 5px;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cooking-level-image {
+
+    height: 45px;
+    width: 45px;
+
+    background-image: url(assets/free-icon-level-up-7634775.png);
+    background-position: center;
+    background-size: 100% 100%;
+
+}
+
+.cooking-level-text {
+
+    color: rgba(0, 0, 0, 1);
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+#ingredients-wrapper {
+
+    margin-bottom: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.ingredients-box {
+
+    width: 1520px;
+
+    gap: 20px;
+
+}
+
+.ingredients-title {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+
+    border-bottom: 1px solid #358B43;
+
+}
+
+.ingredients-sub-title {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.ingredients-cooking-title-material-box {
+
+    display: flex;
+    align-items: center;
+
+    margin-left: 42px;
+    margin-top: 30px;
+
+}
+
+.material-container {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.ingredients-cooking-container {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ingredients-cooking-title-material {
+
+    color: rgba(255, 0, 0, 0.7);
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+
+}
+
+.ingredients-cooking-box {
+
+    margin: 0 50px;
+
+    width: 660px;
+    height: 65px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    border-bottom: 1px solid #AEAEAE;
+
+}
+
+.ingredients-cooking-name {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.ingredients-cooking-number {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+#video-wrapper {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.video-box {
+
+    width: 1520px;
+
+}
+
+.video-title {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+
+    border-bottom: 1px solid #358B43;
+
+}
+
+.video-sub-title {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.video-thumbnail-container {
+
+    margin: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#reciper-writer-wrapper {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.reciper-writer-box {
+
+    width: 1520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid #358B43;
+
+}
+
+.reciper-writer-title-box {
+
+    width: 1520px;
+
+}
+
+.reciper-writer-title {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+.reciper-writer-sub-title {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.reciper-writer-profile-container {
+    
+    margin: 50px;
+    
+    width: 1520px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+
+.reciper-writer-profile-image {
+    
+    width: 120px;
+    height: 120px;
+    
+    background-image: url(assets/egg-8289259_1280.png);
+    background-size: 100% 100%;
+    border-radius: 50%;
+    
+}
+
+.reciper-writer-profile-image:hover {
+
+    cursor: pointer;
+
+}
+
+.recipe-writer-profile-view {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.reciper-writer-profile-nickname {
+
+    width: 120px;
+    display: flex;
+    justify-content: center;
+
+    padding: 10px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.reciper-writer-profile-nickname:hover {
+
+    cursor: pointer;
+
+}
+
+.reciper-writer-profile-content {
+
+    padding: 10px 50px;
+
+    width: 1200px;
+    white-space: normal;
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.reciper-writer-profile-follow-button {
+
+    display: flex;
+    justify-content: center;
+    
+    width: 50px;
+    height: 20px;
+    
+    color: rgba(255, 255, 255, 1);
+    
+    font-family: SUIT;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 30px;
+    background: rgba(53, 139, 67, 1);
+    
+}
+    
+.reciper-writer-profile-follow-button:hover {
+    
+    cursor: pointer;
+    background-color: rgba(53, 139, 67, 0.8);
+    
+}
+
+#photo-review-wrapper {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.photo-review-title-box {
+
+    width: 1520px;
+
+    border-bottom: 1px solid #358B43;
+
+
+}
+
+.photo-review-title {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+.photo-review-sub-title {
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.photo-review-container {
+
+    width: 1520px;
+
+    margin: 50px 0px;
+
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+.photo-review-box {
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 130px;
+
+}
+
+.review-photo {
+
+    width: 200px;
+    height: 200px;
+
+    background-image: url(assets/egg-8289259_1280.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.revie-photo:hover {
+
+    cursor: pointer;
+
+}
+
+.more-photos {
+
+    width: 100px;
+    height: 90px;
+
+    background-image: url(assets/egg-8289259_1280.png);
+    background-position: center;
+    background-size: cover;
+
+    filter: brightness(70%)
+
+}
+
+.more-photos:hover {
+
+    cursor: pointer;
+
+}
+
+
+
+#comment-wrapper {
+
+    padding-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.comment-title-container {
+
+    width: 1520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid #358B43;
+
+}
+
+.comment-title-box {
+
+    width: 1520px;
+
+}
+
+.comment-title {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+.comment-write-container {
+
+    margin-top: 50px;
+    
+    width: 1520px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-bottom: 1px solid #358B43;
+
+}
+
+.comment-write-container-box {
+
+    margin-bottom: 60px;
+
+    width: 1520px;
+    height: 150px;
+
+    border-bottom: 1px solid #AEAEAE;
+
+
+}
+
+.comment-write-sub-container {
+    
+    padding-bottom: 20px;
+
+    margin: 0px 50px 50px 0px;
+    
+    width: 1520px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.comment-writer-profile-image {
+
+    width: 120px;
+    height: 120px;
+    
+    background-image: url(assets/egg-8289259_1280.png);
+    background-size: 100% 100%;
+    border-radius: 50%;
+
+}
+
+.comment-write-sub-box {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.comment-write-nickname-and-datetime {
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+.comment-writer-nickname {
+
+    padding-left: 10px;
+
+    display: flex;
+    justify-content: center;
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.comment-writer-datetime {
+
+    margin-right: 20px;
+
+    color: rgba(0, 0, 0, 0.4);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.comment-update-delete-button {
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+
+.comment-update-button {
+    
+    color: rgba(0, 0, 0, 0.4);
+    
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    
+}
+
+.comment-update-button:hover {
+
+    cursor: pointer;
+
+}
+
+.comment-divider {
+
+    color: rgba(0, 0, 0, 0.4);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.comment-delete-button {
+
+    color: rgba(0, 0, 0, 0.4);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+
+}
+
+.comment-delete-button:hover {
+
+    cursor: pointer;
+
+}
+
+.comment-writer-comment {
+
+    padding: 20px 50px;
+
+    width: 1040px;
+    white-space: normal;
+
+    color: #AEAEAE;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.comment-more-down-arrow {
+
+    margin: 20px;
+
+    width: 40px;
+    height: 20px;
+
+}
+
+.comment-more-down-arrow:hover {
+
+    cursor: pointer;
+
+}
+
+
+
+.comment-write-input-container {
+
+    margin-top: 20px;
+
+    width: 1300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.comment-write-input-box {
+
+    width: 1520px;
+
+}
+
+.write-comment-container {
+
+    display: flex;
+
+}
+
+.write-comment-box {
+
+    height: 100px;
+
+    margin: 50px;
+
+}
+
+.comment-input-box {
+
+    margin-top: 20px;
+    width: 1040px;
+    height: 100px;
+
+}
+
+.comment-input-container textarea {
+   
+    width: 1000px;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #AEAEAE;
+    border-radius: 4px;
+    resize: none;
+}
+
+.comment-input-button-box button {
+    
+    margin-top: 20px;
+
+    width: 100px;
+    height: 100px;
+
+}
+
+/* 구독버튼 스타일 */
+.chef-list-center-bottom-subscription {
+    width: 106.5px;
+    height: 20px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    font-family: "SUIT";
+    color: rgba(53, 139, 67, 1);
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+  
+    border-radius: 50px;
+    border: 1px solid rgba(53, 139, 67, 1);
+  }
+  
+  .chef-list-center-bottom-subscription:hover {
+    cursor: pointer;
+    background-color: rgba(53, 139, 67, 0.1);
+  }
+  
+  .chef-list-center-bottom-subscription-on {
+    width: 106.5px;
+    height: 20px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    font-family: "SUIT";
+    color: rgba(255, 255, 255, 1);
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+  
+    background-color: rgba(53, 139, 67, 1);
+    border-radius: 50px;
+    border: 1px solid rgba(53, 139, 67, 1);
+  }
+  
+  .chef-list-center-bottom-subscription-on:hover {
+    cursor: pointer;
+    background-color: rgba(53, 139, 67, 0.8);
+  }
+
+  /* 좋아요 버튼 스타일 */
+  .favorite-button-on {
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(assets/like-icon.png);
+    background-size: 100% 100%;
+
+  }
+
+  .favorite-button-on:hover {
+
+    cursor: pointer;
+
+  }
+
+  .favorite-button-off {
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(assets/un-like-icon-7476962.png);
+    background-size: 100% 100%;
+    
+  }
+
+  .favorite-button-off:hover {
+
+    cursor: pointer;
+
+  }

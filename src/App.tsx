@@ -7,7 +7,6 @@ import {
   MAIN_PATH,
   MEMBERSHIP_WITHDRAWAL_PATH,
   PASSWORD_UPDATE_PATH,
-  SIGN_IN_PATH,
   SIGN_UP_PATH,
   USER_RECIPE,
   RECIPE_DETAIL_PATH,
@@ -21,7 +20,8 @@ import {
   RECIPE_UPDATE_PATH,
   RANKING_PATH,
   CHEF_LIST_PATH,
-  SEARCH_PATH
+  SEARCH_PATH,
+  AUTH_PATH
 } from "constant";
 import SignUp from "views/Authentication/Sign-Up";
 import SignIn from "views/Authentication/Sign-In";
@@ -48,7 +48,7 @@ function App() {
       <Route element={<Container />}>
         <Route path={MAIN_PATH} element={<Main />} />
         
-        <Route path={SIGN_IN_PATH} element={<SignIn />} />
+        <Route path={AUTH_PATH} element={<SignIn />} />
         <Route path={SIGN_UP_PATH} element={<SignUp />} />
         <Route path={USER_FOUND_PATH} element={<UserFound />} />
         <Route path={USER_UPDATE_PATH} element={<UserUpdate />} />

@@ -15,16 +15,18 @@ export default function ChefListItem({ chefItem }: Props) {
     //          state: Properties          //
     const { nickname, profileImageUrl, followCount, boardNumber, favoriteCount, viewCount } = chefItem;
 
-    //          state: 랭킹          //
-    // const { count, setCount } = useState();
-
-    // const { user, setUser } = useState();
+    const [chefRankingList, setChefRankingList] = useState<ChefItem[]>([]);
 
     // useEffect(() => {
-    //     if (count.length === user.length) {
-    //         setCount(count++);
-    //     }
-    // })
+    //     const intervalId = setInterval(() => {
+    //         setChefRankingList((prevItems) =>
+    //         chefItem.map((item) => ({ ...item, count: item.count + item.id }))
+    //       );
+    //     }, 1000);
+    
+    //     return () => clearInterval(intervalId);
+        
+    // });
 
     //          state: 조회하는 유저 이메일 상태          //
     const { searchEmail } = useParams();
@@ -40,7 +42,9 @@ export default function ChefListItem({ chefItem }: Props) {
     //          render: 쉐프 리스트 아이템 컴포넌트 렌더링          //
     return(
         <div className='chef-list'>
-            <div className='chef-ranking-number'>{`${1}`}</div>
+            <div className='chef-ranking-number'>
+            {/* {count} */}
+            </div>
             <div className='chef-profile'>
                 <div className='chef-profile-image' onClick={onChefPageButtonClickHandler} style={{ backgroundImage: `url(${profileImageUrl})` }}></div>
                 

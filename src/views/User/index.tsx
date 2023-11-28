@@ -16,10 +16,10 @@ import userSearchListMock from "mocks/user-search-list-mock";
 import userLatelyBoardListMock from "mocks/user-lately-board-list.mock";
 import UserWriteRecipeReviewList from "components/UserWriteRecipeReviewList";
 import UserWriteCommentListItem from "components/UserWriteCommentList";
-import { GetSignInUserResponseDto, GetUserResponseDto } from "apis/dto/response/userPage";
+import { GetSignInUserResponseDto, GetUserResponseDto, GetUserWritingRecipeListREsponseDto } from "apis/dto/response/userPage";
 import ResponseDto from "apis/dto/response";
 import { useCookies } from "react-cookie";
-import { getSignInUserRequest, getUserRequest, patchProfileCommentRequest } from "apis";
+import { getSignInUserRequest, getUserRequest, getUserWritingRecipeListRequest, patchProfileCommentRequest } from "apis";
 import { PatchProfileCommentRequestDto } from "apis/dto/request";
 
 //          component: 유저 페이지          //
@@ -34,7 +34,8 @@ export default function User() {
 
     //          state: 팔로워, 팔로윙, 포스트트 개수 상태          //
     const [count, setCount] = useState<number>(0);
-    //          state: TODO 쿠키 상태          //
+    //          state: cookie 상태          //
+    const [cookies, setCookie] = useCookies();
     //          state: 화면 상태          //
     const [view, setView] = useState<'user-recipe' | 'user-writing-recipe' | 'user-recipe-review' | 'user-recipe-comment' >('user-recipe'); 
 
@@ -45,8 +46,6 @@ export default function User() {
     //          component: 유저 정보 컴포넌트          //
     const UserInformation = () => {
 
-        //          state: cookie 상태          //
-        const [cookies, setCookie] = useCookies();
 
         //          state: 프로필 이미지 상태           //
         const [profileImageUrl, setProfileImageUrl] = useState<string | null>('');
@@ -451,7 +450,15 @@ export default function User() {
         //          function: 네비게이트 함수          //
         const navigator = useNavigate();
 
-        //          function: get user write 
+        //          function: get user writing recipe list response 처리 함수          //
+        const getUserWritingRecipeListResponse = (responseBody: GetUserWritingRecipeListREsponseDto | ResponseDto) => {
+            const { code } = responseBody;
+            if (code === 'NU') alert('존재하지 않는 유저입니다.');
+            if (code !== 'SU') {
+                // navigator(MAIN_PATH);
+                return;
+            }
+        }
 
         //          event handler: 버튼 클릭 이벤트 처리          //
         const onButtonClickHandler = () => {
@@ -467,8 +474,11 @@ export default function User() {
 
         //          effect: 조회하는 유저의 이메일이 변경될 때 마다 실행할 함수          //
         useEffect(() => {
-            setBoardList(userWritingRecipeListMock);
-            setCount(userWritingRecipeListMock.length);
+            if (!searchEmail) {
+                navigator(MAIN_PATH);
+                return;
+            }
+            getUserWritingRecipeListRequest(searchEmail).then(getUserWritingRecipeListResponse);
         }, [searchEmail]);
 
         //          event handler: 유저 레시피 페이지 전환 이벤트 처리          //

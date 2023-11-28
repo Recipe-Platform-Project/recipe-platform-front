@@ -1,6 +1,7 @@
 export default interface UserWritingRecipeItem {
     boardNumber: number;
     title: string;
-    writingContents: string;
-    recipeImage: string | null;
+    boardContent: string;
+    boardMainImage: string;
+    writeDatetime: string;
 }

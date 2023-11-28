@@ -10,8 +10,8 @@ export const USER_UPDATE_PATH = "/userUpdate";
 export const PASSWORD_UPDATE_PATH = "/passwordUpdate"; 
 export const MEMBERSHIP_WITHDRAWAL_PATH = "/membershipWithdrawal";
 
-export const USER_RECIPE = (email:string | undefined) => `/user/${email}`;
-export const USER_SEARCH_RECIPE = (email:string | undefined) => (word:string) => `/user/${email}/${word}`
+export const USER_RECIPE = (nickname:string | undefined) => `/user/${nickname}`;
+export const USER_SEARCH_RECIPE = (nickname:string | undefined) => (word:string) => `/user/${nickname}/${word}`
 
 export const RANKING_PATH = "/ranking";
 

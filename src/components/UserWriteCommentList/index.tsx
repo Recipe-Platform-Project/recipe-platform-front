@@ -12,8 +12,7 @@ interface Props {
 export default function UserWriteCommentListItem({userWriteCommentItem}: Props) {
 
     //          state: Properties          //
-    const {boardNumber, title, writeNickname, recipeImage,
-    commentNickname, commentContents, commentDatetime} = userWriteCommentItem;
+    const {boardNumber, title, nickname, boardMainImage, commentNumber, contents, writeDatetime} = userWriteCommentItem;
 
     //          function: 네비게이트 함수          //
     const navigator = useNavigate();
@@ -27,16 +26,16 @@ export default function UserWriteCommentListItem({userWriteCommentItem}: Props) 
     return (
         <div className='user-comment-box' onClick={onRecipeClickHandler}>
             <div className='user-comment-image'>
-                <div className='user-comment-image-url'>{recipeImage}</div>
+                <div className='user-comment-image-url' style={{ backgroundImage: `url(${boardMainImage})`}}></div>
             </div>
             <div className='user-comment-recipe-container'>
                 <div className='user-comment-title'>{title}</div>
-                <div className='user-comment-write-nickname'>{'by.' + writeNickname}</div>
+                <div className='user-comment-write-nickname'>{'by.' + nickname}</div>
             </div>
             <div className='user-comment-container'>
-                <div className='user-comment-nickname'>{commentNickname}</div>
-                <div className='user-comment-contents'>{commentContents}</div>
-                <div className='user-comment-datetime'>{commentDatetime}</div>
+                <div className='user-comment-nickname'>{nickname}</div>
+                <div className='user-comment-contents'>{contents}</div>
+                <div className='user-comment-datetime'>{writeDatetime}</div>
             </div>
         </div>
     )

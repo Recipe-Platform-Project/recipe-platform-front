@@ -1,7 +1,9 @@
 export default interface UserWriteRecipeReviewItem {
     boardNumber: number;
     title: string;
-    horoscope: string;
-    contents: string; 
-    recipeImage: string | null;
+    rating: string;
+    boardMainImage: string; 
+    writeDatetime: string;
+    contents: string;
+    commentImage: string | null;
 } 

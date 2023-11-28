@@ -3,7 +3,7 @@ import ChefInfoItem from "./chef-info-item.interface";
 import BoardItem from "./board-item.interface";
 import LoginUser from "./login-user.interface";
 import BestBoardItem from "./best-board-item.interface";
-import User from "./user.interface";
+import UserItem from "./user-item.interface";
 import UserCommentItem from "./user-comment-item.interface";
 import UserRecipeItem from "./user-recipe-item.interface";
 import UserWritingRecipeItem from "./user-writing-recipe-item.interface";
@@ -20,7 +20,7 @@ export type {
   BoardItem,
   LoginUser,
   BestBoardItem,
-  User,
+  UserItem,
   UserCommentItem,
   UserRecipeItem,
   UserWritingRecipeItem,

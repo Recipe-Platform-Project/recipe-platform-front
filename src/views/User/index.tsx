@@ -5,8 +5,8 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { userCommentListMock, userMock, userRecipeListMock, userRecipeReviewListMock, userWriteCommentListMock, userWriteRecipeReviewListMock, userWritingRecipeListMock } from "mocks";
 import { usePagination } from "hooks";
-import { BoardItem, UserCommentItem, UserRecipeItem, UserRecipeReviewItem, UserWriteCommentItem, UserWriteRecipeReviewItem, UserWritingRecipeItem } from "Types";
-import { USER_RECIPE, USER_SEARCH_RECIPE, USER_UPDATE_PATH } from "constant";
+import { BoardItem, UserCommentItem, UserItem, UserRecipeItem, UserRecipeReviewItem, UserWriteCommentItem, UserWriteRecipeReviewItem, UserWritingRecipeItem } from "Types";
+import { MAIN_PATH, USER_RECIPE, USER_SEARCH_RECIPE, USER_UPDATE_PATH } from "constant";
 import UserRecipeList from "components/UserRecipeList";
 import Pagination from "components/Pagination";
 import UserWritingRecipeList from "components/UserWritingRecipeList";
@@ -16,6 +16,11 @@ import userSearchListMock from "mocks/user-search-list-mock";
 import userLatelyBoardListMock from "mocks/user-lately-board-list.mock";
 import UserWriteRecipeReviewList from "components/UserWriteRecipeReviewList";
 import UserWriteCommentListItem from "components/UserWriteCommentList";
+import { GetSignInUserResponseDto, GetUserResponseDto } from "apis/dto/response/userPage";
+import ResponseDto from "apis/dto/response";
+import { useCookies } from "react-cookie";
+import { getSignInUserRequest, getUserRequest, patchProfileCommentRequest } from "apis";
+import { PatchProfileCommentRequestDto } from "apis/dto/request";
 
 //          component: 유저 페이지          //
 export default function User() {
@@ -25,7 +30,8 @@ export default function User() {
     //          state: 로그인 유저 정보 상태          //
     const { user, setUser } = useUserStore();
     //          state: 본인 여부 상태          //
-    const [isMypage, setMypage] = useState<boolean>(true);   
+    const [isMypage, setMypage] = useState<boolean>(false);   
+
     //          state: 팔로워, 팔로윙, 포스트트 개수 상태          //
     const [count, setCount] = useState<number>(0);
     //          state: TODO 쿠키 상태          //
@@ -40,28 +46,84 @@ export default function User() {
     const UserInformation = () => {
 
         //          state: cookie 상태          //
-        // const [cookies, setCookie] = useCookies();
+        const [cookies, setCookie] = useCookies();
 
         //          state: 프로필 이미지 상태           //
-        const [profileImage, setProfileImage] = useState<string | null>('');
+        const [profileImageUrl, setProfileImageUrl] = useState<string | null>('');
         //          state: 이메일 상태           //
         const [email, setEmail] = useState<string>('');
-        //          state: 본인 여부 상태          //
-        const [isMyPage, setMyPage] = useState<boolean>(false);
         //          state: 닉네임 이미지 상태          //
-        const [nickname, setNickname] = useState<string>('아보카도도도');
+        const [nickname, setNickname] = useState<string>('');
+
+        //          state: 기존 자기 소개 상태          //
+        const [existingProfileComment, setExistingProfileComment] = useState<string>('');
         //          state: 자기소개 상태          //
-        const [introduction, setIntroduction] = useState<string>('');
+        const [profileComment, setProfileComment] = useState<string>('');
         //          state: 자기소개 변경 상태          //
-        const [changeIntroduction, setChangeIntroduction] = useState<boolean>(true);
+        const [changeProfileComment, setChangeProfileComment] = useState<boolean>(false);
+
         //          state: 구독 버튼 상태          //
         const [subscription, setSubscription] = useState<boolean>(false);
+        
+        //          state: board number 상태          //
+        const [boardNumber, setBoardNumber] = useState<number>(0);
         //          state: followers number 상태          //
         const [followers, setFollowers] = useState<number>(0);
         //          state: followers number 상태          //
         const [following, setFollowing] = useState<number>(0);
-        //          state: followers number 상태          //
-        const [post, setPost] = useState<number>(0);
+
+        //          function: get user response 처리 함수          //
+        const getUserResponse = (responseBody: GetUserResponseDto | ResponseDto) => {
+            const { code } = responseBody;
+            if (code === 'NU') alert('존재하지 않는 유저입니다.');
+            if (code === 'DBE') alert('데이터베이스 오류입니다.');
+            if (code !== 'SU') {
+                // navigator(MAIN_PATH);
+                return;
+            }
+            
+            const { email, nickname, profileImageUrl, boardNumber, followCount, followingCount } = responseBody as GetSignInUserResponseDto;
+            setEmail(email);
+            setNickname(nickname);
+            setProfileImageUrl(profileImageUrl);
+            setBoardNumber(boardNumber);
+            setFollowers(followCount);
+            setFollowing(followingCount);
+        }
+
+        //          function: patch profile comment response 처리 함수          //
+        const patchProfileCommentResponse = (code: string) => {
+            if (code === 'AF' || code === 'NU') {
+                alert('로그인이 필요합니다.');
+                // navigator(AUTH_PATH);
+                return;
+            }
+            if (code === 'DBE') alert('데이터베이스 오류입니다.');
+            if (code !== 'SU') {
+                setProfileComment(existingProfileComment);
+                return;
+            }
+
+            if (!searchEmail) return;
+            getUserRequest(searchEmail).then(getUserResponse);
+
+            const accessToken = cookies.accessToken;
+            if (!searchEmail) return;
+            getSignInUserRequest(accessToken).then(getSignInUserResponse);
+
+            setChangeProfileComment(false);
+        }
+
+        //          function: get sign in user respnse 처리 함수          //
+        const getSignInUserResponse = (responseBody: GetSignInUserResponseDto | ResponseDto) => {
+            const { code } = responseBody;
+            if (code !== 'SU') {
+                setCookie('accessToken', '', {expires: new Date(), path: MAIN_PATH});
+                setUser(null);
+                return;
+            }
+            // setUser({ ...responseBody as GetSignInUserResponseDto });
+        };
 
 
         // TODO: 프로필 이미지, 닉네임 정보수정에서 불러오기로 고치기
@@ -69,7 +131,7 @@ export default function User() {
         const onProfileImageChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
             if (!event.target.files || !event.target.files.length) return;
             const imageUrl = URL.createObjectURL(event.target.files[0]);
-            setProfileImage(imageUrl);
+            setProfileImageUrl(imageUrl);
         }; 
         //          event handler: 닉네임 변경 이벤트 처리          //
         const onNicknameChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -96,23 +158,37 @@ export default function User() {
 
         //          event handler: 자기소개 변경 버튼 클릭 이벤트 처리          //
         const onChangeIntroductionButtonClickHandler = () => {
-            if (!isMyPage) return;
-            setChangeIntroduction(!changeIntroduction);
+            if (!isMypage) return;
+            if (!changeProfileComment) {
+                setChangeProfileComment(true);
+                return;
+            }
+            
+            const accessToken = cookies.accessToken;
+            if (!accessToken) return;
+            
+            const requestBody: PatchProfileCommentRequestDto = { profileComment };
+            patchProfileCommentRequest(requestBody, accessToken).then(patchProfileCommentResponse);
         }
         
         //          event handler: 자기소개 변경 이벤트 처리          //
-        const onIntroductionChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
-            const introduction = event.target.value;
-            setIntroduction(introduction);
+        const onProfileCommentChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
+            const profileComment = event.target.value;
+            setProfileComment(profileComment);
         }
 
         //          effect: 조회하는 유저의 이메일이 변경될 때 마다 실행할 함수          //
+        // useEffect(() => {
+        //     if (!searchEmail) {
+        //         navigator(MAIN_PATH);
+        //         return;
+        //     }
+        //     getUserRequest(searchEmail).then(getUserResponse);
+        // }, [searchEmail]);
+
         useEffect(() => {
-            const { email, nickname, profileImage } = userMock;
-            setEmail(email);
-            setNickname(nickname);
-            setProfileImage(profileImage);
-        }, [searchEmail]);
+            getUserRequest(email).then(getUserResponse);
+        })
 
         //          render: 유저 정보 컴포넌트 렌더링          //
         return (
@@ -120,7 +196,7 @@ export default function User() {
                 <div className='user-container'>
                     <div className='user-left'>
                         <div className='user-image'>
-                            <div className='user-default-profile-image'></div>
+                            <div className='user-default-profile-image' style={{ backgroundImage: `url(${profileImageUrl})`}}></div>
                         </div>
                     </div>
                     <div className='user-right'>
@@ -128,9 +204,9 @@ export default function User() {
                             <div className='user-nickname'>{nickname}</div>
                             <div className='user-modifying-information'>
                                 {isMypage ? (
-                                <div className='user-modifying-information-button' onClick={onSubscriptionButtonClickHandler}>{'구독'}</div>
-                                ) : (
                                 <div className='user-modifying-information-button' onClick={onInfoModifyingButtonClickHandler}>{'회원정보 수정'}</div>
+                                ) : (
+                                <div className='user-modifying-information-button' onClick={onSubscriptionButtonClickHandler}>{'구독'}</div>
                                 )}
                             </div>
                         </div>
@@ -142,13 +218,13 @@ export default function User() {
                                     <span className='emphasis'>{following}</span>
                             </li>
                             <li className='user-middle-box'>{'post '}
-                                    <span className='emphasis'>{post}</span>
+                                    <span className='emphasis'>{boardNumber}</span>
                             </li>
                         </div>
                         <div className='user-right-bottom'>
                             <div className='user-introduction'>
-                                {changeIntroduction ? (
-                                <textarea className='user-introduction-text-input' placeholder="자기소개를 입력할 수 있습니다." spellCheck="false" value={introduction} onChange={onIntroductionChangeHandler} />
+                                {changeProfileComment ? (
+                                <textarea className='user-introduction-text-input' placeholder="자기소개를 입력할 수 있습니다." spellCheck="false" value={profileComment} onChange={onProfileCommentChangeHandler} />
                                 ) : (
                                 <div className='user-introduction-text'></div>
                                 )}

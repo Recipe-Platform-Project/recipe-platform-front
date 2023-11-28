@@ -13,7 +13,7 @@ interface Props {
 export default function UserRecipeReviewList({ userRecipeReviewItem }: Props) {
 
     //          state: Properties          //
-    const { boardNumber, title, contents, recipeImage, } = userRecipeReviewItem
+    const { boardNumber, title, rating, contents, boardMainImage, writeDatetime,commentImage } = userRecipeReviewItem
 
     //          function: 네비게이트 함수           //
     const navigator = useNavigate();
@@ -28,7 +28,7 @@ export default function UserRecipeReviewList({ userRecipeReviewItem }: Props) {
         <div className='user-recipe-review-whites' onClick={onRecipeReviewClickHandler}>
             <div className='user-recipe-review-recipe'>
                 <div className='user-recipe-review-image'>
-                    <div className='recipe-recipe-review-image-url' style={{backgroundImage: `url(${recipeImage})`}}></div>
+                    <div className='recipe-recipe-review-image-url' style={{backgroundImage: `url(${boardMainImage})`}}></div>
                 </div>
                 <div className='user-recipe-review-recipe-box'>
                     <div className='user-recipe-review-title'>{title}</div>

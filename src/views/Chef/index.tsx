@@ -9,6 +9,8 @@ import ChefListItem from "components/ChepList";
 import Pagination from "components/Pagination";
 import GetPopulerListResponseDto from "apis/dto/response/get-populer-list-response.dto";
 import ResponseDto from "apis/dto/response";
+import { GetChefListResponseDto, GetChefSearchListResponseDto } from "apis/dto/response/chef";
+import { getChefListRequest, getChefSearchListRequest } from "apis";
 
 //          component: 쉐프 페이지          //
 export default function Chef() {
@@ -45,7 +47,6 @@ export default function Chef() {
         // 상태를 만들고 엔터 또는 버튼을 클릭했을 때 실행되는 함수 
         //          state: 검색단어? 상태           //
         const [value, setValue] = useState<boolean>(false);
-
         
 
         //          event handler: 서브버튼 클릭 이벤트 처리          //
@@ -111,7 +112,7 @@ export default function Chef() {
             <div id='chef-wrapper'>
                 <div className='chef-top'>
                     <div className='chef-ranking-box'>
-                        <div className='chef-ranking' style={({color:'#358B43', border: '1px solid #AEAEAE', borderBottom: '0'})} onClick={onChangeChefRankingClickHandler}>{'구독 순위'}</div>
+                        <div className='chef-ranking' style={({color:'#358B43', border: '1px solid #AEAEAE', borderBottom: '0'})} onClick={onChangeChefRankingClickHandler}>{'쉐프 순위'}</div>
                         <div className='chef-search-list'style={({color:'#000', border: '1px solid #AEAEAE', borderBottom: '0', borderLeft:'0'})} onClick={onChangeChefSearchClickHandler}>{'쉐프'}</div>
                         <div className='chef-top-search-box'>
                             <div className='chef-search-input-box'>
@@ -125,10 +126,10 @@ export default function Chef() {
                     <div id='chef-bottom'>
                         {page === 1 && (<>
                         <div className='chef-title-box'>
-                            <div className='chef-title'>{'일간 기준 구독 많은 순위'}</div>
+                            <div className='chef-title'>{'누적 기준 구독 많은 순위'}</div>
                             <div className='chef-title-button'>
-                                <div className='chef-oneDay' style={{backgroundColor:'#B2D3B7'}}>{'일간'}</div>
-                                <div className='chef-accumulate' style={{color:'#AEAEAE'}} onClick={onSubTepButtonClickHandler}>{'누적'}</div>
+                                <div className='chef-oneDay' style={{backgroundColor:'#B2D3B7'}}>{'구독순'}</div>
+                                <div className='chef-accumulate' style={{color:'#AEAEAE'}} onClick={onSubTepButtonClickHandler}>{'좋아요순'}</div>
                             </div>
                         </div>
                         <div className='chef-ranking-list'>
@@ -137,10 +138,10 @@ export default function Chef() {
                         </>)}
                         {page === 2 && (<>
                         <div className='chef-title-box'>
-                            <div className='chef-title'>{'누적 기준 구독 많은 순위'}</div>
+                            <div className='chef-title'>{'누적 기준 좋아요 많은 순위'}</div>
                             <div className='chef-title-button'>
-                                <div className='chef-oneDay' style={{color:'#AEAEAE'}} onClick={onSubTepButtonClickHandler}>{'일간'}</div>
-                                <div className='chef-accumulate' style={{backgroundColor:'#B2D3B7'}}>{'누적'}</div>
+                                <div className='chef-oneDay' style={{color:'#AEAEAE'}} onClick={onSubTepButtonClickHandler}>{'구독순'}</div>
+                                <div className='chef-accumulate' style={{backgroundColor:'#B2D3B7'}}>{'좋아요순'}</div>
                             </div>
                         </div>
                         <div className='chef-ranking-list'>
@@ -176,12 +177,43 @@ export default function Chef() {
         const [count, setCount] = useState<number>(0);
 
         //          state: 검색어 path variable 상태          //
-        const { word } = useParams();
+        const { searchNickname } = useParams();
 
         //          state: 검색 버튼 상태          //
         const [showInput, setSowInput] = useState<boolean>(false);
         //          state: 검색 값 상태          //
         const [searchValue, setSearchValue] = useState<string>('');
+
+        //          state: 쉐프 리스트 상태          //
+        const [chefList, setChefList] = useState<ChefItem[]>([]);
+
+        //          function: get chef search list response 처리 함수          //
+        const getChefSearchListResponse = (responseBody: GetChefSearchListResponseDto | ResponseDto) => {
+            const { code } = responseBody;
+            if (code === 'DBE') alert('데이터베이스 오류입니다.');
+            if (code === 'SU') return;
+
+            const { chefSearchList } = responseBody as GetChefSearchListResponseDto;
+            setBoardList(chefSearchList);
+            setCount(chefSearchList.length);
+        };
+        
+        //          function: get chef list response 처리 함수          //
+        const getChefListResponse = (ResponseBody: GetChefListResponseDto | ResponseDto) => {
+            const { code } = ResponseBody;
+            if (code === 'DBE') alert ('데이터베이스 오류입니다.');
+            if (code !== 'SU') return;
+
+            const { chefList } = ResponseBody as GetChefListResponseDto;
+            setChefList(chefList);
+            setCount(chefList.length);
+        }
+
+        //          effect: 컴포넌트 마운트 시 chef 리스트 불러오기          //
+        useEffect(() => {
+            getChefListRequest().then(getChefListResponse);
+        }, []);
+
 
         //          event handler: 검색 값 변경 이벤트 처리          //
         const onSearchValueChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -213,18 +245,21 @@ export default function Chef() {
         })
 
         //          effect: 조회하는 유저의 이메일이 변경될 때 마다 실행할 함수          //
-        useEffect(() => {
-            setBoardList(chefListMock);
-            setCount(chefListMock.length);
-        },[searchEmail]);
+        // useEffect(() => {
+        //     setBoardList(chefListMock);
+        //     setCount(chefListMock.length);
+        // },[searchEmail]);
 
         //          effect: word path variable이 변경될 때 마다 검색 결과 불러오기          //
         useEffect(() => {
-            if (!word) return;
-            const chefList = chefSearchListMock(word);
+            if (!searchNickname) return;
+            getChefSearchListRequest(searchNickname).then(getChefSearchListResponse);
             setBoardList(chefList);
+
+            // const chefList = chefSearchListMock(word);
+            // setBoardList(chefList);
             setCount(chefList.length)
-        }, [word])
+        }, [searchNickname])
 
         //          event handler: 쉐프 랭킹 페이지 전환 이벤트 처리          //
         const onChangeChefRankingClickHandler = () => {
@@ -259,7 +294,7 @@ export default function Chef() {
                         </div>
                         ) : (
                         <div className='chef-ranking-list'>
-                            {viewBoardList.map((chefItem => <ChefListItem chefItem={chefItem}/>))}
+                            {chefList.map((chefItem => <ChefListItem chefItem={chefItem}/>))}
                         </div>
                         )}
                         

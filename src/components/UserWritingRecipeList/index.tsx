@@ -13,7 +13,7 @@ interface Props {
 export default function UserWritingRecipeList({ userWritingRecipeItem }: Props) {
 
     //          state: Properties          //
-    const { boardNumber, title, writingContents, recipeImage } = userWritingRecipeItem
+    const { boardNumber, title, boardContent, boardMainImage, writeDatetime } = userWritingRecipeItem
 
     //          function: 네비게이트 함수           //
     const navigator = useNavigate();
@@ -28,11 +28,11 @@ export default function UserWritingRecipeList({ userWritingRecipeItem }: Props) 
         <div className='user-writing-board-whites' onClick={onWritingRecipeClickHandler}>
             <div className='user-writing-board-whiting-recipe'>
                 <div className='user-writing-board-recipe-image'>
-                    <div className='recipe-writing-image-url' style={{backgroundImage: `url(${recipeImage})`}}></div>
+                    <div className='recipe-writing-image-url' style={{backgroundImage: `url(${boardMainImage})`}}></div>
                 </div>
                 <div className='user-writing-board-recipe-box'>
                     <div className='user-writing-board-title'>{title}</div>
-                    <div className='user-writing-board-contents'>{writingContents}</div>
+                    <div className='user-writing-board-contents'>{boardContent}</div>
                 </div>
             </div>
         </div>

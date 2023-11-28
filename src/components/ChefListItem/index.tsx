@@ -5,18 +5,36 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { useCookies } from "react-cookie";
 import { chefInfoMock } from "mocks";
-import { CHEF_LIST_PATH } from "constant";
+import { CHEF_LIST_PATH, USER_RECIPE } from "constant";
+import GetTop30ChefListResponseDto from "apis/dto/response/chef/get-top30-chef-list.response.dto";
+import ResponseDto from "apis/dto/response";
+import { getTop30ChefListRequest } from "apis/dto";
 
 //					component: 쉐프 리스트 컴포넌트 					//
 export default function ChefList2() {
+  const [chefList, setChefList] = useState<ChefInfoItem[]>([]);
   const slideRef = useRef<HTMLDivElement | null>(null);
   const itemRef = useRef<HTMLDivElement | null>(null);
-  const [chefList, setChefList] = useState<ChefInfoItem[]>([]);
   const [current, setCurrent] = useState<number>(0);
   const [translate, setTranslate] = useState<number>(0);
 
   //          function: 네비게이트 함수         //
   const navigator = useNavigate();
+
+  //          function: get latest board list response 처리 함수         //
+  const getTop30ChefListListResponse = (responseBody: GetTop30ChefListResponseDto | ResponseDto) => {
+    const { code } = responseBody;
+    if (code === "DBE") alert("데이터 베이스 오류 입니다.");
+    if (code !== "SU") return;
+
+    const {chefList} = responseBody as GetTop30ChefListResponseDto;
+    setChefList(chefList);
+  }
+
+  //					effect: 컴포넌트 마운트 시 실행할 함수					//
+  useEffect(() => {
+    getTop30ChefListRequest().then(getTop30ChefListListResponse);
+  }, []);
 
   //          interface: Chef 리스트 아이템 컴포넌트 Props         //
   interface Props {
@@ -27,7 +45,7 @@ export default function ChefList2() {
   const ChefItem = forwardRef<HTMLDivElement, Props>(
     ({ chefItem }: Props, ref) => {
       //          state: Propertites          //
-      const { email, profileImage, nickname } = chefItem;
+      const { email, profileImageUrl, nickname } = chefItem;
       //          state: 구독 상태          //
       const [subscription, setSubscription] = useState<boolean>(false);
       //          state: 쿠키 상태          //
@@ -44,7 +62,7 @@ export default function ChefList2() {
 
       //          event handler: Chef Click 이벤트 처리 함수          //
       const onChefClickHandler = () => {
-        navigator(`/user/${email}`);
+        navigator(USER_RECIPE(email));
       };
       //          render: Chef 리스트 아이템 컴포넌트 렌더링          //
       return (
@@ -55,7 +73,7 @@ export default function ChefList2() {
           >
             <div
               className="chef-list-center-bottom-profile-image"
-              style={{ backgroundImage: `url(${profileImage})` }}
+              style={{ backgroundImage: `url(${profileImageUrl})` }}
             ></div>
             <div className="chef-list-center-bottom-nickname">{nickname}</div>
           </div>

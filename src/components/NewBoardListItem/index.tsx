@@ -4,6 +4,9 @@ import { BoardItem } from "Types";
 import { useNavigate } from "react-router-dom";
 import { boardListMock } from "mocks";
 import { RECIPE_LIST_PATH } from "constant";
+import { GetNewBoardListResponseDto } from "apis/dto/response/board";
+import ResponseDto from "apis/dto/response";
+import { getNewBoardListRequest } from "apis/dto";
 
 //          component: board 리스트 아이템 컴포넌트          //
 export default function NewBoardList() {
@@ -19,22 +22,39 @@ export default function NewBoardList() {
   }
   //          function: 네비게이트 함수         //
   const navigator = useNavigate();
+
+  //          function: get top 3 board list response 처리 함수          //
+  const getNewBoardListResponse = (responseBody: GetNewBoardListResponseDto | ResponseDto) => {
+    const { code } = responseBody;
+    if (code === 'DBE') alert('데이터베이스 오류입니다.');
+    if (code !== 'SU') return;
+
+    const { newList } = responseBody as GetNewBoardListResponseDto;
+    setNewBoardList(newList);
+  };
+
+  //					effect: 컴포넌트가 마운트 시 보드 리스트 불러오기					//
+  useEffect(() => {
+    getNewBoardListRequest().then(getNewBoardListResponse)
+  }, []);
+  
   //          component: best board 리스트 아이템 컴포넌트          //
   const NewBoardItem = forwardRef<HTMLDivElement, Props>(
     ({ boardItem }: Props, ref) => {
       //          state: Propertites          //
-      const { noticeNumber, title, imageUrl } = boardItem;
+      const { boardNumber, title, boardMainImage } = boardItem;
+
 
       //          event handler: board Click 이벤트 처리 함수          //
       const onBoardClickHandler = () => {
-        navigator(`/board/detail/${noticeNumber}`);
+        navigator(`/board/detail/${boardNumber}`);
       };
       //                  render: board 리스트 아이템 컴포넌트 렌더링                 //
       return (
         <div ref={ref} className="recipe-box" onClick={onBoardClickHandler}>
           <div
             className="recipe-image"
-            style={{ backgroundImage: `url(${imageUrl})` }}
+            style={{ backgroundImage: `url(${boardMainImage})` }}
           ></div>
           <div className="recipe-title">{title}</div>
         </div>
@@ -42,11 +62,6 @@ export default function NewBoardList() {
     }
   );
 
-  //					effect: 컴포넌트가 마운트 시 보드 리스트 불러오기					//
-  useEffect(() => {
-    // TODO: API 호출로 변경
-    setNewBoardList(boardListMock);
-  }, []);
   //          event handler: 다음 이미지로 이동하는 함수          //
   const nextSlide = () => {
     if (!slideRef.current) return;

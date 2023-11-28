@@ -7,7 +7,6 @@ import {
   MAIN_PATH,
   MEMBERSHIP_WITHDRAWAL_PATH,
   PASSWORD_UPDATE_PATH,
-  SIGN_IN_PATH,
   SIGN_UP_PATH,
   USER_RECIPE,
   RECIPE_DETAIL_PATH,
@@ -21,7 +20,8 @@ import {
   RECIPE_UPDATE_PATH,
   RANKING_PATH,
   CHEF_LIST_PATH,
-  SEARCH_PATH
+  SEARCH_PATH,
+  AUTH_PATH
 } from "constant";
 import SignUp from "views/Authentication/Sign-Up";
 import SignIn from "views/Authentication/Sign-In";
@@ -35,8 +35,6 @@ import Chef from 'views/Chef';
 import Search from 'views/Search';
 import Ranking from 'views/Ranking';
 import Container from './layouts/Container';
-import RecipeDetail from 'views/Board/Detail';
-import CookingReviewComments from 'components/Reviewcomments';
 import Comments from 'components/Comments';
 import Modals from 'components/Modals';
 import BoardUpdate from "views/Board/Update";
@@ -48,7 +46,7 @@ function App() {
       <Route element={<Container />}>
         <Route path={MAIN_PATH} element={<Main />} />
         
-        <Route path={SIGN_IN_PATH} element={<SignIn />} />
+        <Route path={AUTH_PATH} element={<SignIn />} />
         <Route path={SIGN_UP_PATH} element={<SignUp />} />
         <Route path={USER_FOUND_PATH} element={<UserFound />} />
         <Route path={USER_UPDATE_PATH} element={<UserUpdate />} />
@@ -69,11 +67,9 @@ function App() {
         <Route path={RECIPE_LIST_PATH('')} element={<Search />} />
         <Route path={RECIPE_LIST_PATH(':word')} element={<Search />} />
         
-        <Route path={RECIPE_DETAIL_PATH(':boardNumber')} element={<BoardDetail />} />
+        <Route path={RECIPE_DETAIL_PATH(':boardNumber')} element={<BoardDetail  />} />
         <Route path={RECIPE_WRITE_PATH} element={<BoardWrite />} />
         <Route path={RECIPE_UPDATE_PATH(':boardNumber')} element={<BoardUpdate />} />
-        
-        <Route path='/modal' element={<Modals/>} />
 
         <Route path='*' element={<h1>404 Not Found</h1>} />
 

@@ -13,6 +13,10 @@ import UserRecipeReviewItem from "./user-recipe-review-item.interface";
 import RankingItem from "./ranking-board-list-item.interface";
 import SearchItem from "./search-board-item.interface";
 import RecentlyItme from "./recently-board-item.interface";
+import BoardDetailItem from "./board-detail-item.interface";
+import MaterialItem from "./material-item.interface";
+import CookingSteps from "./cooking-steps.interface";
+import User from "views/User";
 
 export type {
   ChefItem,
@@ -21,6 +25,8 @@ export type {
   LoginUser,
   BestBoardItem,
   UserItem,
+  MaterialItem,
+  User,
   UserCommentItem,
   UserRecipeItem,
   UserWritingRecipeItem,
@@ -30,4 +36,6 @@ export type {
   RankingItem,
   SearchItem,
   RecentlyItme,
+  BoardDetailItem,
+  CookingSteps,
 };

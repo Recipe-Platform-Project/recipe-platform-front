@@ -857,16 +857,16 @@ export default function User() {
         const LatelyRecipeListItem = forwardRef<HTMLDivElement, Props>(
             ({ boardItem }: Props, ref) => {
               //          state: Propertites          //
-              const { noticeNumber, title, imageUrl } = boardItem;
+              const { boardNumber, title, boardMainImage } = boardItem;
               //          event handler: Card Click 이벤트 처리 함수          //
               // TODO: 클릭시 게시물 이동 만들기
               const onLatelyRecipeClickHandler = () => {
-                navigator(`/board/detail/${noticeNumber}`);
+                navigator(`/board/detail/${boardNumber}`);
               };
               //                  render: board 리스트 아이템 컴포넌트 렌더링                 //
               return (
                 <div ref={ref} className="user-recent-post-box" onClick={onLatelyRecipeClickHandler}>
-                  <div className="user-recent-post-image" style={{ backgroundImage: `url(${imageUrl})` }}></div>
+                  <div className="user-recent-post-image" style={{ backgroundImage: `url(${boardMainImage})` }}></div>
                   <div className="user-recent-post-title">{title}</div>
                 </div>  
               );

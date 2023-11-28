@@ -23,11 +23,11 @@ export default function LatelyRecipe() {
   const LatelyRecipeListItem = forwardRef<HTMLDivElement, Props>(
     ({ boardItem }: Props, ref) => {
       //          state: Propertites          //
-      const { noticeNumber, title, imageUrl } = boardItem;
+      const { boardNumber, title, boardMainImage } = boardItem;
       //          event handler: Card Click 이벤트 처리 함수          //
       // TODO: 클릭시 게시물 이동 만들기
       const onLatelyRecipeClickHandler = () => {
-        navigator(`/board/detail/${noticeNumber}`);
+        navigator(`/board/detail/${boardNumber}`);
       };
       //                  render: board 리스트 아이템 컴포넌트 렌더링                 //
       return (
@@ -38,7 +38,7 @@ export default function LatelyRecipe() {
         >
           <div
             className="lately-recipe-bottom-center-image"
-            style={{ backgroundImage: `url(${imageUrl})` }}
+            style={{ backgroundImage: `url(${boardMainImage})` }}
           ></div>
           <div className="lately-recipe-bottom-center-title">{title}</div>
         </div>
@@ -53,8 +53,8 @@ export default function LatelyRecipe() {
   //          event handler: 다음 이미지로 이동하는 함수          //
   const nextSlide = () => {
     if (!slideRef.current) return;
-    const lastIndex = latelyBoardList.length - 5;
-    const newCurrent = current === lastIndex ? 0 : current + 5;
+    const lastIndex = latelyBoardList.length - 4;
+    const newCurrent = current === lastIndex ? 0 : current + 4;
     setCurrent(newCurrent);
     const newTranslate = -237 * newCurrent;
     slideRef.current.style.transform = `translateX(${newTranslate}px)`;
@@ -63,8 +63,9 @@ export default function LatelyRecipe() {
   //          event handler: 이전 이미지로 이동하는 함수          //
   const prevSlide = () => {
     if (!slideRef.current) return;
-    const lastIndex = latelyBoardList.length - 5;
-    const newCurrent = current === 0 ? lastIndex : current - 5;
+    const lastIndex = latelyBoardList.length - 4;
+    const newCurrent = current === 0 ? lastIndex : current - 4
+    ;
     setCurrent(newCurrent);
     const newTranslate = -237 * newCurrent;
     slideRef.current.style.transform = `translateX(${newTranslate}px)`;

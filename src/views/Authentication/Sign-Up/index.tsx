@@ -12,20 +12,65 @@ export default function SignUp() {
     
     //          state: 로그인 유저 전역 상태          //
     const { user, setUser } = useUserStore();
+    
     //          state: 쿠키 상태          //
     const [cookies, setCookie] = useCookies();
 
     //          state: 비밀번호 상태            //
     const passwordRef = useRef<HTMLInputElement | null>(null);
+    
     //                 component: 회원가입 컴포넌트                     //
     const SignUp = () => {
+        
         //          state: 입력한 이메일 상태          //
-    const [email, setEmail] = useState<string>('');
+        const [email, setEmail] = useState<string>('');
+        
+        //          state: 이메일 에러 상태             //
+        const [emailError, setEmailError] = useState<boolean>(false);
+
+        //          state: 이메일 에러 메시지 상태          //
+        const [emailErrorMessage, setEmailErrorMessage] = useState<string>('');
+
         //          state: 입력한 비밀번호 상태          //
         const [password, setPassword] = useState<string>('');
+
+        //          state: 비밀번호 확인 상태            //
+        const [passwordCheck, setPasswordCheck] = useState<string>('');
+        
         //          state: 비밀번호 인풋 타입 상태          //
         const [passwordType, setPasswordType] = useState<'text' | 'password'>('password');
-        //          state: 로그인 에러 상태          //
+        
+        //          state: 비밀번호 타입 상태           //
+        const [passwordError, setPasswordError] = useState<boolean>(false);
+        
+        //          state: 비밀번호 에러 메세지 상태            //
+        const [passwordErrorMessage, setPasswordErrorMessage] = useState<string>('');
+
+        //          state: 비밀번호 확인 에러 상태          //
+        const [passwordCheckError, setPasswordCheckError] = useState<boolean>(false);
+
+        //          state: 비밀번호 확인 에러 메세지 상태           //
+        const [passwordCheckErrorMessage, setPasswordCheckErrorMessage] = useState<string>('');
+
+        //          state: 닉네임 상태              //
+        const [nickname, setNickname] = useState<string>('');
+
+        //          state: 닉네임 에러 상태             //
+        const [nicknameError, setNicknameError] = useState<boolean>(false);
+
+        //          state: 닉네임 에러 메세지 상태              //
+        const [nicknameErrorMessage, setNicknameErrorMessage] = useState<string>('');
+
+        //          state: 핸드폰 번호 상태                 //
+        const [telNumber, setTelNumber] = useState<string>('');
+
+        //          state: 핸드폰 번호 에러 상태             //
+        const [telNumberError, setTelNumberError] = useState<boolean>(false);
+
+        //          state: 핸드폰 번호 에러 메세지 상태             //
+        const [telNumberErrorMessage, setTelNumberErrorMessage] = useState<string>('');
+
+        //          state: 회원가입 에러 상태          //
         const [error, setError] = useState<boolean>(false);
 
         //         state: AllCheckbox 상태             //
@@ -39,6 +84,32 @@ export default function SignUp() {
 
         //         state: ProcessingCheckbox 상태             //
         const [isEssentialCheck, setEssentialCheck] = useState<boolean>(false);
+        
+        //            function: sign up response 처리 함수                //
+        const signUpResponse = (code: string) => {
+            if(code === 'VF') alert('모두 입력하세요.');
+            if(code === 'DE'){
+                setEmailError(true);
+                setEmailErrorMessage('중복되는 이메일 주소입니다.');
+            }
+            if(code === 'DN'){
+                setNicknameError(true);
+                setNicknameErrorMessage('중복되는 닉네임 입니다.');
+            }
+            if(code === 'DT'){
+                setTelNumberError(true);
+                setTelNumberErrorMessage('중복되는 휴대 전화번호 입니다.');
+            }
+            if(code === 'DBE') alert('데이터베이스 오류입니다.');
+            if(code !== 'SU') return;
+            
+            setEmail('');
+            setPassword('');
+            setNickname('');
+            setTelNumber('');
+            setAllCheck(false);
+            navigate('/SignIn');
+        }
 
         //         event handler: 전체 체크박스 버튼 핸들러              //
         const onAllCheckBoxButtonClickHandler = () => {
@@ -46,36 +117,54 @@ export default function SignUp() {
             setEssentialCheck(!isEssentialCheck);
             setCollectCheck(!isCollectCheck);
             setProcessingCheck(!isProcessingCheck);
-          }
+        }
 
         //         event handler: 이용약관 필수 체크박스 버튼 핸들러              //
         const onEssentialCheckBoxButtonClickHandler = () => {
             setEssentialCheck(!isEssentialCheck);
-          }
+        }
         
         //         event handler: 개인정보 수집 선택 체크박스 버튼 핸들러              //
         const onCollectCheckBoxButtonClickHandler = () => {
             setCollectCheck(!isCollectCheck);
-          }
+        }
 
         //         event handler: 개인정보 처리 선택 체크박스 버튼 핸들러              //
         const onProcessingCheckBoxButtonClickHandler = () => {
             setProcessingCheck(!isProcessingCheck);
-          }
+        }
         
-        //         event handler: 회원가입 버튼 클릭 이벤트                 //
+        //         event handler: 로고 버튼 클릭 이벤트                 //
         const onLogoClickHandler = () => {
             navigate('/');
         }
 
         //         event handler: 회원가입 버튼 클릭 이벤트                 //
         const onSignInClickHandler = () => {
-            navigate('/SignIn');
-        }
-          
-
+            //  description: 이메일 패턴 확인   //
+            const emailPattern = /^[a-zA-Z0-9]*@([-.]?[a-zA-Z0-9])*\.[a-zA-Z]{2,4}$/;
+            const checkedEmail = !emailPattern.test(email);
+            if(checkedEmail){
+                setEmailError(true);
+                setEmailErrorMessage('이메일 주소 형식이 맞지 않습니다.');
+            }
+            //  description: 비밀번호 길이 확인 //
+            const checkedPassword = password.trim().length < 8;
+            if(checkedPassword){
+                setPasswordError(true);
+                setPasswordErrorMessage('비밀번호는 8자 이상 입력해주세요.');
+            }
+            //  description: 비밀번호 일치 여부 확인 //
+            const checkedPasswordCheck = password !== passwordCheck;
+            if(checkedPasswordCheck){
+                setPasswordCheckError(true);
+                setPasswordCheckErrorMessage('비밀번호가 일치하지 않습니다.');
+            }
+            if(checkedEmail || checkedPassword || checkedPasswordCheck) return;
+                navigate('/SignIn');
+            }
+        
         //         render: 회원가입 화면 랜더               //
-
         return(
             <div id='sign-up-wrapper'>
                 <div className='authentication-header'>

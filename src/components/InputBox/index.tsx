@@ -19,7 +19,7 @@ interface Props {
 const InputBox = forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
   
   //          state: Properties          //
-  const { label, type, error, placeholder, value, icon, errorMessage } = props;
+  const { label, type, error, placeholder, value, errorMessage } = props;
   const { setValue, onKeyDown, onButtonClick } = props;
 
   //          event handler: input 값 변경 이벤트 처리          //
@@ -39,11 +39,6 @@ const InputBox = forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
       <div className='inputbox-label'>{label}</div>
       <div className={error ? 'inputbox-container-error' : 'inputbox-container'}>
         <input ref={ref} className='input' type={type} placeholder={placeholder} value={value} onChange={onInputValueChangeHandler} onKeyDown={onKeyDownHandler} />
-        {onButtonClick !== undefined && (
-          <div className='icon-button' onClick={onButtonClick}>
-            {icon !== undefined && <div className={icon}></div>}
-          </div>
-        )}
       </div>
       <div className='inputbox-message'>{errorMessage}</div>
     </div>

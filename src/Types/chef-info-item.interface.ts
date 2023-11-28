@@ -1,6 +1,6 @@
 export default interface ChefInfoItem {
     email: string
-    profileImage: string | null
+    profileImageUrl: string | null
     nickname: string
 
 }

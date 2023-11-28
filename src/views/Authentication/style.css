@@ -1,0 +1,272 @@
+.sign-in-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.authentication-header{
+    width: 1920px;
+    height: 210px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authentication-logo-box{
+    width: 365px;
+    height: 120px;
+
+}
+
+.authentication-logo{
+    width: 100%;
+    height: 100%;
+
+    background-image: url(assets/Logo.png);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+}
+
+.sign-in-title-box{
+    height: 112px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sign-in-title{
+    color: #000;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 12.5px;
+}
+
+.sign-in-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    height: 400px;
+    border-radius: 10px;
+    border: 1px solid #AEAEAE;
+}
+
+.sign-in-place-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sign-in-place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.find-button-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.sign-in-place InputBox {
+    margin: 20px 0; /* 위아래 여백을 조절 */
+}
+
+.sign-in-place .input-button {
+    margin: 20px 0; /* 위아래 여백을 조절 */
+}
+
+.find-button-container {
+    display: flex; 
+    justify-content: space-between; 
+    margin: 10px 0; 
+}
+
+.find-button {
+    margin: 0 5px; 
+}
+
+.input-button {
+
+    border-radius: 30px;
+    background: #358B43;
+
+    width: 180px;
+    height: 48px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #FFF;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 10px;
+  }
+  
+  .input-button:hover {
+    cursor: pointer;
+  }
+  
+  .input-box {
+    width: 24px;
+    height: 24px;
+  }
+
+  #sign-up-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+.sign-up-title-box{
+    height: 112px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sign-up-title{
+    color: #000;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 12.5px;
+}
+
+.sign-up-container{
+    width: 750px;
+}
+
+.password-tip{
+    color: #AEAEAE;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+    
+
+.check-container{
+    display: flex;
+    width: 740px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agreed-check{
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+
+
+.agreed-text{
+    color: rgba(0, 0, 0, 0.70);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.agreed-container{
+    width: 749px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+}
+
+.agreed-text-container{
+    padding: 10px;
+    width: 600px;
+}
+
+.check-button {
+    width: 20px;
+    height: 20px;
+    
+    display: flex;
+    justify-content: center;
+    
+}
+.uncheck {
+    width: 100%;
+    height: 100%;
+  
+    background-image: url(assets/CheckBox.png);
+    background-position: 50% 50%;
+    background-size: 100%;
+}
+.checked{
+    width: 100%;
+    height: 100%;
+  
+    background-image: url('assets/CheckBox-check.png');
+    background-position: 50% 50%;
+    background-size: 100%;
+}
+.agreed-check{
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.detail-check{
+    display: flex;
+}
+.sign-up-button-box{
+    display: flex;
+    width: 750px;
+    height: 144px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.sign-up-button {
+
+    background: #358B43;
+
+    display: flex;
+    width: 400px;
+    height: 44px;
+    padding: 7px 86px 7px 87px;
+    justify-content: center;
+    align-items: center;
+
+    color: #FFF;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 10px;
+  }

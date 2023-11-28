@@ -6,6 +6,7 @@ import GetUserRecipeSearchList from "./get-user-recipe-search-list.response.dto"
 import GetUserRepleCommentResponseDto from "./get-user-reple-comment.response.dto"
 import GetUserWriteRepleCommentResponseDto from "./get-user-write-reple-comment.response.dto"
 import GetUserReviewListResponseDto from "./get-user-review-list.response.dto"
+import GetUserWritingRecipeListREsponseDto from "./get-user-writing-recipe-list.response.dto"
 import PatchProfileCommentResponseDto from "./patch-profile-comment.response"
 
 export type {
@@ -17,6 +18,7 @@ export type {
     GetUserRepleCommentResponseDto,
     GetUserWriteRepleCommentResponseDto,
     GetUserReviewListResponseDto,
+    GetUserWritingRecipeListREsponseDto,
 
     PatchProfileCommentResponseDto
 }

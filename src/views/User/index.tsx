@@ -122,7 +122,7 @@ export default function User() {
                 setUser(null);
                 return;
             }
-            // setUser({ ...responseBody as GetSignInUserResponseDto });
+            setUser({ ...responseBody as GetSignInUserResponseDto });
         };
 
 
@@ -448,10 +448,10 @@ export default function User() {
         //          state: 게시물 개수 상태          //
         const [count, setCount] = useState<number>(16);
 
-
         //          function: 네비게이트 함수          //
         const navigator = useNavigate();
 
+        //          function: get user write 
 
         //          event handler: 버튼 클릭 이벤트 처리          //
         const onButtonClickHandler = () => {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import ResponseDto from './dto/response';
 import { GetChefListResponseDto, GetChefRankingResponseDto, GetChefSearchListResponseDto } from './dto/response/chef';
-import { GetSignInUserRecipeResponseDto, GetSignInUserResponseDto, GetUserRecipeResponseDto, GetUserRecipeSearchList, GetUserRepleCommentResponseDto, GetUserResponseDto, GetUserReviewListResponseDto, GetUserWriteRepleCommentResponseDto, PatchProfileCommentResponseDto } from './dto/response/userPage';
+import { GetSignInUserRecipeResponseDto, GetSignInUserResponseDto, GetUserRecipeResponseDto, GetUserRecipeSearchList, GetUserRepleCommentResponseDto, GetUserResponseDto, GetUserReviewListResponseDto, GetUserWriteRepleCommentResponseDto, GetUserWritingRecipeListREsponseDto, PatchProfileCommentResponseDto } from './dto/response/userPage';
 import { PatchProfileCommentRequestDto } from './dto/request';
 import GetUserWriteReviewListResponseDto from './dto/response/userPage/get-user-write-review-list.response.dto';
 
@@ -63,9 +63,10 @@ export const getChefSearchListRequest = async (searchNickname: string) => {
 
 
 const GET_SIGN_IN_USER_URL = () => `${API_DOMAIN}/user`
-const GET_USER_URL = (nickname: string) => `{API_DOMAIN}/user/{nickname}`
+const GET_USER_URL = (email: string) => `{API_DOMAIN}/user/{email}`
 const GET_SIGN_IN_USER_RECIPE_URL = () => `${API_DOMAIN}/recipe-list`
-const GET_USER_RECIPE_URL = (nickname: string) => `${API_DOMAIN}/user/{nickname}/recipe-list`
+const GET_USER_RECIPE_URL = (email: string) => `${API_DOMAIN}/user/{email}/recipe-list`
+const GET_USER_WRITING_RECIPE_LIST_URL = () => `${API_DOMAIN}/user/user-writing-recipe-list`
 const GET_USER_REVIEW_LIST_URL = () => `${API_DOMAIN}/user-recipe-review-list`
 const GET_USER_WRITE_REVIEW_LIST_URL = () => `${API_DOMAIN}/user-write-recipe-review-list`
 const GET_USER_REPLE_COMMENT_URL = () => `${API_DOMAIN}/user/user-comment-list`
@@ -90,8 +91,8 @@ export const getSignInUserRequest = async (token: string) => {
 }
 
 // description: get user request //
-export const getUserRequest = async (nickname: string) => {
-    const result = await axios.get(GET_USER_URL(nickname))
+export const getUserRequest = async (email: string) => {
+    const result = await axios.get(GET_USER_URL(email))
         .then(response => {
             const responseBody: GetUserResponseDto = response.data;
             return responseBody;
@@ -118,8 +119,8 @@ export const getSignInUserRecipeRequest = async (token: string) => {
 };
 
 // description: get user recipe request //
-export const getUserRecipeRequest = async (nickname: string) => {
-    const result = await axios.get(GET_USER_RECIPE_URL(nickname))
+export const getUserRecipeRequest = async (email: string) => {
+    const result = await axios.get(GET_USER_RECIPE_URL(email))
         .then(response => {
             const responseBody: GetUserRecipeResponseDto = response.data;
             return responseBody;
@@ -129,6 +130,19 @@ export const getUserRecipeRequest = async (nickname: string) => {
             return responseBody;
         });
     return result;
+};
+
+// description: get user writing recipe list request //
+export const getUserWritingRecipeListRequest = async (token: string) => {
+    const result = await axios.get(GET_USER_WRITING_RECIPE_LIST_URL(), authorization(token))
+        .then(response => {
+            const responseBody: GetUserWritingRecipeListREsponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        });
 };
 
 // description: get user review list request //

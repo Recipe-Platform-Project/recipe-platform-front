@@ -53,8 +53,8 @@ export default function LatelyRecipe() {
   //          event handler: 다음 이미지로 이동하는 함수          //
   const nextSlide = () => {
     if (!slideRef.current) return;
-    const lastIndex = latelyBoardList.length - 5;
-    const newCurrent = current === lastIndex ? 0 : current + 5;
+    const lastIndex = latelyBoardList.length - 4;
+    const newCurrent = current === lastIndex ? 0 : current + 4;
     setCurrent(newCurrent);
     const newTranslate = -237 * newCurrent;
     slideRef.current.style.transform = `translateX(${newTranslate}px)`;
@@ -63,8 +63,9 @@ export default function LatelyRecipe() {
   //          event handler: 이전 이미지로 이동하는 함수          //
   const prevSlide = () => {
     if (!slideRef.current) return;
-    const lastIndex = latelyBoardList.length - 5;
-    const newCurrent = current === 0 ? lastIndex : current - 5;
+    const lastIndex = latelyBoardList.length - 4;
+    const newCurrent = current === 0 ? lastIndex : current - 4
+    ;
     setCurrent(newCurrent);
     const newTranslate = -237 * newCurrent;
     slideRef.current.style.transform = `translateX(${newTranslate}px)`;

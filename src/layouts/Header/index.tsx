@@ -14,6 +14,7 @@ import {
 } from "constant";
 import { useCookies } from "react-cookie";
 import useUserStore from "stores/user.store";
+
 //          component: 헤더 컴포넌트          //
 export default function Header() {
   //          function: useLocation 함수        //
@@ -53,8 +54,8 @@ export default function Header() {
   //          event handler: 헤더 Hidden 처리       //
   if (locationNow.pathname === "/SignIn") return null;
   if (locationNow.pathname === "/SignUp") return null;
-  if (locationNow.pathname === "/PasswordFound") return null;
-  if (locationNow.pathname === "/UserUpdate") return null;
+  if (locationNow.pathname === "/passwordUpdate") return null;
+  if (locationNow.pathname === "/userUpdate") return null;
   if (locationNow.pathname === "/MembershipWithdrawal") return null;
   if (locationNow.pathname === "/UserFound") return null;
 

@@ -35,6 +35,53 @@
 
 }
 
+.view-counte-box {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.view-counte-container {
+
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+    gap: 15px;
+    
+
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100px;
+    height: 20px;
+
+    position: absolute;
+    bottom: 310px;
+
+    border-radius: 10px;
+
+}
+.view-counte-icon {
+
+    margin-left: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(assets/eye-icon.png);
+    background-size: 100% 100%;
+
+}
+
+.view-counte-number {
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
 .recipe-detail-write-info-box {
 
     display: flex;
@@ -77,13 +124,13 @@
 
 .recipe-detail-writer-nickname {
 
-    margin-left: 130px;
+    margin-left: 165px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 91px;
+    width: 120px;
     height: 29px;
 
     border-radius: 50px;
@@ -201,9 +248,9 @@
 
 .servings-text {
 
-    color: rgba(0, 0, 0, 0.50);
+    color: rgba(0, 0, 0, 1);
     font-family: SUIT;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
 
 }
@@ -233,9 +280,9 @@
 
 .cooking-time-text {
 
-    color: rgba(0, 0, 0, 0.50);
+    color: rgba(0, 0, 0, 1);
     font-family: SUIT;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
 
 }
@@ -265,9 +312,9 @@
 
 .cooking-level-text {
 
-    color: rgba(0, 0, 0, 0.50);
+    color: rgba(0, 0, 0, 1);
     font-family: SUIT;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
 
 }
@@ -316,25 +363,52 @@
 
 }
 
-.ingredients-cooking-container {
+.ingredients-cooking-title-material-box {
+
+    display: flex;
+    align-items: center;
+
+    margin-left: 42px;
+    margin-top: 30px;
+
+}
+
+.material-container {
 
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.ingredients-cooking-container {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ingredients-cooking-title-material {
+
+    color: rgba(255, 0, 0, 0.7);
+    font-family: SUIT;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
 
 }
 
 .ingredients-cooking-box {
 
-    margin: 50px;
+    margin: 0 50px;
 
-    width: 622px;
-    height: 59px;
+    width: 660px;
+    height: 65px;
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 90%;
-    
+    justify-content: space-between;
     
     border-bottom: 1px solid #AEAEAE;
 
@@ -406,11 +480,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-}
-
-.video-thumbnail {
-
 
 }
 
@@ -502,7 +571,7 @@
 
 .reciper-writer-profile-nickname {
 
-    width: 200px;
+    width: 120px;
     display: flex;
     justify-content: center;
 
@@ -625,7 +694,7 @@
 
 }
 
-.revie-photo {
+.review-photo {
 
     width: 200px;
     height: 200px;
@@ -984,4 +1053,37 @@
   .chef-list-center-bottom-subscription-on:hover {
     cursor: pointer;
     background-color: rgba(53, 139, 67, 0.8);
+  }
+
+  /* 좋아요 버튼 스타일 */
+  .favorite-button-on {
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(assets/like-icon.png);
+    background-size: 100% 100%;
+
+  }
+
+  .favorite-button-on:hover {
+
+    cursor: pointer;
+
+  }
+
+  .favorite-button-off {
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(assets/un-like-icon-7476962.png);
+    background-size: 100% 100%;
+    
+  }
+
+  .favorite-button-off:hover {
+
+    cursor: pointer;
+
   }

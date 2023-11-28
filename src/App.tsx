@@ -21,13 +21,13 @@ import {
   RECIPE_UPDATE_PATH,
   RANKING_PATH,
   CHEF_LIST_PATH,
-  SEARCH_PATH
+  SEARCH_PATH 
 } from "constant";
 import SignUp from "views/Authentication/Sign-Up";
 import SignIn from "views/Authentication/Sign-In";
 import BoardWrite from "views/Board/Write";
-import UserUpdate from "views/User/UserUpdate";
-import PasswordUpdate from "views/User/PasswordUpdate";
+import UserUpdate from "views/update/UserUpdate";
+import PasswordUpdate from "views/update/PasswordUpdate";
 import MembershipWithdrawal from "views/Membership/MembershipWithdrawal";
 import UserFound from "views/Membership/UserFound";
 import User from 'views/User';
@@ -35,8 +35,6 @@ import Chef from 'views/Chef';
 import Search from 'views/Search';
 import Ranking from 'views/Ranking';
 import Container from './layouts/Container';
-import RecipeDetail from 'views/Board/Detail';
-import CookingReviewComments from 'components/Reviewcomments';
 import Comments from 'components/Comments';
 import Modals from 'components/Modals';
 import BoardUpdate from "views/Board/Update";
@@ -69,11 +67,9 @@ function App() {
         <Route path={RECIPE_LIST_PATH('')} element={<Search />} />
         <Route path={RECIPE_LIST_PATH(':word')} element={<Search />} />
         
-        <Route path={RECIPE_DETAIL_PATH(':boardNumber')} element={<BoardDetail />} />
+        <Route path={RECIPE_DETAIL_PATH(':boardNumber')} element={<BoardDetail  />} />
         <Route path={RECIPE_WRITE_PATH} element={<BoardWrite />} />
         <Route path={RECIPE_UPDATE_PATH(':boardNumber')} element={<BoardUpdate />} />
-        
-        <Route path='/modal' element={<Modals/>} />
 
         <Route path='*' element={<h1>404 Not Found</h1>} />
 

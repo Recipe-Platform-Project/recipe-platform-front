@@ -143,6 +143,7 @@ export const getUserWritingRecipeListRequest = async (token: string) => {
             const responseBody: ResponseDto = error.response.data;
             return responseBody;
         });
+    return result;
 };
 
 // description: get user review list request //

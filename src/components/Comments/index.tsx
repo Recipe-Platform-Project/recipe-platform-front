@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import "./style.css"
 import { useNavigate } from 'react-router-dom';
-import { SIGN_IN_PATH } from 'constant';
+import { AUTH_PATH } from 'constant';
 
 
 //          component: 댓글           //
@@ -34,7 +34,7 @@ export default function Comments() {
   const onSaveButtonClickHandler = () => {
     // TODO: API 쿠키 연결띠
     if (window.confirm("로그인을 하신 후 이용해 주시기 바랍니다.")) {
-      navigator(SIGN_IN_PATH)
+      navigator(AUTH_PATH)
     }
 }
 

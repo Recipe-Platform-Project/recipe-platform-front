@@ -7,7 +7,6 @@ import { BoardItem, ChefItem } from "Types";
 import { chefListMock, chefSearchListMock, latelyBoardListMock, popularWordListMock } from "mocks";
 import ChefListItem from "components/ChepList";
 import Pagination from "components/Pagination";
-import GetPopulerListResponseDto from "apis/dto/response/get-populer-list-response.dto";
 import ResponseDto from "apis/dto/response";
 
 //          component: 쉐프 페이지          //
@@ -296,15 +295,15 @@ export default function Chef() {
         //          function: 네비게이트 함수         //
         const navigator = useNavigate();
 
-        //          function: get popular list response 처리 함수          //
-        const getPopularListResponse = (responseBody: GetPopulerListResponseDto | ResponseDto) =>{
-            const{code}= responseBody;
-            if(code === 'DBE') alert ('데이터베이스 오류입니다')
-            if(code !== 'SU') return;
+        // //          function: get popular list response 처리 함수          //
+        // const getPopularListResponse = (responseBody: GetPopulerListResponseDto | ResponseDto) =>{
+        //     const{code}= responseBody;
+        //     if(code === 'DBE') alert ('데이터베이스 오류입니다')
+        //     if(code !== 'SU') return;
         
-            const{ popularWordList } = responseBody as GetPopulerListResponseDto;
-            setPopularWordList(popularWordList);
-        }
+        //     const{ popularWordList } = responseBody as GetPopulerListResponseDto;
+        //     setPopularWordList(popularWordList);
+        // }
 
         //              event handler: 인기 검색어 뱃지 클릭 이벤트 처리         //
         const onPopulerWordBadgeClickHandler = (word: string) => {

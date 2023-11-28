@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Modals from 'components/Modals';
 import dayjs from 'dayjs';
 import CookingReviewCommentsListItem from 'Types/cooking-review-comments-list.interface';
-import { SIGN_IN_PATH } from 'constant';
+import { AUTH_PATH } from 'constant';
 
 //          interface: 게시물 상세보기 요리 후기 댓글 리스트 아이템 컴포넌트 Props          //
 interface Props {
@@ -280,7 +280,7 @@ const CookingReviews = () => {
     const onSaveButtonClickHandler = () => {
         // TODO: API 쿠키 연결띠
         if (window.confirm("로그인을 하신 후 이용해 주시기 바랍니다.")) {
-          navigator(SIGN_IN_PATH)
+          navigator(AUTH_PATH)
         }
     }
     //           event handler: 요리후기 수정 댓글 내용 변경 이벤트 처리          //

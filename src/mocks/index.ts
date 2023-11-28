@@ -16,6 +16,9 @@ import userLatelyBoardListMock from "./user-lately-board-list.mock";
 import userWriteCommentListMock from "./user-write-comment-list.mock";
 import userWritingRecipeListMock from "./user-writing-recipe-list.mock";
 import userWriteRecipeReviewListMock from "./user-write-recipe-review.mock";
+import boardDetailItemMock from "./board-detail.mock";
+import materialItemMock from "./material-item.mock";
+import cookingStepsMock from "./cooking-steps.mock";
 
 export {
     chefListMock,
@@ -36,4 +39,9 @@ export {
     loginInfoMock,
     bestBoardListMock,
     latelyBoardListMock,
+    boardDetailItemMock,
+    materialItemMock,
+    cookingStepsMock,
+
+
 };

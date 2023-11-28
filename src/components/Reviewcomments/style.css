@@ -41,6 +41,27 @@
 
 }
 
+.no-cooking-review-state-box {
+    
+    height: 220px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.no-registered-text {
+
+    color: #000;
+    font-family: SUIT;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+
+}
+
 .cooking-review-host-container {
 
     padding-top: 50px;
@@ -245,9 +266,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
 
 }
+
 
 .reviewer-write-comment {
 
@@ -265,11 +286,14 @@
 
 .reviewer-write-photo {
 
+    margin-left: 217px;
+
     width: 100px;
     height: 100px;
 
     background-image: url(assets/khloe-arledge-ND3edEmzcdQ-unsplash.jpg);
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: 50% 50%;
 
 }
 
@@ -297,6 +321,12 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+
+}
+
+.box {
+
+    margin-top: 41px;
 
 }
 
@@ -342,6 +372,21 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 140%;
+
+}
+
+.in-add-image-box {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100px;
+    height: 100px;
+
+    background-position: 50% 50%;
+    background-size: cover;
 
 }
 
@@ -396,6 +441,8 @@
 }
 
 .board-writer-box {
+
+    padding-bottom: 30px;
 
     width: 1320px;
 

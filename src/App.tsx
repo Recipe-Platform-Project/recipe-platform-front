@@ -35,8 +35,6 @@ import Chef from 'views/Chef';
 import Search from 'views/Search';
 import Ranking from 'views/Ranking';
 import Container from './layouts/Container';
-import RecipeDetail from 'views/Board/Detail';
-import CookingReviewComments from 'components/Reviewcomments';
 import Comments from 'components/Comments';
 import Modals from 'components/Modals';
 import BoardUpdate from "views/Board/Update";
@@ -69,11 +67,9 @@ function App() {
         <Route path={RECIPE_LIST_PATH('')} element={<Search />} />
         <Route path={RECIPE_LIST_PATH(':word')} element={<Search />} />
         
-        <Route path={RECIPE_DETAIL_PATH(':boardNumber')} element={<BoardDetail />} />
+        <Route path={RECIPE_DETAIL_PATH(':boardNumber')} element={<BoardDetail  />} />
         <Route path={RECIPE_WRITE_PATH} element={<BoardWrite />} />
         <Route path={RECIPE_UPDATE_PATH(':boardNumber')} element={<BoardUpdate />} />
-        
-        <Route path='/modal' element={<Modals/>} />
 
         <Route path='*' element={<h1>404 Not Found</h1>} />
 

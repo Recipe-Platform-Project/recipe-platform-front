@@ -2,12 +2,12 @@ import { ChangeEvent, KeyboardEvent, useState, useEffect } from "react";
 import "./style.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
+  AUTH_PATH,
   CHEF_LIST_PATH,
   MAIN_PATH,
   RANKING_PATH,
   RECIPE_LIST_PATH,
   RECIPE_WRITE_PATH,
-  SIGN_IN_PATH,
   SIGN_UP_PATH,
   USER_RECIPE,
 } from "constant";
@@ -39,6 +39,9 @@ export default function Header() {
   const isRankingPage = pathname === RANKING_PATH;
   //          variable: 셰프 페이지 논리 변수         //
   const isChefPage = pathname.startsWith(CHEF_LIST_PATH);
+  //          variable: 인증 페이지 논리 변수         //
+  const isAuthPage = pathname === AUTH_PATH;
+
 
   //          event handler: 검색 값 변경 이벤트 처리           //
   const onSearchValueChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -51,8 +54,8 @@ export default function Header() {
     navigator(MAIN_PATH);
   };
   //          event handler: 헤더 Hidden 처리       //
-  if (locationNow.pathname === "/SignIn") return null;
-  if (locationNow.pathname === "/SignUp") return null;
+  if (locationNow.pathname === "/auth") return null;
+  if (locationNow.pathname === "/auth/asign") return null;
   if (locationNow.pathname === "/passwordUpdate") return null;
   if (locationNow.pathname === "/userUpdate") return null;
   if (locationNow.pathname === "/MembershipWithdrawal") return null;
@@ -79,8 +82,7 @@ export default function Header() {
   const LoginMyPage = () => {
     //          event handler: 로그인 버튼 클릭 이벤트 처리         //
     const onSignInButtonClickHandler = () => {
-      setCookies("email", "email@email.com");
-      navigator(SIGN_IN_PATH);
+      navigator(AUTH_PATH);
     };
     //          event handler: 회원가입 버튼 클릭 이벤트 처리         //
     const onSignUpButtonClickHandler = () => {
@@ -88,18 +90,17 @@ export default function Header() {
     };
     //          event handler: 마이페이지 버튼 클릭 이벤트 처리         //
     const onMyPageButtonClickHandler = () => {
-      navigator(USER_RECIPE(cookies.email));
+      navigator(USER_RECIPE(cookies.accessToken));
       // TODO: 경로수정
     };
     //          event handler: 로그아웃 버튼 클릭 이벤트 처리         //
     const onLogoutButtonClickHandler = () => {
-      setCookies("email", "");
+      setCookies('accessToken', '',{ path: '/', expires: new Date()});
       setUser(null);
-      navigator(MAIN_PATH);
     };
 
     //          render: 로그인 회원가입 버튼 컴포넌트 렌더링 (로그인 상태가 아닐 때)         //
-    if (!cookies.email)
+    if (!cookies.accessToken)
       return (
         <>
           <div
@@ -139,7 +140,7 @@ export default function Header() {
 
   //          event handler: 레시피 등록 버튼 클릭 이벤트 처리         //
   const onUploadButtonClickHandler = () => {
-    if (!cookies.email) {
+    if (!cookies.accessToken) {
       alert("로그인이 필요합니다.");
       return;
     }

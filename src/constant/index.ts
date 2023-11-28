@@ -1,8 +1,8 @@
 
 export const MAIN_PATH = "/";
 
-export const SIGN_IN_PATH = "/signIn/";
-export const SIGN_UP_PATH = "/signUp/";
+export const AUTH_PATH = "/auth";
+export const SIGN_UP_PATH = "/auth/asign";
 export const USER_FOUND_PATH = "/userFound";
 export const EMAIL_FOUND_PATH = "/emailFound";
 export const PASSWORD_FOUND_PATH = "/passwordFound";

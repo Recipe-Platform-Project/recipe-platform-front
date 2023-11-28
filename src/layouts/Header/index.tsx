@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import {
   AUTH_PATH,
   CHEF_LIST_PATH,
+  CHEF_PATH,
   MAIN_PATH,
   RANKING_PATH,
   RECIPE_LIST_PATH,
@@ -38,7 +39,7 @@ export default function Header() {
   //          variable: 랭킹 페이지 논리 변수         //
   const isRankingPage = pathname === RANKING_PATH;
   //          variable: 셰프 페이지 논리 변수         //
-  const isChefPage = pathname.startsWith(CHEF_LIST_PATH);
+  const isChefPage = pathname.startsWith(CHEF_PATH);
   //          variable: 인증 페이지 논리 변수         //
   const isAuthPage = pathname === AUTH_PATH;
 

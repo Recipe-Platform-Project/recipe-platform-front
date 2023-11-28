@@ -4,6 +4,9 @@ import { BestBoardItem } from "Types";
 import { useNavigate } from "react-router-dom";
 import { bestBoardListMock } from "mocks";
 import { cutString } from "utils";
+import {  GetBest3BoardListResponseDto } from "apis/dto/response/board";
+import ResponseDto from "apis/dto/response";
+import { getBest3BoardListRequest } from "apis/dto";
 
 //          component: board 리스트 아이템 컴포넌트          //
 export default function BestBoardList() {
@@ -20,17 +23,33 @@ export default function BestBoardList() {
   const [current, setCurrent] = useState<number>(0);
   const [translate, setTranslate] = useState<number>(0);
 
+  //          function: get top 3 board list response 처리 함수          //
+  const getBest3BoardListResponse = (responseBody: GetBest3BoardListResponseDto | ResponseDto) => {
+    const { code } = responseBody;
+    if (code === 'DBE') alert('데이터베이스 오류입니다.');
+    if (code !== 'SU') return;
+
+    const { bestList } = responseBody as GetBest3BoardListResponseDto;
+    setBestBoardList(bestList);
+  };
+
+  //					effect: 컴포넌트가 마운트 시 보드 리스트 불러오기					//
+  useEffect(() => {
+    getBest3BoardListRequest().then(getBest3BoardListResponse)
+  }, []);
   //          component: best board 리스트 아이템 컴포넌트          //
   const BestBoardItem = forwardRef<HTMLDivElement, Props>(
     ({ bestBoardItem }: Props, ref) => {
       //          state: Propertites          //
-      const { noticeNumber, title, imageUrl, writerNickname, content, writerProfileImage, viewCount, commentCount, favoriteCount, tags } = bestBoardItem;
+      const { boardNumber, title, introduce, boardMainImage, writerNickname, writerProfileImage, viewCount, commentCount, favoriteCount, tags } = bestBoardItem;
 
       //          event handler: board Click 이벤트 처리 함수          //
       const onBoardClickHandler = () => {
-        navigator(`/board/detail/${noticeNumber}`);
+        navigator(`/board/detail/${boardNumber}`);
       };
 
+      
+      
       //                  render: board 리스트 아이템 컴포넌트 렌더링                 //
       return (
         <div
@@ -41,7 +60,7 @@ export default function BestBoardList() {
           <div className="main-best-image-box-left">
             <div
               className="main-best-left-image"
-              style={{ backgroundImage: `url(${imageUrl})` }}
+              style={{ backgroundImage: `url(${boardMainImage})` }}
             ></div>
             <div className="main-best-left-image-count-box">
               <div className="main-best-left-image-count">
@@ -52,7 +71,7 @@ export default function BestBoardList() {
           <div className="main-best-image-box-right">
             <div className="main-best-info-box">
               <div className="main-best-title">{cutString(title,10)}</div>
-              <div className="main-best-content">{cutString(content, 55)}</div>
+              <div className="main-best-content">{cutString(introduce, 55)}</div>
               <div className="main-best-counts">
                 <div className="main-best-view-count">{`조회수 ${viewCount}`}</div>
                 <div className="main-best-comment-count">{`댓글 ${commentCount}`}</div>
@@ -74,11 +93,7 @@ export default function BestBoardList() {
       );
     }
   );
-  //					effect: 컴포넌트가 마운트 시 보드 리스트 불러오기					//
-  useEffect(() => {
-    // TODO: API 호출로 변경
-    setBestBoardList(bestBoardListMock);
-  }, []);
+  
   //          event handler: 다음 이미지로 이동하는 함수          //
   const nextSlide = () => {
     if (!slideRef.current) return;
@@ -98,6 +113,7 @@ export default function BestBoardList() {
     const newTranslate = -1370 * newCurrent;
     slideRef.current.style.transform = `translateX(${newTranslate}px)`;
   };
+
   //          render: 메인 best 게시물 컴포넌트 렌더링          //
   return (
     <div id="main-best-wrapper">

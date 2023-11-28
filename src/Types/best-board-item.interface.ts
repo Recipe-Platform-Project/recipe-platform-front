@@ -1,10 +1,10 @@
 export default interface BestBoardItem {
-    noticeNumber: number;
+    boardNumber: number;
     title: string;
-    imageUrl: string;
-    content: string;
+    boardMainImage: string;
+    introduce: string;
     writerNickname: string;
-    writerProfileImage: string | null;
+    writerProfileImage: string;
     viewCount: number;
     commentCount: number;
     favoriteCount: number;

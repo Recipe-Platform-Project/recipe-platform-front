@@ -4,7 +4,7 @@ import React, { ChangeEvent, useRef, useState } from 'react'
 import "./style.css"
 import { useNavigate } from 'react-router-dom';
 import Modals from 'components/Modals';
-import dayjs from 'dayjs';
+// import dayjs from 'dayjs';
 import CookingReviewCommentsListItem from 'Types/cooking-review-comments-list.interface';
 import { SIGN_IN_PATH } from 'constant';
 
@@ -41,23 +41,23 @@ export default function CookingReviewComments({boardNumber}: Props) {
     //          function: 네비게이트 함수          //
     const navigator = useNavigate();
 
-    //          function: 작성일 경과시간 함수          //
-    const getElapsedTime = () => {
-        const now = dayjs().add(9, 'hour');
-        const writeTime = dayjs();
+    // //          function: 작성일 경과시간 함수          //
+    // const getElapsedTime = () => {
+    //     const now = dayjs().add(9, 'hour');
+    //     const writeTime = dayjs();
 
-        const gap = now.diff(writeTime, 's');
-        if (gap < 60) return `${gap}초 전`;
-        if (gap < 3600) return `${Math.floor(gap/60)}분 전`;
-        if (gap < 86400) return `${Math.floor(gap/3600)}시간 전`;
-        return `${Math.floor(gap/86400)}일 전`;
-    };
-    //          function: 작성일 포멧 변경 함수          //
-    const getWriteDatetimeFormat = (writeDatetime: string | undefined) => {
-        if (!writeDatetime) return '';
-        const date = dayjs(writeDatetime);
-        return date.format('YYYY. MM. DD HH:mm:ss');
-      };
+    //     const gap = now.diff(writeTime, 's');
+    //     if (gap < 60) return `${gap}초 전`;
+    //     if (gap < 3600) return `${Math.floor(gap/60)}분 전`;
+    //     if (gap < 86400) return `${Math.floor(gap/3600)}시간 전`;
+    //     return `${Math.floor(gap/86400)}일 전`;
+    // };
+    // //          function: 작성일 포멧 변경 함수          //
+    // const getWriteDatetimeFormat = (writeDatetime: string | undefined) => {
+    //     if (!writeDatetime) return '';
+    //     const date = dayjs(writeDatetime);
+    //     return date.format('YYYY. MM. DD HH:mm:ss');
+    //   };
         
     //           event handler: user 마이페이지 페이지 이동 버튼 클릭 이벤트 처리          //
     const onUserMyPageButtonClickHandler = () => {
@@ -212,7 +212,7 @@ export default function CookingReviewComments({boardNumber}: Props) {
                             <div className='board-writer-nickname-and-datetime-container'>
                                 <div className='board-writer-nickname-and-datetime-box'>
                                     <div className='board-writer-nickname' onClick={onUserMyPageButtonClickHandler} >{'닉네임닉네임닉네임'}</div>
-                                    <div className='board-writer-datetime'>{getElapsedTime()}</div>
+                                    <div className='board-writer-datetime'>{"getElapsedTime()"}</div>
                                 </div>
                                 <div className='reply-comment-edit-box'>
                                     <div className='reply-update-comment-text-button' onClick={onCookingReviewReplyCommentChangeButtonClickHandler}>{'수정'}</div>
@@ -316,7 +316,7 @@ const CookingReviews = () => {
                         <div className='cooking-reviewer-write-info-box'>
                             <div className='cooking-review-host-nickname-and-datetime-box'>
                                 <div className='cooking-review-host-reviewer-nickname' onClick={onUserMyPageButtonClickHandler} >{'닉네임'}</div>
-                                <div className='cooking-review-host-reviewer-write-datetime'>{getElapsedTime()}</div>
+                                <div className='cooking-review-host-reviewer-write-datetime'>{"getElapsedTime()"}</div>
                             </div>
                             <div className='cooking-review-host-reviewer-stars-image-box'>
                                 <div className='cooking-review-host-reviewer-star'></div>

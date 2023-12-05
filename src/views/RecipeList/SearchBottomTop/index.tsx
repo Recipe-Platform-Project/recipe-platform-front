@@ -2,7 +2,11 @@ import React, { useState } from 'react'
 import './style.css'
 import { useNavigate } from 'react-router-dom'
 
-export default function SearchBottomTop() {
+interface Props {
+  count: number
+}
+
+export default function SearchBottomTop({ count }: Props) {
   
   const[section, setSection] = useState<'최신순' | '좋아요순' | '조회순' | ''>('');
 
@@ -13,7 +17,7 @@ export default function SearchBottomTop() {
 
     return(
         <div id='search-board-top-box'>
-          <div className='search-board-top-title'>{'총 N개의 레시피가 있습니다' }</div>
+          <div className='search-board-top-title'>{`총 ${count}개의 레시피가 있습니다` }</div>
           <div className='search-board-top-type-box'>
             <div className={section === '최신순' ? 'search-board-top-type-latest-box-selected' : 'search-board-top-type-latest-box'}>
               <div className='search-board-top-type-latest-title' onClick={() => onSectionClickHandler('최신순')}>{'최신순'}</div>

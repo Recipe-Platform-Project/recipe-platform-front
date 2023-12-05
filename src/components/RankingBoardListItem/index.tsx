@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import { RECIPE_DETAIL_PATH } from 'constant';
 
 interface Props {
+    ranking: number;
     item: RankingItem;
 }
 
-export default function RankingListItem({ item }: Props) {
+export default function RankingListItem({ ranking, item }: Props) {
 
-const { boardNumber, boardTitleImage, title, writeNickname, favoriteCount, starRating } = item;
+const { boardNumber, boardTitleImage, title, writerNickname, favoriteCount, starRating, viewCount } = item;
 
 //              function: 네이비게이트 함수         //
 const navigator = useNavigate();
@@ -25,13 +26,15 @@ const onRankingCardClickHandler = () => {
             <div className='ranking-board-list-item-image-box'>
                 <div className='ranking-board-list-item-image' style={{backgroundImage: `url(${boardTitleImage})`}} onClick={onRankingCardClickHandler}>
                     <div className='ranking-board-list-item-number-box'>
-                        <div className='ranking-board-list-item-number'>{`${1}`}</div>
+                        <div className='ranking-board-list-item-number'>{`${ranking}`}</div>
                     </div>
                 </div>
             </div>
             <div className='ranking-board-list-item-best-user-box'>
                 <div className='ranking-board-list-item-best-user-title'>{`${title}`}</div>
-                <div className='ranking-board-list-item-best-user-nickname'>{`${writeNickname}`}</div>
+                <div className='ranking-board-list-item-best-user-nickname'>{`${writerNickname}`}
+                    <div className='ranking-board-list-item-veiw-count'>{'조회순'}{`${viewCount}`}</div>
+                </div>
                 <div className='ranking-board-list-item-best-user-star-favorite-box'>
                     <div className='ranking-board-list-item-best-user-star-box'>
                         <div className='ranking-board-list-item-best-user-star-image'></div>

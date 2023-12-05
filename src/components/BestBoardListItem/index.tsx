@@ -29,8 +29,8 @@ export default function BestBoardList() {
     if (code === 'DBE') alert('데이터베이스 오류입니다.');
     if (code !== 'SU') return;
 
-    const { bestList } = responseBody as GetBest3BoardListResponseDto;
-    setBestBoardList(bestList);
+    const { best3List } = responseBody as GetBest3BoardListResponseDto;
+    setBestBoardList(best3List);
   };
 
   //					effect: 컴포넌트가 마운트 시 보드 리스트 불러오기					//

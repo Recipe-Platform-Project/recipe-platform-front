@@ -60,10 +60,17 @@
     font-weight: 500;
 }
 .ranking-board-list-item-best-user-nickname{
+    justify-content: space-between;
     margin-top: 10px;
     display: flex;
     color: #7B7777;
     font-size: 12px;
+    font-weight: 400;
+}
+.ranking-board-list-item-veiw-count{
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    font-size: 15px;
     font-weight: 400;
 }
 .ranking-board-list-item-best-user-star-favorite-box{

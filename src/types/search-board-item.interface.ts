@@ -6,5 +6,6 @@ export default interface SearchItem{
     viewCount: number,
     starRating: number,
     writeNickname: string,
+    writeDatetime: string,
     writeProfileImage: string | null
 }

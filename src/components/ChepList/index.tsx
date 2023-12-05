@@ -29,10 +29,6 @@ export default function ChefListItem({ chefItem }: Props) {
     const navigator = useNavigate;
 
     const onChefPageButtonClickHandler = () => {
-<<<<<<< HEAD
-        // navigator(USER_PATH(email));
-=======
->>>>>>> 7ec6a2dc948913bde2bd06f407cb1993cc27ab12
     }
 
     // useEffect (() => {

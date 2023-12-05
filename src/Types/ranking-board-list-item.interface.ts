@@ -2,7 +2,8 @@ export default interface RankingItem{
     boardNumber : number;
     boardTitleImage: string | null;
     title: string;
-    writeNickname: string;
+    viewCount: number,
+    writerNickname: string;
     favoriteCount: number;
     starRating: number;
 }

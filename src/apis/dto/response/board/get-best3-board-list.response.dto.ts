@@ -3,5 +3,5 @@ import ResponseDto from "..";
 
 export default interface GetBest3BoardListResponseDto extends ResponseDto{
 
-    bestList: BestBoardItem[];
+    best3List: BestBoardItem[];
 }

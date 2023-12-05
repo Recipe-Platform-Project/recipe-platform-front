@@ -1,6 +1,6 @@
 import { SearchItem } from "Types";
 
-const searchBoardListMock: SearchItem[] =[
+const searchBoardListMock =[
     {
         boardNumber: 1,
         title: '라면 만드는 법',
